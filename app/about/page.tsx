@@ -43,8 +43,8 @@ const personSchema = {
     "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, serving Las Vegas, Henderson, and Summerlin since 2008.",
   telephone: "+17025001942",
   email: "homes@heyberkshire.com",
-  url: "https://heyberkshire.com/about",
-  image: "https://www.heyberkshire.com/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
+  url: "https://www.grandparkvillagehomes.com/about",
+  image: "https://www.grandparkvillagehomes.com/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
   worksFor: {
     "@type": "RealEstateAgent",
     name: "Berkshire Hathaway HomeServices Nevada Properties",

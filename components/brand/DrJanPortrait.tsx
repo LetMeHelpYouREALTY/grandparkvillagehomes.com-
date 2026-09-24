@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { headers } from "next/headers";
 import { AGENT_IMAGES, getAgentPortraitCopy } from "@/lib/agent-portrait";
+import { siteConfig } from "@/lib/site-config";
 
 type DrJanPortraitProps = {
   variant?: "card" | "feature" | "hero";
   pathname?: string;
 };
 
-const SITE = "https://www.heyberkshire.com";
+const SITE = siteConfig.url;
 
 export function DrJanPortrait({ variant = "card", pathname }: DrJanPortraitProps) {
   const path = pathname ?? headers().get("x-pathname") ?? "/";

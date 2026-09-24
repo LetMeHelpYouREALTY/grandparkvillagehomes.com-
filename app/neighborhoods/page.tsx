@@ -6,9 +6,9 @@ import { MapPin, Phone, Home, Users, GraduationCap } from "lucide-react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Las Vegas Neighborhoods | Berkshire Hathaway HomeServices",
+  title: "Las Vegas Neighborhoods | Grand Park Village Homes",
   description:
-    "Explore Las Vegas and Henderson neighborhoods with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties. Summerlin, Henderson, The Ridges, Southern Highlands & more.",
+    "Explore Las Vegas neighborhoods with Dr. Jan Duffy at Grand Park Village Homes, Berkshire Hathaway HomeServices Nevada Properties. Grand Park, Summerlin, Henderson, and more.",
   keywords: [
     "Las Vegas neighborhoods",
     "Henderson communities",
@@ -130,14 +130,13 @@ export default function NeighborhoodsPage() {
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Grand Park Village Homes
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Las Vegas & Henderson Neighborhoods
+              Las Vegas Neighborhoods by Dr. Jan Duffy
             </h1>
             <p className="text-xl text-slate-600">
-              Explore the best communities in Southern Nevada with Dr. Jan Duffy, your{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> neighborhood expert
+              Grand Park Village Homes in West Summerlin, plus Summerlin, Henderson, and the rest of the Las Vegas Valley.
             </p>
           </div>
 
