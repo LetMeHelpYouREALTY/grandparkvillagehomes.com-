@@ -108,8 +108,6 @@ export default function ReviewsSection({
             <div
               key={review.id}
               className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
-              itemScope
-              itemType="https://schema.org/Review"
             >
               <div className="flex items-center mb-4">
                 <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
@@ -127,16 +125,12 @@ export default function ReviewsSection({
                   )}
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900" itemProp="author">
-                    {review.name}
-                  </h3>
+                  <h3 className="font-bold text-slate-900">{review.name}</h3>
                   <p className="text-sm text-slate-600">{review.location}</p>
                 </div>
               </div>
 
-              <div className="flex items-center mb-4" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
-                <meta itemProp="ratingValue" content={review.rating.toString()} />
-                <meta itemProp="bestRating" content="5" />
+              <div className="flex items-center mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
@@ -149,7 +143,7 @@ export default function ReviewsSection({
 
               <div className="relative">
                 <Quote className="absolute -top-2 -left-2 h-8 w-8 text-blue-100" />
-                <p className="text-slate-700 relative z-10 pl-4" itemProp="reviewBody">
+                <p className="text-slate-700 relative z-10 pl-4">
                   {review.text}
                 </p>
               </div>
@@ -175,8 +169,10 @@ export default function ReviewsSection({
 }
 
 /**
- * Helper to convert reviews to schema format for ReviewSchema component
- * Use with: <ReviewSchema reviews={getReviewSchemaData(reviews)} aggregateRating={aggregateRating} />
+ * Visible testimonial fields. Do not emit Review microdata for these.
+ * Google treats reviews of this business on its own site as self-serving
+ * and will not use them for review snippets.
+ * @see https://developers.google.com/search/docs/appearance/structured-data/review-snippet
  */
 export function getReviewSchemaData(reviews: Review[]) {
   return reviews.map((review) => ({
