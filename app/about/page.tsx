@@ -2,6 +2,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
+import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { 
   Phone, 
   Mail, 
@@ -43,6 +44,7 @@ const personSchema = {
   telephone: "+17025001942",
   email: "homes@heyberkshire.com",
   url: "https://heyberkshire.com/about",
+  image: "https://www.heyberkshire.com/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
   worksFor: {
     "@type": "RealEstateAgent",
     name: "Berkshire Hathaway HomeServices Nevada Properties",
@@ -224,13 +226,7 @@ export default function AboutPage() {
               {/* Stats & Credentials */}
               <div className="space-y-6">
                 {/* Agent Photo Placeholder */}
-                <div className="bg-gradient-to-br from-blue-100 to-slate-100 rounded-lg p-8 aspect-square flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="text-6xl mb-4">👩‍💼</div>
-                    <p className="text-slate-600 font-semibold">Dr. Jan Duffy</p>
-                    <p className="text-sm text-slate-500">BHHS Nevada Properties</p>
-                  </div>
-                </div>
+                <DrJanPortrait variant="feature" pathname="/about" />
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">

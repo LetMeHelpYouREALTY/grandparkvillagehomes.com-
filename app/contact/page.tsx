@@ -1,3 +1,4 @@
+import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
@@ -50,6 +51,9 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="text-center mb-12">
+            <div className="mx-auto mb-8 max-w-sm">
+              <DrJanPortrait variant="feature" pathname="/contact" />
+            </div>
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>

@@ -21,5 +21,10 @@ upload "grand-park/grand-park-single-family.png" "public/images/neighborhoods/gr
 upload "grand-park/grand-park-townhomes.png" "public/images/neighborhoods/grand-park-townhomes.png" "image/png"
 upload "grand-park/grand-park-village-mark.png" "public/images/logos/grand-park-village-mark.png" "image/png"
 upload "grand-park/grand-park-village-homes.svg" "public/images/logos/grand-park-village-homes.svg" "image/svg+xml"
+upload "grand-park/dr-jan-duffy-grand-park-circle.png" "public/images/agent/dr-jan-duffy-grand-park-circle.png" "image/png"
+upload "grand-park/dr-jan-duffy-west-summerlin-realtor.jpg" "public/images/agent/dr-jan-duffy-west-summerlin-realtor.jpg" "image/jpeg"
+upload "grand-park/dr-jan-duffy-grand-park-village-homes-badge.jpg" "public/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg" "image/jpeg"
+upload "grand-park/favicon-32x32.png" "public/favicon-32x32.png" "image/png"
+upload "grand-park/apple-touch-icon.png" "public/apple-touch-icon.png" "image/png"
 
 echo "Uploaded Grand Park images to r2://${BUCKET}/grand-park/"

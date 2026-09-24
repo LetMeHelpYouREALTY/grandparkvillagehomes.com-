@@ -1,19 +1,29 @@
 import Link from "next/link";
+import { headers } from "next/headers";
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
+import { SiteLogo } from "@/components/brand/SiteLogo";
+import { getAgentPortraitCopy } from "@/lib/agent-portrait";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const pathname = headers().get("x-pathname") || "/";
+  const portrait = getAgentPortraitCopy(pathname, "footer");
 
   return (
+    <>
+    <DrJanPortrait pathname={pathname} />
     <footer className="bg-slate-900 text-white">
       <div className="container mx-auto px-4 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="font-bold text-xl mb-4">Berkshire Hathaway HomeServices</h3>
+            <div className="mb-4">
+              <SiteLogo imageAlt={portrait.alt} tone="light" />
+            </div>
             <p className="text-slate-300 mb-4 text-sm">
-              Nevada Properties - Your trusted real estate partner in Las Vegas, Henderson, and
-              Summerlin. Backed by Warren Buffett's legacy of trust.
+              Berkshire Hathaway HomeServices Nevada Properties. Las Vegas, Henderson, and
+              Summerlin, including Grand Park Village.
             </p>
             <div className="flex space-x-4">
               <a
@@ -227,5 +237,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+    </>
   );
 }

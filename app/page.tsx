@@ -8,6 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
 import { grandParkImages } from "@/lib/grand-park-media";
+import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { getFaqsForDomain } from "@/lib/faq-config";
 
@@ -123,16 +124,7 @@ export default async function Home() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-slate-950/55 to-slate-950/80" />
           <div className="relative z-10 container mx-auto px-4 pb-20 pt-32 text-center md:pb-24 md:pt-40">
-            {showVillageHero && (
-              <Image
-                src={grandParkImages.mark}
-                alt="Grand Park Village Homes logo"
-                width={220}
-                height={220}
-                priority
-                className="mx-auto mb-6 h-24 w-24 rounded-full border border-white/30 bg-white/90 object-cover"
-              />
-            )}
+            <DrJanPortrait variant="hero" />
             {config.ctaBadge && (
               <span className="inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-full mb-6">
                 {config.ctaBadge}

@@ -3,12 +3,17 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { SiteLogo } from "@/components/brand/SiteLogo";
+import { getAgentPortraitCopy } from "@/lib/agent-portrait";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const pathname = usePathname() || "/";
+  const portrait = getAgentPortraitCopy(pathname, "nav");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,13 +50,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Brand Logo */}
-          <Link href="/" className="flex flex-col">
-            <span className="text-lg md:text-xl lg:text-2xl font-bold text-slate-900 hover:text-blue-600 transition-colors leading-tight">
-              Berkshire Hathaway
-              <span className="text-blue-600"> HomeServices</span>
-            </span>
-            <span className="text-xs text-slate-500 hidden sm:block">Nevada Properties</span>
-          </Link>
+          <SiteLogo imageAlt={portrait.alt} priority />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-5">

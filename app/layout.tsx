@@ -18,6 +18,14 @@ export async function generateMetadata(): Promise<Metadata> {
       title: config.heroHeadline,
       description: config.description,
       type: "website",
+      images: [
+        {
+          url: "/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
+          width: 1200,
+          height: 1200,
+          alt: "Dr. Jan Duffy, Las Vegas REALTOR, on a phone call. Grand Park Village Homes by Dr. Jan Duffy.",
+        },
+      ],
     },
   };
 }

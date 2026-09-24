@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MapPin, TreePine, Home as HomeIcon, Building2, Star } from "lucide-react";
 import { grandParkImages } from "@/lib/grand-park-media";
+import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
 import {
@@ -165,6 +166,9 @@ export default function GrandParkPage() {
             <p className="text-xl text-slate-600">
               Grand Park is Summerlin’s newest active village in Las Vegas. New homes run from the high $300,000s to over $1.6 million.
             </p>
+            <div className="mx-auto mt-8 max-w-sm text-left">
+              <DrJanPortrait variant="feature" pathname="/neighborhoods/grand-park" />
+            </div>
           </header>
 
           <section className="max-w-6xl mx-auto mb-12" aria-labelledby="village-photo-heading">

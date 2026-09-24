@@ -90,10 +90,11 @@ export function generateRealEstateAgentSchema() {
       "HeyBerkshire",
       "BHHS Nevada Properties",
       "Berkshire Hathaway HomeServices",
+      "Grand Park Village Homes",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/images/dr-jan-duffy.jpg`,
-    image: `${BASE_URL}/images/dr-jan-duffy.jpg`,
+    logo: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-circle.png`,
+    image: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg`,
     description: siteConfig.description,
     telephone: "+1-702-500-1942",
     email: agentInfo.email,
@@ -125,6 +126,14 @@ export function generateRealEstateAgentSchema() {
       {
         "@type": "Place",
         name: "Summerlin",
+      },
+      {
+        "@type": "Place",
+        name: "Grand Park Village",
+        containedInPlace: {
+          "@type": "Place",
+          name: "Summerlin, Las Vegas, Nevada",
+        },
       },
       {
         "@type": "City",
@@ -201,7 +210,7 @@ export function generateOrganizationSchema() {
     "@id": `${BASE_URL}#parent-organization`,
     name: "Berkshire Hathaway HomeServices Nevada Properties",
     url: "https://www.bfrre.com",
-    logo: `${BASE_URL}/favicon-32x32.png`,
+    logo: `${BASE_URL}/images/logos/grand-park-village-homes.svg`,
     parentOrganization: {
       "@type": "Organization",
       name: "Berkshire Hathaway HomeServices",
