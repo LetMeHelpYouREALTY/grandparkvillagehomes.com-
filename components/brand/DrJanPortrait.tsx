@@ -22,7 +22,7 @@ export function DrJanPortrait({
     variant === "feature"
       ? AGENT_IMAGES.badge
       : variant === "hero"
-        ? AGENT_IMAGES.circle
+        ? AGENT_IMAGES.phoneCircle
         : AGENT_IMAGES.portrait;
 
   const imageSchema = {
@@ -52,11 +52,12 @@ export function DrJanPortrait({
     return (
       <figure className="mx-auto mb-6 w-fit">
         <Image
-          src={AGENT_IMAGES.circle}
+          src={src}
           alt={copy.alt}
-          width={128}
-          height={128}
-          className="mx-auto h-24 w-24 rounded-full border border-white/40 md:h-28 md:w-28"
+          width={180}
+          height={180}
+          sizes="160px"
+          className="mx-auto h-36 w-36 rounded-full object-contain md:h-40 md:w-40"
         />
         <figcaption className="mt-3 text-sm font-medium tracking-wide text-white">
           By Dr. Jan Duffy
