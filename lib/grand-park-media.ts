@@ -14,6 +14,7 @@ export const grandParkImages = {
   mark: "/images/logos/grand-park-village-mark.png",
   logo: "/images/logos/grand-park-village-homes.svg",
   agentCircle: "/images/agent/dr-jan-duffy-grand-park-circle.png",
+  agentPhoneCircle: "/images/agent/dr-jan-duffy-calling-circle.jpg",
   agentPortrait: "/images/agent/dr-jan-duffy-west-summerlin-realtor.jpg",
   agentBadge: "/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
 } as const;
@@ -26,6 +27,7 @@ export const grandParkR2Keys = {
   mark: "grand-park/grand-park-village-mark.png",
   logo: "grand-park/grand-park-village-homes.svg",
   agentCircle: "grand-park/dr-jan-duffy-grand-park-circle.png",
+  agentPhoneCircle: "grand-park/dr-jan-duffy-calling-circle.jpg",
   agentPortrait: "grand-park/dr-jan-duffy-west-summerlin-realtor.jpg",
   agentBadge: "grand-park/dr-jan-duffy-grand-park-village-homes-badge.jpg",
 } as const;

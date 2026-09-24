@@ -25,7 +25,11 @@ export default function Navbar() {
 
   const mainNavLinks = [
     { href: "/", label: "Home", external: false },
-    { href: "http://drjanduffy.realscout.com/", label: "Properties", external: true },
+    {
+      href: "http://drjanduffy.realscout.com/",
+      label: "Properties",
+      external: true,
+    },
     { href: "/neighborhoods", label: "Neighborhoods", external: false },
     { href: "/about", label: "About", external: false },
     { href: "/contact", label: "Contact", external: false },
@@ -50,7 +54,7 @@ export default function Navbar() {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
           {/* Brand Logo */}
-          <SiteLogo imageAlt={portrait.alt} priority />
+          <SiteLogo imageAlt={portrait.alt} />
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-5">
@@ -73,7 +77,7 @@ export default function Navbar() {
                 >
                   {link.label}
                 </Link>
-              )
+              ),
             )}
 
             {/* Services Dropdown */}
@@ -83,10 +87,10 @@ export default function Navbar() {
                 onClick={() => setIsServicesOpen(!isServicesOpen)}
                 onMouseEnter={() => setIsServicesOpen(true)}
                 onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
+                  if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault();
                     setIsServicesOpen(!isServicesOpen);
-                  } else if (e.key === 'Escape') {
+                  } else if (e.key === "Escape") {
                     setIsServicesOpen(false);
                   }
                 }}
@@ -132,8 +136,12 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center gap-3">
             <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700">
-              <Link href="tel:+17025001942">
-                <Phone className="h-4 w-4" />
+              <Link
+                href="tel:+17025001942"
+                aria-label="Call Dr. Jan at 702-500-1942"
+              >
+                <Phone className="h-4 w-4" aria-hidden="true" />
+                <span className="sr-only">Call Dr. Jan at 702-500-1942</span>
               </Link>
             </Button>
             <button
@@ -142,7 +150,11 @@ export default function Navbar() {
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
             >
-              {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
+              {isMobileMenuOpen ? (
+                <X size={24} aria-hidden="true" />
+              ) : (
+                <Menu size={24} aria-hidden="true" />
+              )}
             </button>
           </div>
         </div>
@@ -172,7 +184,7 @@ export default function Navbar() {
                   >
                     {link.label}
                   </Link>
-                )
+                ),
               )}
 
               {/* Services Section */}
@@ -193,7 +205,10 @@ export default function Navbar() {
               </div>
 
               <div className="pt-4">
-                <Button asChild className="bg-blue-600 hover:bg-blue-700 w-full">
+                <Button
+                  asChild
+                  className="bg-blue-600 hover:bg-blue-700 w-full"
+                >
                   <Link
                     href="tel:+17025001942"
                     className="flex items-center justify-center gap-2"

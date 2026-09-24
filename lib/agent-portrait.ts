@@ -1,12 +1,14 @@
 /**
  * Dr. Jan Duffy portraits.
- * Three real crops of the same photograph, each with its own filename.
+ * The nav mark is a tight circle crop. The homepage hero uses a wider
+ * circular photo so her shoulders and the gold ring are not clipped.
  * Alt text and captions change with the page so search and answer engines
  * can tie her to that page's place and topic.
  */
 
 export const AGENT_IMAGES = {
   circle: "/images/agent/dr-jan-duffy-grand-park-circle.png",
+  phoneCircle: "/images/agent/dr-jan-duffy-calling-circle.jpg",
   portrait: "/images/agent/dr-jan-duffy-west-summerlin-realtor.jpg",
   badge: "/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
 } as const;
