@@ -169,6 +169,17 @@ export default function GrandParkPage() {
             <div className="mx-auto mt-8 max-w-sm text-left">
               <DrJanPortrait variant="feature" pathname="/neighborhoods/grand-park" />
             </div>
+            <nav className="mt-8 flex flex-wrap justify-center gap-3 text-sm" aria-label="Grand Park guides">
+              <Link href="/neighborhoods/grand-park/glenrock" className="rounded-full bg-slate-100 px-4 py-2 font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700">
+                Glenrock map
+              </Link>
+              <Link href="/neighborhoods/grand-park/builders" className="rounded-full bg-slate-100 px-4 py-2 font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700">
+                Builders
+              </Link>
+              <Link href="/neighborhoods/grand-park/park" className="rounded-full bg-slate-100 px-4 py-2 font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700">
+                90-acre park
+              </Link>
+            </nav>
           </header>
 
           <section className="max-w-6xl mx-auto mb-12" aria-labelledby="village-photo-heading">

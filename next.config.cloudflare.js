@@ -38,6 +38,18 @@ const nextConfig = {
         destination: 'https://www.heyberkshire.com/:path*',
         permanent: true,
       },
+      {
+        source: '/',
+        has: [{ type: 'host', value: 'grandparkvillagehomes.com' }],
+        destination: 'https://www.grandparkvillagehomes.com/',
+        permanent: true,
+      },
+      {
+        source: '/:path+',
+        has: [{ type: 'host', value: 'grandparkvillagehomes.com' }],
+        destination: 'https://www.grandparkvillagehomes.com/:path+',
+        permanent: true,
+      },
     ]
   },
 

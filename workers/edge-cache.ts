@@ -36,7 +36,12 @@ export default {
 
     // Add cache status header for debugging
     response.headers.set('CF-Cache-Status', response ? 'HIT' : 'MISS');
-    
+
+    // Hashed CSS/JS are render assets, not pages. noindex keeps them out of Google.
+    if (url.pathname.startsWith('/_next/static/')) {
+      response.headers.set('X-Robots-Tag', 'noindex');
+    }
+
     return response;
   },
 };

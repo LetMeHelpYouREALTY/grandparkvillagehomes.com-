@@ -3,21 +3,38 @@ import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import { headers } from "next/headers";
 import { getDomainConfig } from "@/lib/domain-config";
+import { getCanonicalUrl, getPreferredOrigin } from "@/lib/canonical";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
 
 export async function generateMetadata(): Promise<Metadata> {
   const domain = headers().get("x-domain") || "";
+  const pathname = headers().get("x-pathname") || "/";
   const config = getDomainConfig(domain);
+  const canonical = getCanonicalUrl(domain, pathname);
+  const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
+
   return {
+    metadataBase: new URL(getPreferredOrigin(domain)),
     title: `${config.neighborhood} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
     description: config.description,
     keywords: config.keywords,
+    alternates: {
+      canonical,
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    ...(googleVerification
+      ? { verification: { google: googleVerification } }
+      : {}),
     openGraph: {
       title: config.heroHeadline,
       description: config.description,
       type: "website",
+      url: canonical,
       images: [
         {
           url: "/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
