@@ -12,7 +12,7 @@ export type GlobalHeroConfig = {
 };
 
 export const GLOBAL_HERO: GlobalHeroConfig = {
-  src: "/images/global-hero/heyberkshire.jpg",
+  src: "/images/global-hero/grand-park-village-homes-las-vegas.jpg",
   alt: "Las Vegas Valley desert skyline and residential rooftops at dusk, Las Vegas, NV",
   tagline: "Grand Park Village Homes — By Dr. Jan Duffy",
   phoneDisplay: "(702) 222-1964",
