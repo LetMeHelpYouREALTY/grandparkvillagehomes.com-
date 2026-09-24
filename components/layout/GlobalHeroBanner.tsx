@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { GLOBAL_HERO } from "@/lib/global-hero";
 
 /**
@@ -7,7 +10,12 @@ import { GLOBAL_HERO } from "@/lib/global-hero";
  * page-level full-bleed heroes on the homepage.
  */
 export default function GlobalHeroBanner() {
+  const pathname = usePathname();
   const { src, alt, tagline, phoneDisplay, phoneTel } = GLOBAL_HERO;
+
+  if (pathname === "/") {
+    return null;
+  }
 
   return (
     <aside

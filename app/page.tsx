@@ -48,6 +48,11 @@ export default async function Home() {
   // ── Domain-aware FAQs ────────────────────────────────────────────────────
   const faqs = getFaqsForDomain(config.pageType, config.domain);
   const faqCopy = FAQ_SECTION_COPY[config.pageType] ?? FAQ_SECTION_COPY["search"];
+  const showVillageHero =
+    config.domain === "default" ||
+    config.domain === "heyberkshire.com" ||
+    config.domain === "grandparkvillagehomes.com" ||
+    config.neighborhood === "Grand Park";
 
   // Personalise the FAQ title with the neighborhood name for community/55+ pages
   const faqTitle =
@@ -103,12 +108,31 @@ export default async function Home() {
       <Navbar />
       <main>
         {/* Domain-Aware Hero */}
-        <section className="relative bg-slate-900 text-white py-24 md:py-32 overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center opacity-30"
-            style={{ backgroundImage: "url('/Image/hero_bg_1.jpg')" }}
+        <section className="relative min-h-[640px] overflow-hidden bg-slate-900 text-white">
+          <Image
+            src={showVillageHero ? grandParkImages.hero : "/Image/hero_bg_1.jpg"}
+            alt={
+              showVillageHero
+                ? "Grand Park Village Homes in West Summerlin, Las Vegas, with new homes beside the central park"
+                : `${config.neighborhood} homes for sale`
+            }
+            fill
+            priority
+            className="object-cover"
+            sizes="100vw"
           />
-          <div className="relative z-10 container mx-auto px-4 text-center">
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-slate-950/55 to-slate-950/80" />
+          <div className="relative z-10 container mx-auto px-4 pb-20 pt-32 text-center md:pb-24 md:pt-40">
+            {showVillageHero && (
+              <Image
+                src={grandParkImages.mark}
+                alt="Grand Park Village Homes logo"
+                width={220}
+                height={220}
+                priority
+                className="mx-auto mb-6 h-24 w-24 rounded-full border border-white/30 bg-white/90 object-cover"
+              />
+            )}
             {config.ctaBadge && (
               <span className="inline-block bg-blue-600 text-white text-sm font-semibold px-4 py-1 rounded-full mb-6">
                 {config.ctaBadge}
@@ -117,7 +141,7 @@ export default async function Home() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               {config.heroHeadline}
             </h1>
-            <p className="text-xl md:text-2xl text-white/80 mb-10 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto">
               {config.heroSubheadline}
             </p>
 
@@ -134,7 +158,7 @@ export default async function Home() {
             <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-white">500+</span>
-                <span>Families Helped</span>
+                <span>Clients Helped</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-white">30+ Years</span>
@@ -191,19 +215,39 @@ export default async function Home() {
                 />
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                Grand Park Village Homes
+                Homes Around a 90-Acre Park
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mb-8">
-                Summerlin’s newest active village, west of the 215 Beltway. New homes run from the high $300,000s to over $1.6 million, around a park of more than 90 acres.
+                Summerlin’s newest active village, west of the 215 Beltway. Single-family homes, paired homes, and townhomes run from the high $300,000s to over $1.6 million.
               </p>
-              <div className="relative mb-8 h-64 md:h-96 overflow-hidden rounded-2xl">
-                <Image
-                  src={grandParkImages.hero}
-                  alt="Grand Park Village Homes in West Summerlin, Las Vegas"
-                  fill
-                  sizes="(max-width: 1152px) 100vw, 1152px"
-                  className="object-cover"
-                />
+              <div className="mb-8 grid gap-4 md:grid-cols-3">
+                <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
+                  <Image
+                    src={grandParkImages.park}
+                    alt="Grand Park central park in West Summerlin, Las Vegas"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
+                  <Image
+                    src={grandParkImages.singleFamily}
+                    alt="Single-family home for sale in Grand Park Village, Summerlin"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
+                  <Image
+                    src={grandParkImages.townhomes}
+                    alt="Townhomes for sale in Grand Park Village, Las Vegas"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
               <Link
                 href="/neighborhoods/grand-park"

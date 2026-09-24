@@ -82,6 +82,8 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
   "vegasvalleyhomesforsale.com": { domain: "vegasvalleyhomesforsale.com", neighborhood: "Las Vegas Valley", tagline: "Vegas Valley Homes for Sale", description: "Search all Vegas Valley homes for sale. Every neighborhood, every price range. Dr. Jan Duffy, BHHS.", heroHeadline: "Vegas Valley Homes for Sale", heroSubheadline: "Every home, every neighborhood, every price point across the entire Las Vegas Valley.", keywords: ["Vegas Valley homes for sale", "Las Vegas Valley real estate", "Southern Nevada homes"], pageType: "search", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Valley-Wide Expert", ctaHeadline: "Search the Entire Vegas Valley", ctaSubheadline: "From Henderson to North Las Vegas — I cover every corner of the Valley." },
   "waterfallhomesnorthlasvegas.com": { domain: "waterfallhomesnorthlasvegas.com", neighborhood: "Waterfall Homes", tagline: "Waterfall Homes North Las Vegas", description: "Waterfall Homes community in North Las Vegas. Expert real estate guidance from Dr. Jan Duffy.", heroHeadline: "Waterfall Homes North Las Vegas", heroSubheadline: "Beautiful North Las Vegas community with distinctive waterfall features.", keywords: ["Waterfall Homes North Las Vegas", "North Las Vegas community", "North LV homes for sale"], pageType: "community", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "North LV Specialist", ctaHeadline: "Find Your Waterfall Homes Property", ctaSubheadline: "Great value, great community — let me show you what is available." },
   "zoomintohomes.com": { domain: "zoomintohomes.com", neighborhood: "Las Vegas", tagline: "Zoom Into Las Vegas Homes", description: "Virtual home tours and in-depth Las Vegas real estate guidance from Dr. Jan Duffy.", heroHeadline: "Zoom Into Las Vegas Homes", heroSubheadline: "Virtual tours, 3D walkthroughs, and live video showings — home buying on your schedule.", keywords: ["virtual home tours Las Vegas", "zoom home tour Las Vegas", "remote home buying Las Vegas"], pageType: "search", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "Virtual Tour Expert", ctaHeadline: "Tour Homes From Anywhere", ctaSubheadline: "Cannot visit in person? I will do a live video tour of any Las Vegas home. Call 702-222-1964." },
+  "grandparkvillagehomes.com": { domain: "grandparkvillagehomes.com", neighborhood: "Las Vegas", tagline: "Grand Park Village Homes", description: "Grand Park Village Homes in West Summerlin, Las Vegas. New construction from the high $300,000s to over $1.6 million. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.", heroHeadline: "Grand Park Village Homes", heroSubheadline: "Summerlin’s newest active village in Las Vegas. New homes from the high $300,000s to over $1.6 million.", keywords: ["Grand Park Village Homes", "Grand Park Summerlin", "West Summerlin new construction", "Glenrock Summerlin"], pageType: "community", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "West Summerlin", ctaHeadline: "Find a Grand Park Village Home", ctaSubheadline: "Call Dr. Jan before you visit a builder. Buyer representation is free." },
+  "heyberkshire.com": { domain: "heyberkshire.com", neighborhood: "Las Vegas", tagline: "Grand Park Village Homes", description: "Grand Park Village Homes in West Summerlin, Las Vegas. New construction from the high $300,000s to over $1.6 million. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.", heroHeadline: "Grand Park Village Homes", heroSubheadline: "Summerlin’s newest active village in Las Vegas. New homes from the high $300,000s to over $1.6 million.", keywords: ["Grand Park Village Homes", "Grand Park Summerlin", "HeyBerkshire", "West Summerlin new construction"], pageType: "community", realscoutAgentId: REALSCOUT_AGENT_ID, ctaBadge: "West Summerlin", ctaHeadline: "Find a Grand Park Village Home", ctaSubheadline: "Call Dr. Jan before you visit a builder. Buyer representation is free." },
 
 };
 
@@ -89,15 +91,15 @@ export const DOMAIN_CONFIGS: Record<string, DomainConfig> = {
 export const DEFAULT_CONFIG: DomainConfig = {
   domain: "default",
   neighborhood: "Las Vegas",
-  tagline: "Las Vegas Homes for Sale",
-  description: "Search Las Vegas homes for sale. Expert real estate guidance from Dr. Jan Duffy, BHHS Nevada Properties.",
-  heroHeadline: "Las Vegas Homes for Sale",
-  heroSubheadline: "Expert real estate guidance from Dr. Jan Duffy — 30+ years, 500+ families helped.",
-  keywords: ["Las Vegas homes for sale", "Las Vegas real estate", "Dr Jan Duffy"],
-  pageType: "search",
+  tagline: "Grand Park Village Homes",
+  description: "Grand Park Village Homes in West Summerlin, Las Vegas. New construction from the high $300,000s to over $1.6 million. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+  heroHeadline: "Grand Park Village Homes",
+  heroSubheadline: "Summerlin’s newest active village in Las Vegas. New homes from the high $300,000s to over $1.6 million.",
+  keywords: ["Grand Park Village Homes", "Grand Park Summerlin", "Las Vegas homes for sale", "Dr Jan Duffy"],
+  pageType: "community",
   realscoutAgentId: REALSCOUT_AGENT_ID,
-  ctaBadge: "Las Vegas Expert",
-  ctaHeadline: "Find Your Las Vegas Home",
+  ctaBadge: "West Summerlin",
+  ctaHeadline: "Find a Grand Park Village Home",
   ctaSubheadline: "Call or text Dr. Jan at 702-222-1964 — I answer my own phone.",
 };
 
