@@ -225,7 +225,7 @@ export default function GoogleBusinessPage() {
               <div className="mt-8 pt-8 border-t border-blue-200">
                 <h3 className="font-bold text-slate-900 mb-4">Neighborhood Expertise</h3>
                 <div className="flex flex-wrap gap-2">
-                  {["Summerlin", "Henderson", "Green Valley", "The Ridges", "Southern Highlands", "Centennial Hills", "Skye Canyon", "Inspirada", "Mountains Edge", "North Las Vegas"].map((area) => (
+                  {["Summerlin", "Grand Park", "Henderson", "Green Valley", "The Ridges", "Southern Highlands", "Centennial Hills", "Skye Canyon", "Inspirada", "Mountains Edge", "North Las Vegas"].map((area) => (
                     <Link
                       key={area}
                       href={`/neighborhoods/${area.toLowerCase().replace(/\s+/g, "-")}`}

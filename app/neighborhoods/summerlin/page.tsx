@@ -155,6 +155,16 @@ export default function SummerlinPage() {
                 condos in Affinity or a move-up buyer seeking a custom home in Red Rock Country Club, BHHS
                 has the expertise to guide you through the process.
               </p>
+              <p>
+                <strong>Grand Park</strong> is Summerlin’s newest active village, west of the 215 Beltway
+                along Sky Vista Drive and Far Hills Drive. New homes run from the high $300,000s to over
+                $1.6 million, around a 90-plus-acre park. The Glenrock sales gallery is mapped at 360 Talon
+                Heights St.{" "}
+                <Link href="/neighborhoods/grand-park" className="text-blue-700 font-medium">
+                  Open the Grand Park map
+                </Link>
+                .
+              </p>
 
               {/* Community Highlights */}
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Community Highlights</h3>

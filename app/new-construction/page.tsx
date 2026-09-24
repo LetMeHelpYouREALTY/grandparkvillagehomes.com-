@@ -95,6 +95,7 @@ const builders = [
     segment: "Luxury",
     priceRange: "$600,000 - $2,500,000+",
     communities: [
+      "Summerlin Grand Park (Glenrock)",
       "Summerlin (Mesa Ridge, Reverence)",
       "Henderson (Inspirada, Lake Las Vegas)",
       "The Ridges",
@@ -112,7 +113,7 @@ const builders = [
     segment: "Production",
     priceRange: "$380,000 - $900,000",
     communities: [
-      "Summerlin (various)",
+      "Summerlin Grand Park (Fairview)",
       "Henderson (Cadence, Inspirada)",
       "North Las Vegas (Valley Vista)",
       "Southwest (Skye Hills)",
@@ -130,6 +131,7 @@ const builders = [
     segment: "Entry-Level to Mid-Range",
     priceRange: "$350,000 - $650,000",
     communities: [
+      "Summerlin Grand Park",
       "North Las Vegas (multiple)",
       "Southwest Las Vegas",
       "Henderson",
@@ -147,7 +149,7 @@ const builders = [
     segment: "Mid-Range to Luxury",
     priceRange: "$450,000 - $1,200,000",
     communities: [
-      "Summerlin",
+      "Summerlin Grand Park",
       "Henderson (Cadence, Lake Las Vegas)",
       "Mountains Edge",
     ],
@@ -164,6 +166,7 @@ const builders = [
     segment: "Mid-Range",
     priceRange: "$400,000 - $800,000",
     communities: [
+      "Summerlin Grand Park (The Brantley)",
       "Henderson (Inspirada)",
       "North Las Vegas",
       "Southwest Las Vegas",
@@ -181,6 +184,7 @@ const builders = [
     segment: "Entry-Level to Mid-Range",
     priceRange: "$380,000 - $700,000",
     communities: [
+      "Summerlin Grand Park (Iris Glen, Primrose Park)",
       "North Las Vegas",
       "Henderson",
       "Southwest Las Vegas",

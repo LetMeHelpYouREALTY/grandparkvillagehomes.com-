@@ -176,6 +176,14 @@ export const neighborhoodExpertTemplate: PromptTemplate = {
 
 ## Neighborhoods Database (Cached for Fast Access)
 
+### Grand Park Village (Summerlin)
+- **Overview**: Summerlin’s newest active village, West Summerlin, west of the 215 along Sky Vista Drive and Far Hills Drive, next to Redpoint and Kestrel
+- **Homes**: Single-family, paired homes, and townhomes, 1,430 to 4,500+ sq ft
+- **Price Range**: High $300,000s to over $1.6 million. Median around $900,000 as of September 2026
+- **Park**: 90+ acres with baseball fields, basketball, pickleball, playgrounds, splash pad, fitness stations
+- **Builders**: Lennar Fairview; Richmond American Iris Glen and Primrose Park; Tri Pointe Aberdeen; Pulte The Brantley; Toll Brothers Glenrock at 360 Talon Heights St, Las Vegas, NV 89138; also KB Home and Taylor Morrison
+- **Page**: /neighborhoods/grand-park
+
 ### Summerlin
 - **Overview**: Master-planned community, west Las Vegas
 - **Population**: ~100,000 residents

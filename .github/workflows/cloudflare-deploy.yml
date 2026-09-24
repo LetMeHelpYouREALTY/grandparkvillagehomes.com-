@@ -88,6 +88,30 @@ jobs:
               body: comment
             });
 
+  upload-grand-park-images:
+    name: Store Grand Park images in R2
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install Wrangler
+        run: npm ci
+
+      - name: Upload images to Cloudflare R2
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: bash scripts/upload-grand-park-images.sh
+
   deploy-workers:
     name: Deploy Cloudflare Workers
     runs-on: ubuntu-latest

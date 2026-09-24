@@ -5,7 +5,9 @@ import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
+import { grandParkImages } from "@/lib/grand-park-media";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { getFaqsForDomain } from "@/lib/faq-config";
 
@@ -175,6 +177,43 @@ export default async function Home() {
             </div>
           </div>
         </section>
+
+        {config.neighborhood === "Las Vegas" || config.neighborhood === "Summerlin" ? (
+          <section className="py-16 md:py-20 bg-slate-50">
+            <div className="container mx-auto px-4 max-w-6xl">
+              <div className="mb-6">
+                <img
+                  src={grandParkImages.logo}
+                  alt="Grand Park Village Homes"
+                  width={440}
+                  height={88}
+                  className="h-14 w-auto"
+                />
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                Grand Park Village Homes
+              </h2>
+              <p className="text-lg text-slate-600 max-w-3xl mb-8">
+                Summerlin’s newest active village, west of the 215 Beltway. New homes run from the high $300,000s to over $1.6 million, around a park of more than 90 acres.
+              </p>
+              <div className="relative mb-8 h-64 md:h-96 overflow-hidden rounded-2xl">
+                <Image
+                  src={grandParkImages.hero}
+                  alt="Grand Park Village Homes in West Summerlin, Las Vegas"
+                  fill
+                  sizes="(max-width: 1152px) 100vw, 1152px"
+                  className="object-cover"
+                />
+              </div>
+              <Link
+                href="/neighborhoods/grand-park"
+                className="inline-flex bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold"
+              >
+                View Grand Park Village Homes
+              </Link>
+            </div>
+          </section>
+        ) : null}
 
         {/* Market Stats */}
         <section className="py-16 bg-slate-900 text-white">

@@ -107,6 +107,14 @@ export const neighborhoods = [
     highlights: ["Red Rock views", "150+ parks", "Top schools", "Golf courses"],
   },
   {
+    name: "Grand Park",
+    slug: "grand-park",
+    description:
+      "Summerlin’s newest active village in West Summerlin, new construction from the high $300,000s to over $1.6 million",
+    medianPrice: "~$900,000",
+    highlights: ["90+ acre park", "Glenrock", "New construction", "West of the 215"],
+  },
+  {
     name: "Henderson",
     slug: "henderson",
     description: "Nevada's second-largest city with family-friendly neighborhoods",

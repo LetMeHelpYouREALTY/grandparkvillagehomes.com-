@@ -29,6 +29,16 @@ const neighborhoods = [
     bestFor: "Families, professionals, outdoor enthusiasts",
   },
   {
+    name: "Grand Park",
+    slug: "grand-park",
+    medianPrice: "~$900,000",
+    priceNote: "New construction",
+    description:
+      "Summerlin’s newest active village in West Summerlin, with new homes from the high $300,000s to over $1.6 million",
+    highlights: ["90+ Acre Park", "Glenrock Map", "New Construction", "West of the 215"],
+    bestFor: "New-construction buyers in West Summerlin",
+  },
+  {
     name: "Henderson",
     slug: "henderson",
     medianPrice: "$485,000",
@@ -149,7 +159,13 @@ export default function NeighborhoodsPage() {
                     </div>
                     <div className="text-right">
                       <div className="font-bold text-slate-900">{neighborhood.medianPrice}</div>
-                      <div className="text-sm text-green-600">{neighborhood.priceChange} YoY</div>
+                      {"priceChange" in neighborhood && neighborhood.priceChange ? (
+                        <div className="text-sm text-green-600">{neighborhood.priceChange} YoY</div>
+                      ) : (
+                        <div className="text-sm text-slate-500">
+                          {"priceNote" in neighborhood ? neighborhood.priceNote : ""}
+                        </div>
+                      )}
                     </div>
                   </div>
                   <p className="text-slate-600 text-sm mb-4">{neighborhood.description}</p>

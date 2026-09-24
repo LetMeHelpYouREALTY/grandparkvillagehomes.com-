@@ -18,6 +18,11 @@ command = "npm run build"
 [vars]
 DEBUG = "false"
 
+# Grand Park Village Homes images. Git copies live in public/images.
+[[r2_buckets]]
+binding = "GRAND_PARK_IMAGES"
+bucket_name = "grandparkvillagehomes-images"
+
 # KV Namespaces for caching (optional)
 # [[kv_namespaces]]
 # binding = "CACHE"

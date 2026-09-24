@@ -13,7 +13,7 @@ export const defaultFaqs: FAQ[] = [
   {
     question: "What areas do you serve?",
     answer:
-      "We specialize in Las Vegas and Henderson, Nevada, including Summerlin, Green Valley, and surrounding communities. Our expertise covers residential, luxury, and investment properties throughout Southern Nevada.",
+      "We specialize in Las Vegas and Henderson, Nevada, including Summerlin, Grand Park Village, Green Valley, and surrounding communities. Our expertise covers residential, luxury, and investment properties throughout Southern Nevada.",
   },
   {
     question: "How long does the home buying process take?",

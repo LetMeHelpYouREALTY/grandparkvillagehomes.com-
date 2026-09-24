@@ -57,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const neighborhoodPages = [
     { url: `${baseUrl}/neighborhoods`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/summerlin`, priority: 0.8, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/neighborhoods/grand-park`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/henderson`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/green-valley`, priority: 0.7, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/the-ridges`, priority: 0.8, changeFrequency: "weekly" as const },
