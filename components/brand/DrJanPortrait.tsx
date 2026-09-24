@@ -10,9 +10,13 @@ type DrJanPortraitProps = {
 
 const SITE = siteConfig.url;
 
-export function DrJanPortrait({ variant = "card", pathname }: DrJanPortraitProps) {
+export function DrJanPortrait({
+  variant = "card",
+  pathname,
+}: DrJanPortraitProps) {
   const path = pathname ?? headers().get("x-pathname") ?? "/";
-  const slot = variant === "hero" ? "hero" : variant === "feature" ? "feature" : "card";
+  const slot =
+    variant === "hero" ? "hero" : variant === "feature" ? "feature" : "card";
   const copy = getAgentPortraitCopy(path, slot);
   const src =
     variant === "feature"
@@ -52,7 +56,6 @@ export function DrJanPortrait({ variant = "card", pathname }: DrJanPortraitProps
           alt={copy.alt}
           width={128}
           height={128}
-          priority
           className="mx-auto h-24 w-24 rounded-full border border-white/40 md:h-28 md:w-28"
         />
         <figcaption className="mt-3 text-sm font-medium tracking-wide text-white">
@@ -74,13 +77,18 @@ export function DrJanPortrait({ variant = "card", pathname }: DrJanPortraitProps
           className="h-auto w-full"
           sizes="(max-width: 768px) 100vw, 480px"
         />
-        <figcaption className="px-4 py-3 text-sm text-slate-600">{copy.caption}</figcaption>
+        <figcaption className="px-4 py-3 text-sm text-slate-600">
+          {copy.caption}
+        </figcaption>
       </figure>
     );
   }
 
   return (
-    <section className="border-t border-slate-200 bg-white" aria-label="Dr. Jan Duffy">
+    <section
+      className="border-t border-slate-200 bg-white"
+      aria-label="Dr. Jan Duffy"
+    >
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(imageSchema) }}
@@ -97,7 +105,9 @@ export function DrJanPortrait({ variant = "card", pathname }: DrJanPortraitProps
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-700">
             Grand Park Village Homes
           </p>
-          <p className="mt-1 text-2xl font-bold text-slate-900">By Dr. Jan Duffy</p>
+          <p className="mt-1 text-2xl font-bold text-slate-900">
+            By Dr. Jan Duffy
+          </p>
           <p className="mt-2 max-w-3xl text-slate-600">{copy.caption}</p>
         </div>
       </div>

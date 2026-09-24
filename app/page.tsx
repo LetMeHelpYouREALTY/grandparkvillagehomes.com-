@@ -6,17 +6,20 @@ import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
+import {
+  Phone,
+  Home as HomeIcon,
+  TrendingUp,
+  Shield,
+  Users,
+} from "lucide-react";
 import { grandParkImages } from "@/lib/grand-park-media";
 import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { getFaqsForDomain } from "@/lib/faq-config";
 
 // Maps pageType → human-readable FAQ section title/subtitle
-const FAQ_SECTION_COPY: Record<
-  string,
-  { title: string; subtitle: string }
-> = {
+const FAQ_SECTION_COPY: Record<string, { title: string; subtitle: string }> = {
   community: {
     title: "Community Real Estate FAQ",
     subtitle: "Common questions from buyers and sellers in this neighborhood",
@@ -48,7 +51,8 @@ export default async function Home() {
 
   // ── Domain-aware FAQs ────────────────────────────────────────────────────
   const faqs = getFaqsForDomain(config.pageType, config.domain);
-  const faqCopy = FAQ_SECTION_COPY[config.pageType] ?? FAQ_SECTION_COPY["search"];
+  const faqCopy =
+    FAQ_SECTION_COPY[config.pageType] ?? FAQ_SECTION_COPY["search"];
   const showVillageHero =
     config.domain === "default" ||
     config.domain === "heyberkshire.com" ||
@@ -109,9 +113,14 @@ export default async function Home() {
       <Navbar />
       <main>
         {/* Domain-Aware Hero */}
-        <section className="relative min-h-[640px] overflow-hidden bg-slate-900 text-white">
+        <section
+          className="relative min-h-[640px] overflow-hidden bg-slate-900 text-white"
+          style={{ minHeight: 640 }}
+        >
           <Image
-            src={showVillageHero ? grandParkImages.hero : "/Image/hero_bg_1.jpg"}
+            src={
+              showVillageHero ? grandParkImages.hero : "/Image/hero_bg_1.jpg"
+            }
             alt={
               showVillageHero
                 ? "Grand Park Village Homes in West Summerlin, Las Vegas, with new homes beside the central park"
@@ -119,6 +128,7 @@ export default async function Home() {
             }
             fill
             priority
+            quality={60}
             className="object-cover"
             sizes="100vw"
           />
@@ -172,15 +182,32 @@ export default async function Home() {
                 Why Work With Dr. Jan Duffy?
               </h2>
               <p className="text-lg text-slate-600">
-                Berkshire Hathaway HomeServices Nevada Properties — the most trusted name in Las Vegas real estate.
+                Berkshire Hathaway HomeServices Nevada Properties — the most
+                trusted name in Las Vegas real estate.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[
-                { icon: Shield, title: "Trusted Brand", desc: "Backed by Warren Buffett's Berkshire Hathaway — unmatched integrity" },
-                { icon: Users, title: "50K+ Network", desc: "Global referral network for seamless moves to or from any market" },
-                { icon: TrendingUp, title: "$127M+ Sold", desc: "Proven results across every Las Vegas neighborhood since 2008" },
-                { icon: HomeIcon, title: "Full Service", desc: "Buying, selling, 55+, luxury, investment — one expert handles it all" },
+                {
+                  icon: Shield,
+                  title: "Trusted Brand",
+                  desc: "Backed by Warren Buffett's Berkshire Hathaway — unmatched integrity",
+                },
+                {
+                  icon: Users,
+                  title: "50K+ Network",
+                  desc: "Global referral network for seamless moves to or from any market",
+                },
+                {
+                  icon: TrendingUp,
+                  title: "$127M+ Sold",
+                  desc: "Proven results across every Las Vegas neighborhood since 2008",
+                },
+                {
+                  icon: HomeIcon,
+                  title: "Full Service",
+                  desc: "Buying, selling, 55+, luxury, investment — one expert handles it all",
+                },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="text-center p-6">
                   <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
@@ -194,7 +221,8 @@ export default async function Home() {
           </div>
         </section>
 
-        {config.neighborhood === "Las Vegas" || config.neighborhood === "Summerlin" ? (
+        {config.neighborhood === "Las Vegas" ||
+        config.neighborhood === "Summerlin" ? (
           <section className="py-16 md:py-20 bg-slate-50">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="mb-6">
@@ -210,7 +238,9 @@ export default async function Home() {
                 Homes Around a 90-Acre Park
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mb-8">
-                Summerlin’s newest active village, west of the 215 Beltway. Single-family homes, paired homes, and townhomes run from the high $300,000s to over $1.6 million.
+                Summerlin’s newest active village, west of the 215 Beltway.
+                Single-family homes, paired homes, and townhomes run from the
+                high $300,000s to over $1.6 million.
               </p>
               <div className="mb-8 grid gap-4 md:grid-cols-3">
                 <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
@@ -218,7 +248,8 @@ export default async function Home() {
                     src={grandParkImages.park}
                     alt="Grand Park central park in West Summerlin, Las Vegas"
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 380px, 33vw"
+                    quality={60}
                     className="object-cover"
                   />
                 </div>
@@ -227,7 +258,8 @@ export default async function Home() {
                     src={grandParkImages.singleFamily}
                     alt="Single-family home for sale in Grand Park Village, Summerlin"
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 380px, 33vw"
+                    quality={60}
                     className="object-cover"
                   />
                 </div>
@@ -236,7 +268,8 @@ export default async function Home() {
                     src={grandParkImages.townhomes}
                     alt="Townhomes for sale in Grand Park Village, Las Vegas"
                     fill
-                    sizes="(max-width: 768px) 100vw, 33vw"
+                    sizes="(max-width: 768px) 380px, 33vw"
+                    quality={60}
                     className="object-cover"
                   />
                 </div>
@@ -268,14 +301,21 @@ export default async function Home() {
                 { value: "2.1", label: "Months Inventory", sub: "" },
               ].map(({ value, label, sub }) => (
                 <div key={label} className="text-center">
-                  <div className="text-4xl font-bold text-blue-400 mb-1">{value}</div>
+                  <div className="text-4xl font-bold text-blue-400 mb-1">
+                    {value}
+                  </div>
                   <div className="text-slate-300 text-sm">{label}</div>
-                  {sub && <div className="text-green-400 text-xs mt-1">{sub}</div>}
+                  {sub && (
+                    <div className="text-green-400 text-xs mt-1">{sub}</div>
+                  )}
                 </div>
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link href="/market-report" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors">
+              <Link
+                href="/market-report"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+              >
                 Full Market Report
               </Link>
             </div>
@@ -287,11 +327,7 @@ export default async function Home() {
         <ReviewsSection />
 
         {/* Domain-Aware FAQ with FAQPage schema already injected above */}
-        <FAQSection
-          faqs={faqs}
-          title={faqTitle}
-          subtitle={faqCopy.subtitle}
-        />
+        <FAQSection faqs={faqs} title={faqTitle} subtitle={faqCopy.subtitle} />
 
         {/* Domain-Specific CTA */}
         <section className="py-16 md:py-20 bg-blue-600 text-white">
@@ -299,7 +335,7 @@ export default async function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               {config.ctaHeadline}
             </h2>
-            <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
               {config.ctaSubheadline}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -317,8 +353,9 @@ export default async function Home() {
                 Send a Message
               </Link>
             </div>
-            <p className="mt-6 text-blue-200 text-sm">
-              Dr. Jan Duffy | License S.0197614.LLC | Berkshire Hathaway HomeServices Nevada Properties
+            <p className="mt-6 text-white text-sm">
+              Dr. Jan Duffy | License S.0197614.LLC | Berkshire Hathaway
+              HomeServices Nevada Properties
             </p>
           </div>
         </section>
