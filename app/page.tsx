@@ -9,6 +9,8 @@ import Image from "next/image";
 import { Phone, Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
 import { grandParkImages } from "@/lib/grand-park-media";
 import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
+import { headers } from "next/headers";
+import { getPreferredOrigin } from "@/lib/canonical";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { getFaqsForDomain } from "@/lib/faq-config";
 
@@ -66,7 +68,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
-    url: `https://${config.domain !== "default" ? config.domain : "www.grandparkvillagehomes.com"}`,
+    url: getPreferredOrigin(headers().get("x-domain")),
     telephone: "+17022221964",
     address: {
       "@type": "PostalAddress",
@@ -74,11 +76,6 @@ export default async function Home() {
       addressLocality: "Las Vegas",
       addressRegion: "NV",
       postalCode: "89134",
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "200",
     },
   };
 
