@@ -3,6 +3,7 @@
 import { Star, Quote } from "lucide-react";
 import Image from "next/image";
 import { sectionImages } from "@/lib/section-images";
+import { SectionAnswer } from "@/components/seo/SectionAnswer";
 
 export interface Review {
   id: number;
@@ -85,6 +86,10 @@ export default function ReviewsSection({
             {title}
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
+          <SectionAnswer>
+            These notes are from people who bought or sold with Dr. Jan Duffy in
+            Las Vegas, Henderson, and Summerlin.
+          </SectionAnswer>
           {/* Aggregate Rating Display */}
           <div className="flex items-center justify-center gap-2 mt-4">
             <div className="flex">

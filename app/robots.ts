@@ -24,12 +24,19 @@ export default function robots(): MetadataRoute.Robots {
         crawlDelay: 5,
       },
       {
-        userAgent: ["GPTBot", "CCBot", "anthropic-ai", "Claude-Web"],
-        disallow: "/",
-      },
-      {
-        userAgent: "Google-Extended",
+        userAgent: [
+          "GPTBot",
+          "OAI-SearchBot",
+          "ChatGPT-User",
+          "ClaudeBot",
+          "Claude-Web",
+          "anthropic-ai",
+          "PerplexityBot",
+          "Google-Extended",
+          "Applebot-Extended",
+        ],
         allow: "/",
+        disallow: ["/api/", "/admin/", "/monitoring/"],
       },
       {
         userAgent: "Googlebot-Image",

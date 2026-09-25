@@ -6,6 +6,7 @@ import { getDomainConfig } from "@/lib/domain-config";
 import { getCanonicalUrl, getPreferredOrigin } from "@/lib/canonical";
 import { Analytics } from "@vercel/analytics/react";
 import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
+import { DirectAnswer } from "@/components/seo/DirectAnswer";
 
 export async function generateMetadata(): Promise<Metadata> {
   const domain = headers().get("x-domain") || "";
@@ -51,10 +52,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = headers().get("x-pathname") || "/";
+
   return (
     <html lang="en" className={GeistSans.className}>
       <body>
         <GlobalHeroBanner />
+        <DirectAnswer pathname={pathname} />
         {children}
         <Analytics />
       </body>

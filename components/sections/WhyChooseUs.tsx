@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Shield, TrendingUp, Users, Award, Clock, Home } from "lucide-react";
 import { sectionImages } from "@/lib/section-images";
+import { SectionAnswer } from "@/components/seo/SectionAnswer";
 
 const features = [
   {
@@ -46,6 +47,11 @@ export default function WhyChooseUs() {
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Experience the difference of working with a trusted real estate professional
           </p>
+          <SectionAnswer>
+            Dr. Jan Duffy helps people buy and sell in Las Vegas, Henderson, and
+            Summerlin through Berkshire Hathaway HomeServices Nevada Properties.
+            Call or text (702) 222-1964.
+          </SectionAnswer>
           <div className="relative mx-auto mt-8 h-56 max-w-5xl overflow-hidden rounded-2xl md:h-80">
             <Image
               src={sectionImages.whyChoose.src}

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { SectionAnswer } from "@/components/seo/SectionAnswer";
 
 export default function RealScoutListings() {
   const realScoutAgentEncodedId =
@@ -20,6 +21,10 @@ export default function RealScoutListings() {
             <p className="text-slate-600 text-lg">
               Discover exceptional homes in Las Vegas and Henderson
             </p>
+            <SectionAnswer>
+              The homes below come from the live RealScout feed for Dr. Jan
+              Duffy. Confirm the price and status on each listing.
+            </SectionAnswer>
           </div>
           <Button asChild variant="outline" className="mt-4 md:mt-0">
             <a

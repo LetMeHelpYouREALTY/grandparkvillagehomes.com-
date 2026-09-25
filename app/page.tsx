@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { grandParkImages } from "@/lib/grand-park-media";
 import { sectionImages } from "@/lib/section-images";
+import { SectionAnswer } from "@/components/seo/SectionAnswer";
 import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { getFaqsForDomain } from "@/lib/faq-config";
@@ -144,8 +145,13 @@ export default async function Home() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               {config.heroHeadline}
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto">
-              {config.heroSubheadline}
+            <p
+              id="direct-answer"
+              className="text-xl md:text-2xl text-white/90 mb-10 max-w-3xl mx-auto"
+            >
+              {config.heroSubheadline} Dr. Jan Duffy, license S.0197614.LLC,
+              Berkshire Hathaway HomeServices Nevada Properties. Call or text
+              (702) 222-1964.
             </p>
 
             {/* RealScout Search Widget */}
@@ -186,6 +192,11 @@ export default async function Home() {
                 Berkshire Hathaway HomeServices Nevada Properties — the most
                 trusted name in Las Vegas real estate.
               </p>
+              <SectionAnswer>
+                Dr. Jan Duffy, license S.0197614.LLC, works from 9406 W Lake Mead
+                Blvd, Suite 100, Las Vegas, NV 89134, and sells homes across the
+                valley, including Grand Park Village.
+              </SectionAnswer>
               <div className="relative mx-auto mt-8 h-56 max-w-6xl overflow-hidden rounded-2xl md:h-80">
                 <Image
                   src={sectionImages.whyWork.src}
@@ -311,7 +322,10 @@ export default async function Home() {
               <h2 className="text-3xl font-bold mb-3">
                 {config.neighborhood} Real Estate Market
               </h2>
-              <p className="text-slate-300">Current data — updated regularly</p>
+              <p className="text-slate-300">
+                These are the Las Vegas figures published on this page. For a
+                price on one address, call or text (702) 222-1964.
+              </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
@@ -364,6 +378,11 @@ export default async function Home() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               {config.ctaHeadline}
             </h2>
+            <p className="mx-auto mb-4 max-w-2xl text-base text-white">
+              Call or text Dr. Jan Duffy at (702) 222-1964, or send a message.
+              Berkshire Hathaway HomeServices Nevada Properties, 9406 W Lake Mead
+              Blvd, Suite 100, Las Vegas, NV 89134.
+            </p>
             <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
               {config.ctaSubheadline}
             </p>
