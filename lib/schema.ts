@@ -92,7 +92,7 @@ export function generateRealEstateAgentSchema() {
       "Grand Park Village Homes",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-circle.png`,
+    logo: `${BASE_URL}/images/agent/dr-jan-duffy-calling-circle.jpg`,
     image: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg`,
     description: siteConfig.description,
     telephone: "+1-702-500-1942",

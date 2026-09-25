@@ -1,7 +1,7 @@
 /**
  * Dr. Jan Duffy portraits.
- * The nav mark is a tight circle crop. The homepage hero uses a wider
- * circular photo so her shoulders and the gold ring are not clipped.
+ * The nav mark and the homepage hero use the wider circular photo
+ * so her shoulders and the gold ring are not clipped.
  * Alt text and captions change with the page so search and answer engines
  * can tie her to that page's place and topic.
  */

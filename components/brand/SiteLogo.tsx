@@ -15,12 +15,13 @@ export function SiteLogo({ imageAlt, tone = "dark", priority = false }: SiteLogo
   return (
     <Link href="/" className="flex min-w-0 items-center gap-2">
       <Image
-        src={AGENT_IMAGES.circle}
+        src={AGENT_IMAGES.phoneCircle}
         alt={imageAlt}
-        width={64}
-        height={64}
+        width={56}
+        height={56}
         priority={priority}
-        className="h-10 w-10 shrink-0 rounded-full md:h-12 md:w-12"
+        sizes="56px"
+        className="h-12 w-12 shrink-0 rounded-full object-contain md:h-14 md:w-14"
       />
       <span className="flex min-w-0 flex-col text-left leading-tight">
         <span className={`text-[13px] font-bold leading-tight sm:text-base ${titleColor}`}>
