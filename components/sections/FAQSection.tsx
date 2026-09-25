@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { sectionImages } from "@/lib/section-images";
 
 export interface FAQ {
   question: string;
@@ -73,6 +75,16 @@ export default function FAQSection({
             {title}
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
+          <div className="relative mx-auto mt-8 h-52 max-w-4xl overflow-hidden rounded-2xl md:h-72">
+            <Image
+              src={sectionImages.faq.src}
+              alt={sectionImages.faq.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 896px"
+              quality={60}
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="max-w-3xl mx-auto">

@@ -2,6 +2,7 @@
 
 import { Star, Quote } from "lucide-react";
 import Image from "next/image";
+import { sectionImages } from "@/lib/section-images";
 
 export interface Review {
   id: number;
@@ -10,6 +11,7 @@ export interface Review {
   rating: number;
   text: string;
   image?: string;
+  imageAlt?: string;
   date?: string;
 }
 
@@ -21,7 +23,8 @@ export const defaultReviews: Review[] = [
     location: "Las Vegas, NV",
     rating: 5,
     text: "Dr. Duffy made our home buying experience seamless. Her knowledge of the Las Vegas market is unmatched, and she guided us through every step with professionalism and care.",
-    image: "/Image/person1.jpeg",
+    image: sectionImages.reviewLasVegas.src,
+    imageAlt: sectionImages.reviewLasVegas.alt,
     date: "2025-11-15",
   },
   {
@@ -30,7 +33,8 @@ export const defaultReviews: Review[] = [
     location: "Henderson, NV",
     rating: 5,
     text: "We couldn't be happier with our new home! The entire process was smooth, and Dr. Duffy's attention to detail and negotiation skills saved us thousands. Highly recommend!",
-    image: "/Image/person_2-min.jpg",
+    image: sectionImages.reviewHenderson.src,
+    imageAlt: sectionImages.reviewHenderson.alt,
     date: "2025-10-22",
   },
   {
@@ -39,7 +43,8 @@ export const defaultReviews: Review[] = [
     location: "Summerlin, NV",
     rating: 5,
     text: "As first-time homebuyers, we were nervous about the process. Dr. Duffy patiently explained everything and helped us find the perfect home in our budget. Thank you!",
-    image: "/Image/person_4-min.jpg",
+    image: sectionImages.reviewSummerlin.src,
+    imageAlt: sectionImages.reviewSummerlin.alt,
     date: "2025-09-08",
   },
 ];
@@ -107,31 +112,28 @@ export default function ReviewsSection({
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+              className="overflow-hidden bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow"
               itemScope
               itemType="https://schema.org/Review"
             >
-              <div className="flex items-center mb-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
-                  {review.image ? (
-                    <Image
-                      src={review.image}
-                      alt={review.name}
-                      fill
-                      className="object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-slate-200 flex items-center justify-center">
-                      <span className="text-slate-400 text-sm">{review.name[0]}</span>
-                    </div>
-                  )}
+              {review.image ? (
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={review.image}
+                    alt={review.imageAlt ?? `${review.location} home`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 360px"
+                    quality={60}
+                    className="object-cover"
+                  />
                 </div>
-                <div>
-                  <h3 className="font-bold text-slate-900" itemProp="author">
-                    {review.name}
-                  </h3>
-                  <p className="text-sm text-slate-600">{review.location}</p>
-                </div>
+              ) : null}
+              <div className="p-6">
+              <div className="mb-4">
+                <h3 className="font-bold text-slate-900" itemProp="author">
+                  {review.name}
+                </h3>
+                <p className="text-sm text-slate-600">{review.location}</p>
               </div>
 
               <div className="flex items-center mb-4" itemProp="reviewRating" itemScope itemType="https://schema.org/Rating">
@@ -152,6 +154,7 @@ export default function ReviewsSection({
                 <p className="text-slate-700 relative z-10 pl-4" itemProp="reviewBody">
                   {review.text}
                 </p>
+              </div>
               </div>
             </div>
           ))}

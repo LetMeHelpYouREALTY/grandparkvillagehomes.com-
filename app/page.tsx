@@ -14,6 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import { grandParkImages } from "@/lib/grand-park-media";
+import { sectionImages } from "@/lib/section-images";
 import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { getFaqsForDomain } from "@/lib/faq-config";
@@ -185,6 +186,16 @@ export default async function Home() {
                 Berkshire Hathaway HomeServices Nevada Properties — the most
                 trusted name in Las Vegas real estate.
               </p>
+              <div className="relative mx-auto mt-8 h-56 max-w-6xl overflow-hidden rounded-2xl md:h-80">
+                <Image
+                  src={sectionImages.whyWork.src}
+                  alt={sectionImages.whyWork.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 1152px"
+                  quality={60}
+                  className="object-cover"
+                />
+              </div>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[
@@ -285,13 +296,22 @@ export default async function Home() {
         ) : null}
 
         {/* Market Stats */}
-        <section className="py-16 bg-slate-900 text-white">
-          <div className="container mx-auto px-4">
+        <section className="relative overflow-hidden py-16 text-white">
+          <Image
+            src={sectionImages.market.src}
+            alt={sectionImages.market.alt}
+            fill
+            sizes="100vw"
+            quality={60}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-slate-950/80" />
+          <div className="relative container mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold mb-3">
                 {config.neighborhood} Real Estate Market
               </h2>
-              <p className="text-slate-400">Current data — updated regularly</p>
+              <p className="text-slate-300">Current data — updated regularly</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
@@ -330,8 +350,17 @@ export default async function Home() {
         <FAQSection faqs={faqs} title={faqTitle} subtitle={faqCopy.subtitle} />
 
         {/* Domain-Specific CTA */}
-        <section className="py-16 md:py-20 bg-blue-600 text-white">
-          <div className="container mx-auto px-4 text-center">
+        <section className="relative overflow-hidden py-16 text-white md:py-20">
+          <Image
+            src={sectionImages.cta.src}
+            alt={sectionImages.cta.alt}
+            fill
+            sizes="100vw"
+            quality={60}
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-blue-950/80" />
+          <div className="relative container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               {config.ctaHeadline}
             </h2>

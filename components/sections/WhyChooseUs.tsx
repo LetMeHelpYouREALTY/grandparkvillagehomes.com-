@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { Shield, TrendingUp, Users, Award, Clock, Home } from "lucide-react";
+import { sectionImages } from "@/lib/section-images";
 
 const features = [
   {
@@ -44,6 +46,16 @@ export default function WhyChooseUs() {
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Experience the difference of working with a trusted real estate professional
           </p>
+          <div className="relative mx-auto mt-8 h-56 max-w-5xl overflow-hidden rounded-2xl md:h-80">
+            <Image
+              src={sectionImages.whyChoose.src}
+              alt={sectionImages.whyChoose.alt}
+              fill
+              sizes="(max-width: 768px) 100vw, 1024px"
+              quality={60}
+              className="object-cover"
+            />
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
