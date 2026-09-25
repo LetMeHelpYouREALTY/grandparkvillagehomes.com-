@@ -168,28 +168,28 @@ export default function MarketInsightsPage() {
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <p className="text-blue-100 mb-6">
+                <p className="text-white mb-6">
                   California remains the #1 source of Las Vegas home buyers. Understanding this
                   migration pattern is essential for both buyers and sellers.
                 </p>
                 <div className="space-y-4">
                   <div className="bg-white/10 rounded-lg p-4">
                     <div className="text-2xl font-bold">37%</div>
-                    <div className="text-blue-200 text-sm">of all Las Vegas buyers from CA</div>
+                    <div className="text-white text-sm">of all Las Vegas buyers from CA</div>
                   </div>
                   <div className="bg-white/10 rounded-lg p-4">
                     <div className="text-2xl font-bold">$250K+</div>
-                    <div className="text-blue-200 text-sm">Avg. equity CA buyers bring</div>
+                    <div className="text-white text-sm">Avg. equity CA buyers bring</div>
                   </div>
                   <div className="bg-white/10 rounded-lg p-4">
                     <div className="text-2xl font-bold">Bay Area & LA</div>
-                    <div className="text-blue-200 text-sm">Primary source markets</div>
+                    <div className="text-white text-sm">Primary source markets</div>
                   </div>
                 </div>
               </div>
               <div>
                 <h3 className="font-bold text-lg mb-4">Why Californians Choose Las Vegas</h3>
-                <ul className="space-y-2 text-blue-100">
+                <ul className="space-y-2 text-white">
                   <li className="flex items-start">
                     <span className="text-amber-400 mr-2">1.</span>
                     <span><strong>Tax savings:</strong> 9.3%-13.3% state income tax eliminated</span>
@@ -282,7 +282,7 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Tech corridor growth, safety rankings, and quality of life driving consistent demand.
+                  Tech corridor employers and master-planned communities are drawing buyers.
                   Expect continued 4-6% appreciation.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -297,7 +297,7 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Red Rock views, Downtown Summerlin, and top schools maintain premium positioning.
+                  Red Rock views and Downtown Summerlin keep this area in demand.
                   Limited new inventory keeps values strong.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -327,7 +327,7 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Family-friendly community with the valley's largest park. New construction
+                  Home to the valley's largest park. New construction
                   competing with resales. Solid appreciation.
                 </p>
                 <div className="text-sm text-slate-500">

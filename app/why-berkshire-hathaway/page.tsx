@@ -169,19 +169,19 @@ export default function WhyBerkshireHathawayPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-bold mb-2">50K+</div>
-                <div className="text-blue-200">Agents Worldwide</div>
+                <div className="text-white">Agents Worldwide</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-bold mb-2">1,500+</div>
-                <div className="text-blue-200">Offices Globally</div>
+                <div className="text-white">Offices Globally</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-bold mb-2">$138B+</div>
-                <div className="text-blue-200">Sales Volume (2024)</div>
+                <div className="text-white">Sales Volume (2024)</div>
               </div>
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-bold mb-2">#1</div>
-                <div className="text-blue-200">Most Trusted Brand</div>
+                <div className="text-white">Most Trusted Brand</div>
               </div>
             </div>
           </section>

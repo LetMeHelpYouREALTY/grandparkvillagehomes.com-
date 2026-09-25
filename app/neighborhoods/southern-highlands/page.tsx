@@ -142,9 +142,9 @@ export default function SouthernHighlandsPage() {
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has represented buyers
                 and sellers in Southern Highlands for over two decades. Dr. Jan Duffy understands the
                 community's various sections—from the guard-gated luxury estates surrounding the golf
-                course to the family-friendly neighborhoods in the community's newer phases. Whether
-                you're seeking a golf course lot with Strip views or a spacious family home with top-rated
-                schools, BHHS has the local expertise to guide your search.
+                course to the newer phases of the community. Whether
+                you're seeking a golf course lot with Strip views or a larger home with mountain
+                views, BHHS has the local expertise to guide your search.
               </p>
 
               {/* Community Highlights */}
@@ -180,14 +180,14 @@ export default function SouthernHighlandsPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Southern Highlands School Districts</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Southern Highlands is served by Clark County School District with some of southwest
-                  Las Vegas's highest-rated schools:
+                  Southern Highlands is served by Clark County School District. Which school covers a home
+                  depends on the address. Schools named in this area include:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Elementary Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Elise Wolff Elementary (9/10)</li>
+                      <li>• Elise Wolff Elementary</li>
                       <li>• Janet Lundahl Elementary</li>
                       <li>• Robert Forbuss Elementary</li>
                       <li>• Floyd Elementary</li>
@@ -196,7 +196,7 @@ export default function SouthernHighlandsPage() {
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Middle & High Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Coronado High School (8/10)</li>
+                      <li>• Coronado High School</li>
                       <li>• Liberty High School</li>
                       <li>• Del Webb Middle School</li>
                       <li>• Mannion Middle School</li>
@@ -308,7 +308,7 @@ export default function SouthernHighlandsPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Southern Highlands delivers luxury living at prices that often surprise buyers—especially
                 those relocating from California. You get championship golf, guard-gated security, mountain
-                views, and excellent schools, all just 15 minutes from the Strip. As a Berkshire Hathaway
+                views, all just 15 minutes from the Strip. As a Berkshire Hathaway
                 HomeServices agent, I help clients see beyond the golf course to the community's full potential."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
@@ -371,7 +371,7 @@ export default function SouthernHighlandsPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Explore Southern Highlands Living
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Southern Highlands specialist,
               for expert guidance in this premier golf community.
             </p>
@@ -382,7 +382,7 @@ export default function SouthernHighlandsPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

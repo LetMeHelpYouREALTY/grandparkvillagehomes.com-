@@ -179,7 +179,7 @@ export default function DownsizingPage() {
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Professional staging that showcases family-friendly features</span>
+                    <span>Professional staging that shows the floor plan and outdoor space</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -447,7 +447,7 @@ export default function DownsizingPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Simplify Your Life?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Get a free home valuation and explore your downsizing options.
               Dr. Jan will show you what's possible without any pressure.
             </p>

@@ -290,7 +290,7 @@ export default function LuxuryHomesPage() {
           {/* Luxury Services */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
             <h2 className="text-2xl font-bold mb-4 text-center">Luxury Home Marketing Services</h2>
-            <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
+            <p className="text-white text-center max-w-3xl mx-auto mb-8">
               Selling a luxury home requires more than just an MLS listing. Dr. Jan Duffy provides 
               comprehensive marketing services that showcase your property to qualified buyers 
               worldwide through Berkshire Hathaway HomeServices' premium marketing channels.
@@ -298,7 +298,7 @@ export default function LuxuryHomesPage() {
             <div className="grid md:grid-cols-2 gap-4">
               {luxuryServices.map((service) => (
                 <div key={service} className="flex items-center bg-blue-500/30 p-4 rounded-lg">
-                  <CheckCircle className="h-5 w-5 text-blue-200 mr-3 flex-shrink-0" />
+                  <CheckCircle className="h-5 w-5 text-white mr-3 flex-shrink-0" />
                   <span>{service}</span>
                 </div>
               ))}

@@ -295,7 +295,7 @@ export default function NewConstructionPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">100% Free to You</h3>
-                  <p className="text-blue-100">
+                  <p className="text-white">
                     Builders pay the buyer's agent commission (2-3%) as part of their marketing
                     budget. You get professional representation at zero cost.
                   </p>
@@ -307,7 +307,7 @@ export default function NewConstructionPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Contract Review</h3>
-                  <p className="text-blue-100">
+                  <p className="text-white">
                     Builder contracts are 50+ pages of legal language favoring the builder.
                     Dr. Jan reviews every clause and explains your rights.
                   </p>
@@ -319,7 +319,7 @@ export default function NewConstructionPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Your Advocate</h3>
-                  <p className="text-blue-100">
+                  <p className="text-white">
                     The builder's sales rep works for the builder. You deserve someone who works
                     exclusively for YOUR interests—negotiating, monitoring, and protecting you.
                   </p>
@@ -331,7 +331,7 @@ export default function NewConstructionPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg mb-2">Construction Oversight</h3>
-                  <p className="text-blue-100">
+                  <p className="text-white">
                     We schedule walkthroughs at framing, pre-drywall, and final stages. Problems
                     caught early are fixed—problems missed become your problems.
                   </p>
@@ -339,7 +339,7 @@ export default function NewConstructionPage() {
               </div>
             </div>
             <div className="text-center">
-              <p className="text-xl font-semibold text-blue-100">
+              <p className="text-xl font-semibold text-white">
                 "Why would you negotiate against professionals without professional help—
                 especially when that help is free?"
               </p>
@@ -668,7 +668,7 @@ export default function NewConstructionPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Tour New Construction?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Call <strong>(702) 500-1942</strong> to register Dr. Jan Duffy as your buyer's agent 
               <strong> before</strong> visiting any model home—or you may lose your right to free 
               professional representation. Current incentive information available.
@@ -688,7 +688,7 @@ export default function NewConstructionPage() {
                 Request Builder Info
               </Link>
             </div>
-            <p className="mt-6 text-blue-200 text-sm">
+            <p className="mt-6 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

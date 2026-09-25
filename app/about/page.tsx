@@ -424,7 +424,7 @@ export default function AboutPage() {
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Questions about buying or selling in Las Vegas? Call or text Dr. Jan Duffy today 
               for a free consultation. Whether you're ready to start your search or just exploring 
               options, she's here to help.
@@ -444,7 +444,7 @@ export default function AboutPage() {
                 Schedule Consultation
               </Link>
             </div>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

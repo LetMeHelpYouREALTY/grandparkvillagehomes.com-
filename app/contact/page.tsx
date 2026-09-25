@@ -192,7 +192,7 @@ export default function ContactPage() {
                 <div className="bg-blue-600 text-white p-6 text-center">
                   <Calendar className="h-10 w-10 mx-auto mb-3" />
                   <h2 className="text-2xl font-bold mb-2">Schedule an Appointment</h2>
-                  <p className="text-blue-100">
+                  <p className="text-white">
                     Book a time that works for you—phone consultation, property showing, 
                     or in-person meeting at our office.
                   </p>
@@ -272,7 +272,7 @@ export default function ContactPage() {
                 <Phone className="h-8 w-8 mr-4" />
                 <div className="text-left">
                   <div className="font-bold text-lg">Call Now</div>
-                  <div className="text-blue-100">(702) 500-1942</div>
+                  <div className="text-white">(702) 500-1942</div>
                 </div>
               </a>
               <a

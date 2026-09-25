@@ -143,8 +143,8 @@ export default function MountainsEdgePage() {
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> serves Mountains
                 Edge buyers with the same commitment to excellence we bring to the valley's luxury
                 markets. Dr. Jan Duffy understands that value doesn't mean compromise—it means
-                finding the right home at the right price. For families priced out of Summerlin
-                or Henderson, Mountains Edge delivers comparable lifestyle at accessible prices.
+                finding the right home at the right price. For buyers comparing list prices in Summerlin or
+                Henderson, Mountains Edge is a master-planned option with mountain views.
               </p>
 
               {/* Community Highlights */}
@@ -370,7 +370,7 @@ export default function MountainsEdgePage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Discover Mountains Edge Value
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Mountains Edge specialist,
               for expert guidance in finding exceptional value in southwest Las Vegas.
             </p>
@@ -381,7 +381,7 @@ export default function MountainsEdgePage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

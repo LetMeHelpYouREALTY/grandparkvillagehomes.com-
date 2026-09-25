@@ -68,7 +68,7 @@ const properties: Property[] = [
   },
   {
     id: 2,
-    name: "Spacious Family Home",
+    name: "Single-Family Home",
     location: "Henderson, NV",
     price: "$625,000",
     image: "/Image/hero_bg_2.jpg",

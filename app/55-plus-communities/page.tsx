@@ -161,7 +161,7 @@ const communities = [
       "Henderson's premier 55+ community",
       "2 championship golf courses",
       "Stunning mountain views",
-      "America's safest large city location",
+      "Henderson location near Anthem",
     ],
     description:
       "Henderson's premier 55+ community with stunning mountain views and championship golf.",
@@ -274,7 +274,7 @@ const communities = [
     highlights: [
       "Most affordable Summerlin 55+ option",
       "18-hole golf course",
-      "Established community (1990s)",
+      "Built in the 1990s",
       "Strong sense of community",
     ],
     description:
@@ -850,7 +850,7 @@ export default function FiftyFiveCommunitiesPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Let's Find Your Ideal Lifestyle Match
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Ready to explore active adult living in Las Vegas? Contact Dr. Jan
               Duffy for a free consultation and personalized community
               recommendations.
@@ -870,7 +870,7 @@ export default function FiftyFiveCommunitiesPage() {
                 Request Information
               </Link>
             </div>
-            <p className="text-blue-200 text-lg">
+            <p className="text-white text-lg">
               Here to make your transition smooth, Dr. Jan{" "}
               <span role="img" aria-label="sunshine">
                 ☀️

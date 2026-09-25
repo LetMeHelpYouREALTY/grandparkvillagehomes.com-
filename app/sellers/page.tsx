@@ -350,7 +350,7 @@ export default function SellersPage() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-4">What's Your Home Worth?</h2>
-                <p className="text-blue-100 mb-6">
+                <p className="text-white mb-6">
                   Get a free, no-obligation home valuation from Dr. Jan Duffy. Using current MLS
                   data and expertise serving Las Vegas since 2008, you'll know exactly what your 
                   home could sell for in today's market. No algorithms—just real analysis from 
@@ -364,9 +364,9 @@ export default function SellersPage() {
                 </Link>
               </div>
               <div className="text-center">
-                <TrendingUp className="h-24 w-24 text-blue-200 mx-auto mb-4" />
+                <TrendingUp className="h-24 w-24 text-white mx-auto mb-4" />
                 <p className="text-2xl font-bold">$450,000</p>
-                <p className="text-blue-200">Median Home Price (Jan 2026)</p>
+                <p className="text-white">Median Home Price (Jan 2026)</p>
                 <p className="text-blue-300 text-sm mt-2">Up 4.2% from last year</p>
               </div>
             </div>

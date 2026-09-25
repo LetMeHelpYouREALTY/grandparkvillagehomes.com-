@@ -40,10 +40,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "Is Skye Canyon good for families?",
+      name: "What is at Skye Center?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and safe neighborhoods. The community hosts family-friendly events throughout the year at Skye Center.",
+        text: "Skye Canyon has Skye Center, trails, parks, and community events. Floyd Lamb Park is next door. Which school covers a home depends on the address.",
       },
     },
     {
@@ -287,9 +287,8 @@ export default function SkyeCanyonPage() {
               <p className="mt-8">
                 The current Skye Canyon market shows <strong>124 active listings</strong> with homes
                 averaging just <strong>21 days on market</strong>—among the fastest in the valley.
-                The median price of <strong>$550,000</strong> reflects 5.5% year-over-year appreciation,
-                driven by continued demand from families seeking modern homes with exceptional amenities.
-                New construction from builders like Toll Brothers, Lennar, and Woodside Homes ranges
+                The median price of <strong>$550,000</strong> reflects 5.5% year-over-year appreciation.
+                New construction from builders including Toll Brothers, Lennar, and Woodside Homes ranges
                 from $450,000 to $800,000.
               </p>
               <p>
@@ -306,9 +305,8 @@ export default function SkyeCanyonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Skye Canyon is where young families want to be right now. The amenities are incredible,
-                the homes are modern and energy-efficient, and the community vibe is exactly what people
-                are looking for. As a Berkshire Hathaway HomeServices agent, I make sure my clients get
+                "Skye Canyon has Skye Center, new homes, and trails.
+                The homes are modern and energy-efficient. As a Berkshire Hathaway HomeServices agent, I make sure my clients get
                 the best value—whether that's negotiating builder upgrades or finding a resale with
                 features already included."
               </blockquote>
@@ -346,12 +344,12 @@ export default function SkyeCanyonPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Is Skye Canyon good for families?
+                  What is at Skye Center?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, Skye Canyon is designed for families with new schools, extensive children's
-                  amenities, community events, and safe neighborhoods. The community hosts family-friendly
-                  events throughout the year at Skye Center.
+                  Skye Center is a 15-acre complex with pools, a fitness center, and event space.
+                  Trails and parks run through the community, and Floyd Lamb Park is next door.
+                  Which school covers a home depends on the address.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -372,7 +370,7 @@ export default function SkyeCanyonPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Discover Skye Canyon Living
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Skye Canyon specialist,
               for expert guidance on new construction and resale homes.
             </p>
@@ -383,7 +381,7 @@ export default function SkyeCanyonPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

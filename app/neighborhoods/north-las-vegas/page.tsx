@@ -158,7 +158,7 @@ export default function NorthLasVegasPage() {
                   </div>
                   <p className="text-slate-600">
                     North Las Vegas offers the lowest median home prices in the Las Vegas Valley, making
-                    homeownership attainable for first-time buyers, young families, and investors. Entry-level
+                    homeownership attainable for first-time buyers and investors. Entry-level
                     homes start in the $320,000s, while new construction from quality builders ranges
                     from $380,000 to $550,000—prices that would buy a condo elsewhere.
                   </p>
@@ -373,7 +373,7 @@ export default function NorthLasVegasPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Start Your Homeownership Journey
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices North Las Vegas expert,
               for guidance on finding affordable homes that fit your budget.
             </p>
@@ -384,7 +384,7 @@ export default function NorthLasVegasPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

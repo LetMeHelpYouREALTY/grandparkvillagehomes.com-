@@ -380,7 +380,7 @@ export default function MarketUpdatePage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Get Personalized Market Insights
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Want to know what these trends mean for your specific situation?
               Contact Dr. Jan Duffy for a free consultation tailored to your goals.
             </p>
@@ -399,7 +399,7 @@ export default function MarketUpdatePage() {
                 Get Free Home Valuation
               </Link>
             </div>
-            <p className="mt-6 text-blue-200 text-sm">
+            <p className="mt-6 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

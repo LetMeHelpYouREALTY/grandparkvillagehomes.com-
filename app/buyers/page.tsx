@@ -83,7 +83,7 @@ const buyingSteps = [
 
 const neighborhoods = [
   { name: "Summerlin", price: "$625K", description: "Master-planned community with Red Rock views" },
-  { name: "Henderson", price: "$485K", description: "Family-friendly with low crime rates" },
+  { name: "Henderson", price: "$485K", description: "Parks, trails, and Lake Las Vegas nearby" },
   { name: "Green Valley", price: "$520K", description: "Established with mature landscaping" },
   { name: "The Ridges", price: "$2.5M", description: "Ultra-luxury guard-gated estates" },
   { name: "North Las Vegas", price: "$385K", description: "Affordable new construction" },
@@ -208,7 +208,7 @@ export default function BuyersPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
+              seeking luxury estates in guard-gated communities, homes near parks and trails, 
               or affordable new construction, Dr. Jan helps you find the perfect neighborhood. Here's 
               a quick guide to median prices and what each area offers.
             </p>
@@ -364,7 +364,7 @@ export default function BuyersPage() {
             <h2 className="text-2xl font-bold mb-4 text-center">
               Las Vegas Buyer Market Statistics | January 2026
             </h2>
-            <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
+            <p className="text-white text-center max-w-3xl mx-auto mb-8">
               Understanding the current market helps you make informed decisions about timing, 
               pricing, and negotiation strategies. Here's a snapshot of what buyers are facing 
               in the Las Vegas market right now.
@@ -372,19 +372,19 @@ export default function BuyersPage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-bold mb-1">$450K</div>
-                <div className="text-blue-200 text-sm">Median Home Price</div>
+                <div className="text-white text-sm">Median Home Price</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold mb-1">4,850</div>
-                <div className="text-blue-200 text-sm">Active Listings</div>
+                <div className="text-white text-sm">Active Listings</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold mb-1">28 Days</div>
-                <div className="text-blue-200 text-sm">Avg. Days on Market</div>
+                <div className="text-white text-sm">Avg. Days on Market</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold mb-1">+4.2%</div>
-                <div className="text-blue-200 text-sm">Year-Over-Year</div>
+                <div className="text-white text-sm">Year-Over-Year</div>
               </div>
             </div>
           </section>
@@ -421,8 +421,8 @@ export default function BuyersPage() {
                   a: "The Las Vegas market is moderately competitive with 2.1 months of inventory—a slight seller's market. Well-priced homes in desirable areas like Summerlin and Henderson often receive multiple offers within the first week. Having a pre-approval and experienced agent gives you a significant advantage.",
                 },
                 {
-                  q: "What are the best neighborhoods for families in Las Vegas?",
-                  a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering excellent schools, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities—schools, commute, budget, and lifestyle.",
+                  q: "Which Las Vegas neighborhoods have parks and master-planned amenities?",
+                  a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills have parks, trails, and master-planned amenities. Which school serves a home depends on the address. Dr. Jan can match a neighborhood to commute, budget, and amenities.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">

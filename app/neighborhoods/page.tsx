@@ -24,9 +24,9 @@ const neighborhoods = [
     slug: "summerlin",
     medianPrice: "$625,000",
     priceChange: "+6.8%",
-    description: "Premier master-planned community with parks, trails, and top-rated schools",
-    highlights: ["150+ Parks", "Top Schools", "Red Rock Views", "Downtown Summerlin"],
-    bestFor: "Families, professionals, outdoor enthusiasts",
+    description: "Premier master-planned community with parks, trails, and Red Rock views",
+    highlights: ["150+ Parks", "Trails", "Red Rock Views", "Downtown Summerlin"],
+    bestFor: "Buyers who want parks, trails, and Red Rock access",
   },
   {
     name: "Grand Park",
@@ -43,18 +43,18 @@ const neighborhoods = [
     slug: "henderson",
     medianPrice: "$485,000",
     priceChange: "+5.1%",
-    description: "Nevada's second-largest city known for safety, schools, and family-friendly living",
-    highlights: ["Low Crime Rate", "Excellent Schools", "Lake Las Vegas", "Green Valley"],
-    bestFor: "Families, retirees, commuters",
+    description: "Nevada's second-largest city, with parks, Green Valley, and Lake Las Vegas",
+    highlights: ["Parks", "Recreation Centers", "Lake Las Vegas", "Green Valley"],
+    bestFor: "Buyers who want parks or a shorter airport drive",
   },
   {
     name: "Green Valley",
     slug: "green-valley",
     medianPrice: "$520,000",
     priceChange: "+4.8%",
-    description: "Established Henderson community with mature landscaping and excellent amenities",
+    description: "Henderson community with mature landscaping, golf, and nearby shopping",
     highlights: ["Golf Courses", "Walking Trails", "The District", "Mature Trees"],
-    bestFor: "Established families, golfers, professionals",
+    bestFor: "Buyers who want mature trees, golf, and nearby shopping",
   },
   {
     name: "The Ridges",
@@ -72,16 +72,16 @@ const neighborhoods = [
     priceChange: "+7.2%",
     description: "Master-planned luxury community with championship golf and mountain views",
     highlights: ["Golf Community", "Guard-Gated", "Mountain Views", "Luxury Amenities"],
-    bestFor: "Golfers, luxury buyers, families",
+    bestFor: "Golfers and luxury buyers",
   },
   {
     name: "North Las Vegas",
     slug: "north-las-vegas",
     medianPrice: "$385,000",
     priceChange: "+3.2%",
-    description: "Rapidly growing area with affordable new construction and family-friendly communities",
-    highlights: ["New Construction", "Affordable", "Growing Area", "Family-Friendly"],
-    bestFor: "First-time buyers, young families, investors",
+    description: "Rapidly growing area with affordable new construction",
+    highlights: ["New Construction", "Affordable", "Growing Area", "Parks"],
+    bestFor: "First-time buyers and investors",
   },
   {
     name: "Skye Canyon",
@@ -89,17 +89,17 @@ const neighborhoods = [
     medianPrice: "$550,000",
     priceChange: "+5.5%",
     description: "Newer master-planned community in northwest Las Vegas with mountain views",
-    highlights: ["New Homes", "Mountain Views", "Skye Center", "Great Schools"],
-    bestFor: "Young families, outdoor enthusiasts, commuters",
+    highlights: ["New Homes", "Mountain Views", "Skye Center", "Trails"],
+    bestFor: "Buyers who want new homes and trail access",
   },
   {
     name: "Centennial Hills",
     slug: "centennial-hills",
     medianPrice: "$495,000",
     priceChange: "+4.8%",
-    description: "Northwest Las Vegas community with mountain proximity and family amenities",
-    highlights: ["Mountain Access", "Parks", "Shopping", "Family-Friendly"],
-    bestFor: "Families, outdoor lovers, professionals",
+    description: "Northwest Las Vegas community with mountain proximity and parks",
+    highlights: ["Mountain Access", "Parks", "Shopping", "Parks"],
+    bestFor: "Buyers who want mountain access and parks",
   },
   {
     name: "Inspirada",
@@ -107,8 +107,8 @@ const neighborhoods = [
     medianPrice: "$525,000",
     priceChange: "+5.0%",
     description: "Henderson master-planned community with resort-style living and modern homes",
-    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Great Schools"],
-    bestFor: "Families, active adults, new home buyers",
+    highlights: ["Resort Pools", "Walking Trails", "New Construction", "Sports Courts"],
+    bestFor: "Buyers who want resort pools and new construction",
   },
   {
     name: "Mountains Edge",
@@ -117,7 +117,7 @@ const neighborhoods = [
     priceChange: "+4.5%",
     description: "Southwest Las Vegas master-planned community with mountain views and parks",
     highlights: ["Mountain Views", "Parks", "Growing Area", "Affordable Luxury"],
-    bestFor: "Families, commuters, value-seekers",
+    bestFor: "Buyers who want mountain views and parks",
   },
 ];
 
@@ -188,7 +188,7 @@ export default function NeighborhoodsPage() {
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Every Las Vegas neighborhood has its own personality. Whether you want the
-                family-friendly parks of Summerlin, the established charm of Green Valley, or the
+                parks and trails of Summerlin, the mature trees of Green Valley, or the
                 luxury of The Ridges, I'll help you find the community that matches your lifestyle.
                 That's the Berkshire Hathaway HomeServices difference—personalized guidance backed
                 by local expertise."
@@ -232,7 +232,7 @@ export default function NeighborhoodsPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Need Help Choosing a Neighborhood?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Dr. Jan Duffy knows every Las Vegas community inside and out. Call for personalized
               neighborhood recommendations.
             </p>
@@ -243,7 +243,7 @@ export default function NeighborhoodsPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

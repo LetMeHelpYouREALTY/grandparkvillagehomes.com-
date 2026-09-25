@@ -208,21 +208,21 @@ export default function InvestmentPropertiesPage() {
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-blue-700 rounded-lg p-6">
                 <h3 className="font-bold text-lg mb-2">Buy & Hold Rentals</h3>
-                <p className="text-blue-200 text-sm">
+                <p className="text-white text-sm">
                   Long-term wealth building through rental income and appreciation. Ideal for
                   passive investors seeking steady cash flow.
                 </p>
               </div>
               <div className="bg-blue-700 rounded-lg p-6">
                 <h3 className="font-bold text-lg mb-2">Fix & Flip</h3>
-                <p className="text-blue-200 text-sm">
+                <p className="text-white text-sm">
                   Value-add opportunities for active investors. We identify underpriced properties
                   with renovation potential.
                 </p>
               </div>
               <div className="bg-blue-700 rounded-lg p-6">
                 <h3 className="font-bold text-lg mb-2">Short-Term Rentals</h3>
-                <p className="text-blue-200 text-sm">
+                <p className="text-white text-sm">
                   Vacation rental opportunities in tourist-friendly areas. Higher yields with
                   active management.
                 </p>
@@ -301,25 +301,25 @@ export default function InvestmentPropertiesPage() {
                 <p className="text-slate-600 mb-4">
                   <strong>Best for: Cash flow investors.</strong> Highest cap rates in the valley (5.2%+)
                   with lower entry prices. Growing population as Amazon, Fanatics, and other employers
-                  expand. School quality varies by area—research specific zones.
+                  expand. Which school covers a home depends on the address.
                 </p>
                 <div className="grid grid-cols-3 gap-4 text-sm">
                   <div><span className="font-medium">Entry:</span> $350K-$450K</div>
                   <div><span className="font-medium">Rent:</span> $1,800-$2,200</div>
-                  <div><span className="font-medium">Tenant Pool:</span> Working families, warehouse workers</div>
+                  <div><span className="font-medium">Tenant Pool:</span> Local and warehouse workers</div>
                 </div>
               </div>
               <div className="bg-white rounded-xl p-6">
                 <h3 className="font-bold text-xl text-slate-900 mb-2">Henderson</h3>
                 <p className="text-slate-600 mb-4">
-                  <strong>Best for: Balanced investors.</strong> Premium tenant quality, excellent schools,
+                  <strong>Best for: Balanced investors.</strong> Long-term rental demand,
                   and steady appreciation. Lower vacancy rates and longer tenant retention offset
                   slightly lower cap rates.
                 </p>
                 <div className="grid grid-cols-3 gap-4 text-sm">
                   <div><span className="font-medium">Entry:</span> $450K-$600K</div>
                   <div><span className="font-medium">Rent:</span> $2,100-$2,800</div>
-                  <div><span className="font-medium">Tenant Pool:</span> Professionals, families, retirees</div>
+                  <div><span className="font-medium">Tenant Pool:</span> Long-term tenants</div>
                 </div>
               </div>
               <div className="bg-white rounded-xl p-6">

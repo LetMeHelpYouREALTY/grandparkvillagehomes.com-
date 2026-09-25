@@ -164,9 +164,9 @@ export default function SunCityAnthemPage() {
               </h2>
               <p>
                 <strong>Sun City Anthem</strong> brings the legendary Sun City lifestyle to Henderson,
-                Nevada's safest and most desirable city. Built by Del Webb from 1998-2008, this
-                7,100+ home community offers stunning mountain views, championship golf, and
-                resort-caliber amenities—all within Henderson's renowned safety and quality of life.
+                Henderson, Nevada's second-largest city. Built by Del Webb from 1998-2008, this
+                7,100+ home community offers mountain views, championship golf, and
+                a 64,000 sq ft clubhouse.
               </p>
               <p>
                 The community's centerpiece is the Anthem Center, a 64,000 sq ft clubhouse featuring
@@ -192,22 +192,21 @@ export default function SunCityAnthemPage() {
                     Why Henderson Matters
                   </h3>
                   <p className="text-slate-700 mb-4">
-                    Henderson consistently ranks as one of America's safest cities. For 55+ buyers,
-                    this translates to peace of mind, stable property values, and a community that
-                    attracts similar residents who value safety and quality of life.
+                    Sun City Anthem is in Henderson, with two championship golf courses, a 64,000 sq ft
+                    clubhouse, and mountain views. Drive time to the Strip depends on traffic.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
                     <div className="text-center bg-white rounded-lg p-4">
-                      <div className="text-2xl font-bold text-green-600">#2</div>
-                      <div className="text-sm text-slate-600">Safest Large City</div>
+                      <div className="text-2xl font-bold text-green-600">7,100+</div>
+                      <div className="text-sm text-slate-600">Homes</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-4">
-                      <div className="text-2xl font-bold text-green-600">A+</div>
-                      <div className="text-sm text-slate-600">Livability Score</div>
+                      <div className="text-2xl font-bold text-green-600">64K</div>
+                      <div className="text-sm text-slate-600">Sq Ft Clubhouse</div>
                     </div>
                     <div className="text-center bg-white rounded-lg p-4">
-                      <div className="text-2xl font-bold text-green-600">Low</div>
-                      <div className="text-sm text-slate-600">Property Crime</div>
+                      <div className="text-2xl font-bold text-green-600">2</div>
+                      <div className="text-sm text-slate-600">Golf Courses</div>
                     </div>
                   </div>
                 </div>

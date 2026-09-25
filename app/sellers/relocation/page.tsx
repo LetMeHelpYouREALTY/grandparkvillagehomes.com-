@@ -496,7 +496,7 @@ export default function RelocationPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Make Your Move?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Let's create a relocation plan that works with your timeline.
               Dr. Jan will coordinate everything so you can focus on your new opportunity.
             </p>

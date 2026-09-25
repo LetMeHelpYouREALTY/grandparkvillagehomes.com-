@@ -40,10 +40,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "How are the schools in Inspirada?",
+      name: "Which schools serve Inspirada?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Inspirada is served by highly-rated Henderson schools including newer facilities built specifically for the growing community. The area attracts families specifically for its educational options and family-friendly environment.",
+        text: "Inspirada is in Henderson. Which school covers a home depends on the address. The community has resort-style pools, trails, and parks.",
       },
     },
     {
@@ -196,7 +196,7 @@ export default function InspiradaPage() {
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Middle & High Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Coronado High School (8/10)</li>
+                      <li>• Coronado High School</li>
                       <li>• Foothill High School</li>
                       <li>• Del Webb Middle School</li>
                       <li>• Mannion Middle School</li>
@@ -342,12 +342,11 @@ export default function InspiradaPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  How are the schools in Inspirada?
+                  Which schools serve Inspirada?
                 </h3>
                 <p className="text-slate-600">
-                  Inspirada is served by highly-rated Henderson schools including newer facilities
-                  built specifically for the growing community. The area attracts families specifically
-                  for its educational options and family-friendly environment.
+                  Inspirada is in Henderson. Which school covers a home depends on the address.
+                  The community has resort-style pools, trails, and parks.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -368,7 +367,7 @@ export default function InspiradaPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Experience Inspirada Living
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Inspirada specialist,
               for expert guidance in Henderson's premier resort-style community.
             </p>
@@ -379,7 +378,7 @@ export default function InspiradaPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

@@ -49,7 +49,7 @@ const faqSchema = {
       name: "What neighborhoods do California relocators prefer in Las Vegas?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "California buyers typically gravitate toward Summerlin (similar to Irvine/coastal communities), Henderson (family-friendly like San Diego suburbs), and The Ridges (comparable to Newport Coast luxury). These areas offer the quality and amenities California buyers expect.",
+        text: "California buyers typically gravitate toward Summerlin (similar to Irvine/coastal communities), Henderson (parks, trails, and a short airport drive), and The Ridges (comparable to Newport Coast luxury). These areas offer the quality and amenities California buyers expect.",
       },
     },
     {
@@ -231,20 +231,20 @@ export default function CaliforniaRelocatorPage() {
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                 <div className="bg-blue-600 text-white p-4">
                   <h3 className="font-bold text-xl">Summerlin</h3>
-                  <p className="text-blue-100 text-sm">Median: $726K</p>
+                  <p className="text-white text-sm">Median: $726K</p>
                 </div>
                 <div className="p-6">
                   <p className="text-slate-600 mb-4">
-                    "The Irvine of Las Vegas" - Master-planned perfection with top schools,
+                    "The Irvine of Las Vegas" - master-planned, with parks, trails,
                     Downtown Summerlin shopping, and Red Rock Canyon views.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
-                    <strong>Best for:</strong> Families from Orange County, coastal CA
+                    <strong>Best for:</strong> Buyers comparing Orange County amenities
                   </div>
                   <ul className="text-sm space-y-1 text-slate-700">
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      Top-rated schools
+                      Downtown Summerlin shopping
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
@@ -271,11 +271,11 @@ export default function CaliforniaRelocatorPage() {
                 </div>
                 <div className="p-6">
                   <p className="text-slate-600 mb-4">
-                    Henderson = San Diego suburbs meets tech corridor. Google's data center,
-                    top schools, and "America's Safest City" accolades.
+                    Henderson has a tech corridor, including Google's data center,
+                    plus parks and master-planned communities.
                   </p>
                   <div className="text-sm text-slate-500 mb-4">
-                    <strong>Best for:</strong> Tech workers, young families, San Diego relocators
+                    <strong>Best for:</strong> Tech workers and San Diego relocators
                   </div>
                   <ul className="text-sm space-y-1 text-slate-700">
                     <li className="flex items-center">
@@ -284,7 +284,7 @@ export default function CaliforniaRelocatorPage() {
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                      Lowest crime rates
+                      Short drive to the airport
                     </li>
                     <li className="flex items-center">
                       <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
@@ -403,7 +403,7 @@ export default function CaliforniaRelocatorPage() {
                 </h3>
                 <p className="text-slate-600">
                   California buyers typically gravitate toward Summerlin (similar to Irvine/coastal
-                  communities), Henderson (family-friendly like San Diego suburbs), and The Ridges
+                  communities), Henderson (parks, trails, and a short airport drive), and The Ridges
                   (comparable to Newport Coast luxury). These areas offer the quality and amenities
                   California buyers expect.
                 </p>
@@ -433,10 +433,9 @@ export default function CaliforniaRelocatorPage() {
                   What about schools compared to California?
                 </h3>
                 <p className="text-slate-600">
-                  Nevada public schools overall rank lower than California's, but individual schools
-                  in Summerlin and Henderson rate highly. Many California families choose areas with
-                  top-rated schools or consider private options. Dr. Jan provides school-specific
-                  guidance for every neighborhood.
+                  Which public school serves a home depends on the address. Dr. Jan can
+                  name the zoned school for a property and list nearby private schools.
+                  Call (702) 222-1964.
                 </p>
               </div>
             </div>
@@ -464,7 +463,7 @@ export default function CaliforniaRelocatorPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Start Your Tax-Free Life?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Get a personalized relocation consultation with Dr. Jan Duffy. She'll show you exactly
               what your California equity buys in Las Vegas and help you find the perfect neighborhood.
             </p>
@@ -483,7 +482,7 @@ export default function CaliforniaRelocatorPage() {
                 Schedule Consultation
               </Link>
             </div>
-            <p className="mt-6 text-blue-200 text-sm">
+            <p className="mt-6 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

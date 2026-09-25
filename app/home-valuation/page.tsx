@@ -102,7 +102,7 @@ export default function HomeValuationPage() {
             <div className="bg-white border border-slate-200 rounded-lg overflow-hidden">
               <div className="bg-blue-600 text-white p-4 text-center">
                 <h2 className="text-2xl font-bold">Schedule Your Free Valuation</h2>
-                <p className="text-blue-100 text-sm mt-1">
+                <p className="text-white text-sm mt-1">
                   Book a consultation with Dr. Jan Duffy
                 </p>
               </div>
@@ -461,7 +461,7 @@ export default function HomeValuationPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Know What Your Home Is Worth?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Get a free, no-obligation home valuation from Dr. Jan Duffy and Berkshire Hathaway
               HomeServices Nevada Properties. Accurate pricing. Expert guidance. Zero pressure.
             </p>
@@ -480,7 +480,7 @@ export default function HomeValuationPage() {
                 Learn About Selling
               </Link>
             </div>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

@@ -47,7 +47,7 @@ const summerlinFaqs = [
   {
     question: "What makes Summerlin different from other Las Vegas communities?",
     answer:
-      "Summerlin offers 150+ parks, 150+ miles of trails, top-rated schools, and stunning Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with careful planning since 1990, creating distinct villages each with unique character.",
+      "Summerlin offers 150+ parks, 150+ miles of trails, golf courses, and stunning Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with careful planning since 1990, creating distinct villages each with unique character.",
   },
   {
     question: "Why should I use a Berkshire Hathaway HomeServices agent in Summerlin?",
@@ -63,7 +63,7 @@ const pageSchemas = combineSchemas(
     name: "Summerlin",
     slug: "summerlin",
     description:
-      "Premier master-planned community in Las Vegas featuring Red Rock Canyon views, 150+ parks, top-rated schools, and luxury homes from $400K to $10M+.",
+      "Premier master-planned community in Las Vegas featuring Red Rock Canyon views, 150+ parks, golf courses, and luxury homes from $400K to $10M+.",
     latitude: 36.1672,
     longitude: -115.331,
     containedIn: "Las Vegas",
@@ -150,7 +150,7 @@ export default function SummerlinPage() {
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> has deep roots in Summerlin,
-                and our agents understand the nuances of each village—from the family-friendly atmosphere of
+                and our agents understand the nuances of each village—from the trails and parks in
                 The Paseos to the luxury estates of The Ridges. Whether you're a first-time buyer looking at
                 condos in Affinity or a move-up buyer seeking a custom home in Red Rock Country Club, BHHS
                 has the expertise to guide you through the process.
@@ -184,13 +184,11 @@ export default function SummerlinPage() {
                 <div className="bg-slate-50 p-6 rounded-xl">
                   <div className="flex items-center mb-4">
                     <GraduationCap className="h-8 w-8 text-blue-600 mr-3" />
-                    <h4 className="font-bold text-slate-900 text-lg">Top-Rated Schools</h4>
+                    <h4 className="font-bold text-slate-900 text-lg">Schools in the Area</h4>
                   </div>
                   <p className="text-slate-600">
-                    Summerlin is home to some of Nevada's highest-performing schools. The community includes
-                    multiple Blue Ribbon schools, advanced STEM programs, and excellent private school options
-                    like The Meadows School and Bishop Gorman High School. Families consistently choose
-                    Summerlin for its exceptional educational opportunities.
+                    Which school covers a home depends on the address. Clark County School District
+                    serves Summerlin. Private schools nearby include The Meadows School and Bishop Gorman High School.
                   </p>
                 </div>
               </div>
@@ -199,14 +197,14 @@ export default function SummerlinPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Summerlin School Districts</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Summerlin is served by the Clark County School District with some of Nevada's
-                  highest-rated public schools, plus excellent private options:
+                  Summerlin is served by the Clark County School District. Which school covers a home
+                  depends on the address. Schools named in this area include:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Elementary Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Sig Rogich Middle School (9/10)</li>
+                      <li>• Sig Rogich Middle School</li>
                       <li>• William R. Lummis Elementary</li>
                       <li>• Marion Earl Elementary</li>
                       <li>• Helen Smith Elementary</li>
@@ -216,7 +214,7 @@ export default function SummerlinPage() {
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Middle & High Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Palo Verde High School (8/10)</li>
+                      <li>• Palo Verde High School</li>
                       <li>• West Career & Technical Academy</li>
                       <li>• Del E. Webb Middle School</li>
                       <li>• Sig Rogich Middle School</li>
@@ -309,7 +307,7 @@ export default function SummerlinPage() {
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Summerlin isn't just a neighborhood—it's a lifestyle. I've been serving this area since
-                2008, and I can tell you exactly which villages suit young families, which offer the
+                2008, and I can tell you which villages have parks and trails, which offer
                 best investment potential, and where you'll find the hidden gems. That local knowledge is
                 what sets Berkshire Hathaway HomeServices apart."
               </blockquote>
@@ -350,7 +348,7 @@ export default function SummerlinPage() {
                   What makes Summerlin different from other Las Vegas communities?
                 </h3>
                 <p className="text-slate-600">
-                  Summerlin offers 150+ parks, 150+ miles of trails, top-rated schools, and stunning
+                  Summerlin offers 150+ parks, 150+ miles of trails, golf courses, and stunning
                   Red Rock Canyon views. The Howard Hughes Corporation has developed Summerlin with
                   careful planning since 1990, creating distinct villages each with unique character.
                 </p>
@@ -374,7 +372,7 @@ export default function SummerlinPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Find Your Summerlin Home?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Summerlin specialist,
               for a personalized home search or free market analysis.
             </p>
@@ -385,7 +383,7 @@ export default function SummerlinPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

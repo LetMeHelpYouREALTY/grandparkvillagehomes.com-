@@ -8,7 +8,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices Green Valley | Henderson Real Estate",
   description:
-    "Find Green Valley homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's most established community. Median price $520K. Call (702) 500-1942.",
+    "Find Green Valley homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Green Valley in Henderson. Median price $520K. Call (702) 500-1942.",
   keywords: [
     "Berkshire Hathaway HomeServices Green Valley",
     "Green Valley homes for sale",
@@ -43,7 +43,7 @@ const faqSchema = {
       name: "What makes Green Valley different from newer Henderson communities?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Green Valley, established in 1988, offers what newer communities can't: mature trees, established schools with proven track records, larger lots, and a genuine sense of community built over 35+ years.",
+        text: "Green Valley, established in 1988, offers what newer communities can't: mature trees, larger lots, and a genuine sense of community built over 35+ years.",
       },
     },
     {
@@ -51,7 +51,7 @@ const faqSchema = {
       name: "Is Green Valley a good investment?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Green Valley has shown consistent appreciation due to its prime Henderson location, established infrastructure, and ongoing demand from families seeking top schools and safety. BHHS agents can provide detailed market analysis.",
+        text: "Green Valley sits in Henderson, with mature trees, golf, and nearby shopping. A price opinion depends on the address. BHHS agents can provide a market analysis for a specific home.",
       },
     },
   ],
@@ -128,22 +128,18 @@ export default function GreenValleyPage() {
                 original master-planned community. Established in 1988, Green Valley pioneered the concept
                 of thoughtfully designed neighborhoods in Southern Nevada—long before master-planned
                 communities became the norm. Today, <strong>Berkshire Hathaway HomeServices</strong>
-                continues to serve Green Valley families, helping new generations discover what long-time
-                residents already know: this is one of the best places to live in Nevada.
+                continues to serve Green Valley buyers who want mature trees, golf, and nearby shopping.
               </p>
               <p>
                 What makes Green Valley unique is something that can't be replicated: time. Over three
                 decades, the community has matured into a verdant oasis with towering trees, established
                 landscaping, and a genuine neighborhood feel. While newer communities offer shiny amenities,
-                Green Valley offers something more valuable—proven schools with track records of excellence,
-                neighbors who've built lifelong friendships, and the kind of community cohesion that only
-                develops over generations.
+                Green Valley has mature trees, golf, and The District for shopping and dining.
               </p>
               <p>
                 <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> agents have been selling
-                homes in Green Valley since the beginning. Dr. Jan Duffy knows which streets offer the best
-                mountain views, which school zones are most sought-after, and which HOAs maintain their
-                communities to the highest standards. This institutional knowledge, combined with the
+                homes in Green Valley since the beginning. Dr. Jan Duffy can point to streets with
+                mountain views, the school boundary for an address, and how HOA fees differ by section. This institutional knowledge, combined with the
                 resources and reputation of BHHS, gives Green Valley buyers and sellers a distinct advantage.
               </p>
 
@@ -180,14 +176,14 @@ export default function GreenValleyPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Green Valley School Districts</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Green Valley is home to some of Henderson's most sought-after schools with 35+ years
-                  of proven excellence:
+                  Green Valley is in Henderson. Which school covers a home depends on the address.
+                  Schools named in this area include:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Elementary Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Elise L. Wolff Elementary (9/10)</li>
+                      <li>• Elise L. Wolff Elementary</li>
                       <li>• C.T. Sewell Elementary</li>
                       <li>• Gordon McCaw Elementary</li>
                       <li>• John C. Vanderburg Elementary</li>
@@ -198,7 +194,7 @@ export default function GreenValleyPage() {
                     <h5 className="font-bold text-slate-900 mb-2">Middle & High Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
                       <li>• Green Valley High School (7/10)</li>
-                      <li>• Coronado High School (8/10)</li>
+                      <li>• Coronado High School</li>
                       <li>• Bob Miller Middle School</li>
                       <li>• Burkholder Middle School</li>
                       <li>• Greenspun Junior High</li>
@@ -273,8 +269,7 @@ export default function GreenValleyPage() {
                 means understanding the subtle differences between Green Valley proper, Green Valley Ranch,
                 and Green Valley South. Each area has distinct characteristics, price points, and lifestyle
                 offerings. Dr. Jan Duffy helps buyers navigate these nuances and find the perfect fit—whether
-                that's a starter home for a young family or a forever home for empty nesters looking to
-                downsize without leaving the community they love.
+                from a smaller home to a larger one, without leaving Green Valley.
               </p>
             </div>
           </section>
@@ -283,10 +278,8 @@ export default function GreenValleyPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Green Valley offers something newer communities can't replicate—35 years of established
-                neighborhoods, proven schools, and a real sense of community. When clients tell me they
-                want tree-lined streets and neighbors who know each other's names, I show them Green Valley.
-                It's the original, and still one of the best."
+                "Green Valley has mature trees, golf, and The District. It was planned in 1988.
+                When a buyer wants tree-lined streets, I show them Green Valley."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
@@ -325,7 +318,7 @@ export default function GreenValleyPage() {
                 </h3>
                 <p className="text-slate-600">
                   Green Valley, established in 1988, offers what newer communities can't: mature trees,
-                  established schools with proven track records, larger lots, and a genuine sense of
+                  larger lots, and a genuine sense of
                   community built over 35+ years.
                 </p>
               </div>
@@ -335,8 +328,8 @@ export default function GreenValleyPage() {
                 </h3>
                 <p className="text-slate-600">
                   Green Valley has shown consistent appreciation due to its prime Henderson location,
-                  established infrastructure, and ongoing demand from families seeking top schools and
-                  safety. BHHS agents can provide detailed market analysis.
+                  roads and parks that have been in place for decades, and demand from buyers
+                  who want mature landscaping in Henderson. BHHS agents can provide a market analysis for a specific address.
                 </p>
               </div>
             </div>
@@ -347,9 +340,9 @@ export default function GreenValleyPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Discover Green Valley Living
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Green Valley specialist,
-              for expert guidance in Henderson's most established community.
+              for expert guidance in Green Valley in Henderson.
             </p>
             <a
               href="tel:+17025001942"
@@ -358,7 +351,7 @@ export default function GreenValleyPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

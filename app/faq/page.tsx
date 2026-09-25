@@ -128,8 +128,8 @@ const faqCategories = [
         a: "Absolutely! Our global network of 50,000+ agents makes relocations seamless. Dr. Jan can coordinate with BHHS agents in your current city while providing expert guidance on Las Vegas neighborhoods, schools, and communities.",
       },
       {
-        q: "What are the best neighborhoods for families?",
-        a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills are top choices for families, offering excellent schools, parks, and community amenities. Dr. Jan can match you with the right neighborhood based on your priorities.",
+        q: "Which neighborhoods have parks and master-planned amenities?",
+        a: "Summerlin, Henderson (Green Valley, Inspirada), and Centennial Hills have parks, trails, and master-planned amenities. Which school serves a home depends on the address. Dr. Jan can match a neighborhood to commute, budget, and amenities.",
       },
       {
         q: "How is the cost of living in Las Vegas?",
@@ -221,7 +221,7 @@ export default function FAQPage() {
           {/* CTA */}
           <section className="mt-16 text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Still Have Questions?</h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Dr. Jan Duffy is happy to answer any questions about Las Vegas real estate or working
               with Berkshire Hathaway HomeServices.
             </p>
@@ -232,7 +232,7 @@ export default function FAQPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

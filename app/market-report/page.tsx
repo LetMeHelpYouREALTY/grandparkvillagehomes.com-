@@ -298,7 +298,7 @@ export default function MarketReportPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Get Personalized Market Insights
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Want to know what these numbers mean for your specific neighborhood or situation? Dr.
               Jan Duffy provides free market consultations.
             </p>
@@ -309,7 +309,7 @@ export default function MarketReportPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

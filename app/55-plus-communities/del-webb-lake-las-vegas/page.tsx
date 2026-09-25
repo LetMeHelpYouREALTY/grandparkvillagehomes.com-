@@ -262,7 +262,7 @@ export default function DelWebbLakeLasVegasPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Experience Lakefront 55+ Living
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Tour Del Webb at Lake Las Vegas with Dr. Jan Duffy. See the homes, the lake,
               and the lifestyle that makes this community special.
             </p>

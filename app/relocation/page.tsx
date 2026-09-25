@@ -52,25 +52,25 @@ const relocationSchema = {
 const popularRelocationAreas = [
   {
     name: "Summerlin",
-    best: "Families, professionals",
-    highlights: "Top-rated schools, 150+ parks, Red Rock Canyon proximity, master-planned living",
+    best: "Buyers who want parks and trails",
+    highlights: "150+ parks, Red Rock Canyon proximity, trails, master-planned living",
     from: "$500K",
   },
   {
     name: "Henderson",
-    best: "Families, retirees",
-    highlights: "Lowest crime rates, excellent schools, community feel, diverse neighborhoods",
+    best: "Buyers who want parks or a 55+ community",
+    highlights: "Parks, recreation centers, Lake Las Vegas, Green Valley",
     from: "$450K",
   },
   {
     name: "Green Valley",
-    best: "Established families",
+    best: "Buyers who want mature landscaping",
     highlights: "Mature landscaping, championship golf, shopping and dining, Henderson location",
     from: "$480K",
   },
   {
     name: "Skye Canyon",
-    best: "Young families",
+    best: "Buyers who want new construction",
     highlights: "Newest construction, mountain trail access, modern amenities, growing area",
     from: "$500K",
   },
@@ -82,7 +82,7 @@ const popularRelocationAreas = [
   },
   {
     name: "Inspirada",
-    best: "Families, active adults",
+    best: "Buyers who want resort pools",
     highlights: "Resort-style pools, extensive trails, new homes, Henderson convenience",
     from: "$450K",
   },
@@ -246,15 +246,14 @@ export default function RelocationPage() {
               Las Vegas Schools & Education
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              For families with children, school quality is often the top priority when 
-              relocating. Las Vegas offers a range of public, charter, and private school 
-              options. Dr. Jan provides detailed school research to help you make informed decisions.
+              Which public school serves a home depends on the address. Las Vegas has
+              public, charter, and private schools. Dr. Jan can name the zoned school for a property.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center">
                   <School className="h-5 w-5 text-blue-600 mr-2" />
-                  Top-Rated School Areas
+                  Schools named in these areas
                 </h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
@@ -279,7 +278,7 @@ export default function RelocationPage() {
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span>School ratings and test score comparisons</span>
+                    <span>School name for a specific address</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
@@ -291,7 +290,7 @@ export default function RelocationPage() {
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-1 flex-shrink-0" />
-                    <span>Private school recommendations</span>
+                    <span>Names of nearby private schools</span>
                   </li>
                 </ul>
               </div>
@@ -301,7 +300,7 @@ export default function RelocationPage() {
           {/* Coming From California */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-4 text-center">Moving from California?</h2>
-            <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
+            <p className="text-white text-center max-w-3xl mx-auto mb-8">
               California to Nevada is one of the most popular relocation routes in the country. 
               Thousands of California families move to Las Vegas each year seeking lower costs, 
               no state income tax, and a better quality of life. Here's what the numbers look like.
@@ -309,7 +308,7 @@ export default function RelocationPage() {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="font-bold text-lg mb-3">What You'll Save</h3>
-                <ul className="space-y-2 text-blue-100">
+                <ul className="space-y-2 text-white">
                   <li>• <strong>State income tax:</strong> 0% vs CA's up to 13.3%</li>
                   <li>• <strong>Home prices:</strong> 40-60% lower than LA/SF</li>
                   <li>• <strong>Property taxes:</strong> Typically lower rates</li>
@@ -319,7 +318,7 @@ export default function RelocationPage() {
               </div>
               <div>
                 <h3 className="font-bold text-lg mb-3">What You'll Gain</h3>
-                <ul className="space-y-2 text-blue-100">
+                <ul className="space-y-2 text-white">
                   <li>• <strong>More home:</strong> 50%+ more space for your budget</li>
                   <li>• <strong>Short commutes:</strong> 20-30 min vs 60+ in CA</li>
                   <li>• <strong>Outdoor recreation:</strong> Red Rock, Lake Mead, skiing</li>
@@ -389,8 +388,8 @@ export default function RelocationPage() {
                   a: "Absolutely. Dr. Jan provides virtual tours, video walkthroughs, and detailed neighborhood analysis so you can purchase confidently before relocating. Many clients buy their Las Vegas home without ever visiting in person until closing day.",
                 },
                 {
-                  q: "What are the best areas for families relocating to Las Vegas?",
-                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon consistently rank highest for families due to excellent schools, low crime, and family-friendly amenities. Dr. Jan can match you with the right area based on your specific priorities—schools, commute, budget, and lifestyle.",
+                  q: "Which areas have parks and master-planned amenities?",
+                  a: "Summerlin, Henderson (especially Green Valley and Inspirada), and Skye Canyon have parks, trails, and master-planned amenities. Which school serves a home depends on the address. Dr. Jan can match an area to commute, budget, and amenities.",
                 },
                 {
                   q: "How does the cost of living compare to California?",
@@ -405,8 +404,8 @@ export default function RelocationPage() {
                   a: "Las Vegas has diversified beyond gaming and hospitality. Major growth sectors include healthcare (Intermountain Health, UMC), technology (Switch, various startups), sports (Raiders, Golden Knights, Aces), logistics (Amazon), and professional services. The economy is growing faster than the national average.",
                 },
                 {
-                  q: "Is Las Vegas safe for families?",
-                  a: "Yes, particularly in the suburban communities. Henderson consistently ranks as one of America's safest cities. Summerlin, Green Valley, and Inspirada also have very low crime rates. Dr. Jan can provide detailed crime statistics for any neighborhood you're considering.",
+                  q: "What is the commute from Summerlin and Henderson?",
+                  a: "Drive time depends on the address and the hour. Henderson is a short drive to Harry Reid International Airport. Summerlin sits along the 215 Beltway, with Red Rock Canyon to the west. Dr. Jan can map an address to commute and school boundaries. Call (702) 222-1964.",
                 },
               ].map((faq, index) => (
                 <div key={index} className="bg-slate-50 rounded-lg p-6">

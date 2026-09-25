@@ -256,15 +256,14 @@ export default function TheRidgesPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Schools Serving The Ridges</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  The Ridges is served by top-rated public schools in the Palo Verde cluster, plus Las Vegas's
-                  finest private school options:
+                  Public schools in the Palo Verde cluster serve The Ridges. Private schools are also nearby. Which school covers a home depends on the address:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <h5 className="font-bold text-slate-900 mb-2">Public Schools</h5>
                     <ul className="text-slate-600 text-sm space-y-1">
-                      <li>• Palo Verde High School (8/10)</li>
-                      <li>• Sig Rogich Middle School (9/10)</li>
+                      <li>• Palo Verde High School</li>
+                      <li>• Sig Rogich Middle School</li>
                       <li>• Marion Earl Elementary</li>
                       <li>• Helen Smith Elementary</li>
                     </ul>
@@ -369,7 +368,7 @@ export default function TheRidgesPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Experience The Ridges Luxury
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Contact Dr. Jan Duffy for a confidential consultation about buying or selling
               in Las Vegas's most prestigious community.
             </p>
@@ -380,7 +379,7 @@ export default function TheRidgesPage() {
               <Phone className="h-5 w-5 mr-2" />
               Call (702) 500-1942
             </a>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>

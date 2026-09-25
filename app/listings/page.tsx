@@ -61,7 +61,7 @@ const popularSearches = [
 
 const priceRanges = [
   { range: "Under $400K", description: "Starter homes, condos, townhomes", count: "1,500+" },
-  { range: "$400K - $600K", description: "Family homes, established neighborhoods", count: "2,100+" },
+  { range: "$400K - $600K", description: "Single-family homes and condos", count: "2,100+" },
   { range: "$600K - $1M", description: "Premium locations, larger homes", count: "1,200+" },
   { range: "$1M - $2M", description: "Luxury homes, guard-gated communities", count: "450+" },
   { range: "$2M+", description: "Ultra-luxury estates, custom builds", count: "180+" },
@@ -70,19 +70,19 @@ const priceRanges = [
 const neighborhoods = [
   {
     name: "Summerlin",
-    description: "Master-planned community with Red Rock views, top schools, and 150+ parks",
+    description: "Master-planned community with Red Rock views, trails, and 150+ parks",
     medianPrice: "$625,000",
     daysOnMarket: 22,
   },
   {
     name: "Henderson",
-    description: "Nevada's second-largest city with family-friendly communities and low crime",
+    description: "Nevada's second-largest city, with parks, Green Valley, and Lake Las Vegas",
     medianPrice: "$485,000",
     daysOnMarket: 24,
   },
   {
     name: "Green Valley",
-    description: "Established Henderson community with mature landscaping and golf courses",
+    description: "Henderson community with mature landscaping and golf courses",
     medianPrice: "$520,000",
     daysOnMarket: 26,
   },
@@ -159,7 +159,7 @@ export default function ListingsPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Las Vegas offers diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
+              seeking luxury estates in guard-gated communities, homes near parks and trails, 
               or affordable new construction, our comprehensive search tools help you find exactly 
               what you're looking for. Browse the most popular searches below or use the advanced 
               filters to customize your home search experience.
@@ -220,7 +220,7 @@ export default function ListingsPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Each Las Vegas neighborhood offers a unique lifestyle, from the resort-style living 
-              of Summerlin to the family-friendly communities of Henderson. Understanding these 
+              of Summerlin to the master-planned communities of Henderson. Understanding these 
               differences is crucial to finding a home that fits your needs. As a Berkshire 
               Hathaway HomeServices agent serving Las Vegas since 2008, Dr. Jan Duffy provides 
               expert guidance on which neighborhoods match your priorities—whether that's schools, 
@@ -471,7 +471,7 @@ export default function ListingsPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               Ready to Find Your Las Vegas Home?
             </h2>
-            <p className="text-xl text-blue-100 mb-8">
+            <p className="text-xl text-white mb-8">
               Contact Dr. Jan Duffy for personalized guidance, off-market listings, and expert 
               representation backed by Berkshire Hathaway HomeServices. Free buyer consultations 
               available—the seller pays the commission.
@@ -491,7 +491,7 @@ export default function ListingsPage() {
                 Schedule Consultation
               </Link>
             </div>
-            <p className="mt-4 text-blue-200 text-sm">
+            <p className="mt-4 text-white text-sm">
               Berkshire Hathaway HomeServices Nevada Properties
             </p>
           </section>
