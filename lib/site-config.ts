@@ -12,7 +12,7 @@ export const siteConfig = {
   shortName: "BHHS",
   url: "https://www.grandparkvillagehomes.com",
   description:
-    "Grand Park Village Homes in West Summerlin, Las Vegas. New construction from the high $300,000s to over $1.6 million with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
+    "Grand Park Village new homes in West Summerlin, Las Vegas. Expert buyer representation from Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties.",
 };
 
 export const agentInfo = {

@@ -7,6 +7,7 @@ import { getCanonicalUrl, getPreferredOrigin } from "@/lib/canonical";
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
+import AutoBreadcrumbSchema from "@/components/AutoBreadcrumbSchema";
 
 export async function generateMetadata(): Promise<Metadata> {
   const domain = headers().get("x-domain") || "";
@@ -63,6 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         `}</Script>
       </head>
       <body>
+        <AutoBreadcrumbSchema />
         <GlobalHeroBanner />
         {children}
         <Analytics />
