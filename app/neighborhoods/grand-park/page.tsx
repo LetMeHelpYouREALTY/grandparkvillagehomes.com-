@@ -15,6 +15,7 @@ import {
   combineSchemas,
 } from "@/lib/schema";
 import { generateLocalBusinessSchema } from "@/lib/gbp-schema";
+import AmenityMapSection from "@/components/amenities/AmenityMapSection";
 
 const GLENROCK_ADDRESS = "360 Talon Heights St, Las Vegas, NV 89138";
 const GLENROCK_MAP_QUERY = encodeURIComponent(
