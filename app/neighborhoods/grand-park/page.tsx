@@ -450,6 +450,10 @@ export default function GrandParkPage() {
           <p className="text-center text-sm text-slate-500">Last updated: September 24, 2026</p>
         </div>
       </main>
+      <AmenityMapSection
+        title="What's near Grand Park Village"
+        subtitle="Filter restaurants, parks, schools, healthcare, and more around West Summerlin — centered on Glenrock at 360 Talon Heights St."
+      />
       <RealScoutListings />
       <Footer />
     </>
