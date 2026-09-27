@@ -15,6 +15,7 @@ import {
   combineSchemas,
 } from "@/lib/schema";
 import { generateLocalBusinessSchema } from "@/lib/gbp-schema";
+import AmenityMapSection from "@/components/amenities/AmenityMapSection";
 
 const GLENROCK_ADDRESS = "360 Talon Heights St, Las Vegas, NV 89138";
 const GLENROCK_MAP_QUERY = encodeURIComponent(
@@ -449,6 +450,10 @@ export default function GrandParkPage() {
           <p className="text-center text-sm text-slate-500">Last updated: September 24, 2026</p>
         </div>
       </main>
+      <AmenityMapSection
+        title="What's near Grand Park Village"
+        subtitle="Filter restaurants, parks, schools, healthcare, and more around West Summerlin — centered on Glenrock at 360 Talon Heights St."
+      />
       <RealScoutListings />
       <Footer />
     </>

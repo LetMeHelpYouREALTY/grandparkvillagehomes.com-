@@ -6,6 +6,7 @@ import Footer from "@/components/layouts/Footer";
 import SchemaScript from "@/components/SchemaScript";
 import { grandParkImages } from "@/lib/grand-park-media";
 import { combineSchemas, generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
+import AmenityMapSection from "@/components/amenities/AmenityMapSection";
 
 export const metadata: Metadata = {
   title: "Grand Park 90-Acre Central Park | West Summerlin",
@@ -107,6 +108,10 @@ export default function GrandParkParkPage() {
           </section>
         </div>
       </main>
+      <AmenityMapSection
+        title="Parks and recreation near Grand Park"
+        subtitle="See parks, trails, and recreation around the 90-acre village park and greater West Summerlin."
+      />
       <Footer />
     </>
   );

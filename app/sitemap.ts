@@ -66,6 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/neighborhoods/grand-park/glenrock`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/grand-park/builders`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/grand-park/park`, priority: 0.8, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/amenities`, priority: 0.85, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/henderson`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/green-valley`, priority: 0.7, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/the-ridges`, priority: 0.8, changeFrequency: "weekly" as const },

@@ -18,6 +18,7 @@ import {
   HelpCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
+import AmenityMapSection from "@/components/amenities/AmenityMapSection";
 
 export const metadata: Metadata = {
   title: "Berkshire Hathaway HomeServices New Construction Las Vegas | Buyer's Guide",
@@ -697,6 +698,10 @@ export default function NewConstructionPage() {
           Last Updated: January 2026 | Incentives subject to change
         </div>
       </main>
+      <AmenityMapSection
+        title="New construction near Grand Park Village"
+        subtitle="Grand Park builders sit west of the 215 — use the map to see grocery, schools, and Summerlin destinations from your future address."
+      />
       <RealScoutListings />
       <Footer />
     </>

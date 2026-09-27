@@ -27,6 +27,7 @@ export default function Navbar() {
     { href: "/", label: "Home", external: false },
     { href: "https://drjanduffy.realscout.com/", label: "Properties", external: true },
     { href: "/neighborhoods", label: "Neighborhoods", external: false },
+    { href: "/amenities", label: "Nearby Amenities", external: false },
     { href: "/about", label: "About", external: false },
     { href: "/contact", label: "Contact", external: false },
   ];
