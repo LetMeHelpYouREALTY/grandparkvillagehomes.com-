@@ -57,13 +57,18 @@ function generateFeaturedPlacesItemList() {
       item: {
         "@type": place.schemaType,
         name: place.name,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: place.address,
-          addressLocality: GRAND_PARK_COMMUNITY.city,
-          addressRegion: GRAND_PARK_COMMUNITY.state,
-          addressCountry: "US",
-        },
+        url: place.sourceUrl,
+        ...(place.address
+          ? {
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: place.address,
+                addressLocality: GRAND_PARK_COMMUNITY.city,
+                addressRegion: GRAND_PARK_COMMUNITY.state,
+                addressCountry: "US",
+              },
+            }
+          : {}),
       },
     })),
   };
@@ -144,7 +149,7 @@ const categorySections = [
     id: "golf",
     title: "Golf",
     body:
-      "TPC Summerlin hosts PGA Tour events and offers public tee times in the heart of Summerlin. Bears Best, Siena Golf Club, and Angel Park are also within a typical 15–25 minute drive from Grand Park (approximate).",
+      "TPC Las Vegas, Angel Park, and Bear’s Best are within a typical 15–25 minute drive from Grand Park (approximate).",
   },
   {
     id: "healthcare",
@@ -191,7 +196,7 @@ export default function AmenitiesPage() {
 
         <AmenityMapSection
           title="Interactive amenity map"
-          subtitle={`Centered on ${GRAND_PARK_COMMUNITY.address}. Filter by category or open the fallback map if the API key is not set.`}
+          subtitle={`Centered on ${GRAND_PARK_COMMUNITY.address}. Filter by category to explore dining, parks, schools, and more.`}
           showFullLink={false}
           id="amenities-map"
         />

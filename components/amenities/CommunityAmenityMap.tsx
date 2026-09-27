@@ -4,52 +4,23 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import AmenityMapFallback, { AmenityMapSkeleton } from "@/components/amenities/AmenityMapFallback";
 import {
   AMENITY_CATEGORIES,
+  CURATED_NEARBY_PLACES,
   GRAND_PARK_COMMUNITY,
   type AmenityCategoryId,
-  googleMapsDirectionsUrl,
+  type CuratedPlace,
 } from "@/lib/grand-park-amenity-config";
+import { loadGoogleMaps, mapsAuthFailed } from "@/lib/google-maps-loader";
+import { placeDisplayName, placePosition, searchCategory } from "@/lib/grand-park-places-search";
+import {
+  buildCommunityInfoContent,
+  buildPlaceInfoContent,
+} from "@/lib/grand-park-map-info";
 
 const MAP_HEIGHT_PX = 420;
 const DEFAULT_CATEGORY: AmenityCategoryId = "parks";
 
-function loadGoogleMapsScript(apiKey: string): Promise<void> {
-  if (typeof window === "undefined") {
-    return Promise.reject(new Error("no window"));
-  }
-  if (window.google?.maps) {
-    return Promise.resolve();
-  }
-
-  const existing = document.querySelector<HTMLScriptElement>(
-    'script[data-grand-park-maps="true"]'
-  );
-  if (existing) {
-    return new Promise((resolve, reject) => {
-      existing.addEventListener("load", () => resolve());
-      existing.addEventListener("error", () => reject(new Error("maps script error")));
-    });
-  }
-
-  return new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${encodeURIComponent(
-      apiKey
-    )}&libraries=places&v=weekly&loading=async`;
-    script.async = true;
-    script.defer = true;
-    script.dataset.grandParkMaps = "true";
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error("maps script error"));
-    document.head.appendChild(script);
-  });
-}
-
-function escapeHtml(value: string): string {
-  return value
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
+function curatedForCategory(categoryId: AmenityCategoryId): CuratedPlace[] {
+  return CURATED_NEARBY_PLACES.filter((p) => p.category === categoryId);
 }
 
 type CommunityAmenityMapProps = {
@@ -72,8 +43,26 @@ export default function CommunityAmenityMap({
   const [inView, setInView] = useState(false);
   const [activeCategory, setActiveCategory] = useState<AmenityCategoryId>(DEFAULT_CATEGORY);
   const [mapReady, setMapReady] = useState(false);
-  const [loadFailed, setLoadFailed] = useState(false);
+  const [useFallback, setUseFallback] = useState(() => !apiKey || mapsAuthFailed);
   const [searchStatus, setSearchStatus] = useState<"idle" | "loading" | "error">("idle");
+  const [showCuratedForCategory, setShowCuratedForCategory] = useState<CuratedPlace[]>([]);
+
+  const enterFallback = useCallback(() => {
+    markersRef.current.forEach((marker) => marker.setMap(null));
+    markersRef.current = [];
+    communityMarkerRef.current?.setMap(null);
+    communityMarkerRef.current = null;
+    infoWindowRef.current?.close();
+    mapRef.current = null;
+    setMapReady(false);
+    setUseFallback(true);
+  }, []);
+
+  useEffect(() => {
+    const onAuthFailure = () => enterFallback();
+    window.addEventListener("gmaps:auth-failure", onAuthFailure);
+    return () => window.removeEventListener("gmaps:auth-failure", onAuthFailure);
+  }, [enterFallback]);
 
   useEffect(() => {
     const node = sectionRef.current;
@@ -109,53 +98,32 @@ export default function CommunityAmenityMap({
       label: { text: "★", color: "#ffffff" },
     });
     marker.addListener("click", () => {
-      const iw =
-        infoWindowRef.current ??
-        new google.maps.InfoWindow({
-          content: `<div style="max-width:240px;padding:4px 0">
-            <strong>${escapeHtml(name)}</strong><br/>
-            <span>${escapeHtml(address)}</span><br/>
-            <a href="${googleMapsDirectionsUrl(address)}" target="_blank" rel="noopener noreferrer">Directions</a>
-          </div>`,
-        });
+      const iw = infoWindowRef.current ?? new google.maps.InfoWindow();
       infoWindowRef.current = iw;
+      iw.setContent(buildCommunityInfoContent(name, address));
       iw.open({ map, anchor: marker });
     });
     communityMarkerRef.current = marker;
   }, []);
 
-  const searchCategory = useCallback(
+  const runCategorySearch = useCallback(
     async (map: google.maps.Map, categoryId: AmenityCategoryId) => {
       const category = AMENITY_CATEGORIES.find((c) => c.id === categoryId);
       if (!category) return;
 
       setSearchStatus("loading");
+      setShowCuratedForCategory([]);
       clearMarkers();
       showCommunityMarker(map);
 
       try {
-        const placesLibrary = (await google.maps.importLibrary(
-          "places"
-        )) as google.maps.PlacesLibrary;
-        const { Place } = placesLibrary;
-        const { center, searchRadiusMeters } = GRAND_PARK_COMMUNITY;
-
-        const { places } = await Place.searchNearby({
-          fields: ["displayName", "formattedAddress", "rating", "location"],
-          locationRestriction: {
-            center,
-            radius: searchRadiusMeters,
-          },
-          includedPrimaryTypes: category.placeTypes,
-          maxResultCount: 15,
-        });
-
+        const places = await searchCategory(GRAND_PARK_COMMUNITY.center, categoryId);
         const bounds = new google.maps.LatLngBounds();
-        bounds.extend(center);
+        bounds.extend(GRAND_PARK_COMMUNITY.center);
 
         places.forEach((place) => {
-          const position = place.location;
-          const displayName = place.displayName ?? "Place";
+          const position = placePosition(place);
+          const displayName = placeDisplayName(place);
           const address = place.formattedAddress ?? "";
           if (!position) return;
 
@@ -166,20 +134,11 @@ export default function CommunityAmenityMap({
             title: displayName,
           });
           marker.addListener("click", () => {
-            const rating =
-              place.rating !== undefined ? `<br/>Rating: ${place.rating.toFixed(1)}` : "";
-            const dest = address || `${position.lat},${position.lng}`;
-            const iw =
-              infoWindowRef.current ??
-              new google.maps.InfoWindow();
+            const dest =
+              address || place.googleMapsURI || `${position.lat},${position.lng}`;
+            const iw = infoWindowRef.current ?? new google.maps.InfoWindow();
             infoWindowRef.current = iw;
-            iw.setContent(
-              `<div style="max-width:260px;padding:4px 0">
-                <strong>${escapeHtml(displayName)}</strong>${rating}<br/>
-                ${address ? `<span>${escapeHtml(address)}</span><br/>` : ""}
-                <a href="${googleMapsDirectionsUrl(dest)}" target="_blank" rel="noopener noreferrer">Directions</a>
-              </div>`
-            );
+            iw.setContent(buildPlaceInfoContent(displayName, address, dest));
             iw.open({ map, anchor: marker });
           });
           markersRef.current.push(marker);
@@ -188,12 +147,13 @@ export default function CommunityAmenityMap({
         if (places.length > 0) {
           map.fitBounds(bounds);
         } else {
-          map.setCenter(center);
+          map.setCenter(GRAND_PARK_COMMUNITY.center);
           map.setZoom(13);
         }
         setSearchStatus("idle");
       } catch {
         setSearchStatus("error");
+        setShowCuratedForCategory(curatedForCategory(categoryId));
         map.setCenter(GRAND_PARK_COMMUNITY.center);
         map.setZoom(13);
         showCommunityMarker(map);
@@ -203,15 +163,13 @@ export default function CommunityAmenityMap({
   );
 
   useEffect(() => {
-    if (!apiKey || !inView || loadFailed || mapReady) return;
+    if (!apiKey || !inView || useFallback || mapReady || mapsAuthFailed) return;
 
     let cancelled = false;
 
-    (async () => {
-      try {
-        await loadGoogleMapsScript(apiKey);
+    loadGoogleMaps(apiKey)
+      .then(() => {
         if (cancelled || !mapContainerRef.current) return;
-
         const map = new google.maps.Map(mapContainerRef.current, {
           center: GRAND_PARK_COMMUNITY.center,
           zoom: 13,
@@ -224,22 +182,22 @@ export default function CommunityAmenityMap({
         });
         mapRef.current = map;
         setMapReady(true);
-      } catch {
-        if (!cancelled) setLoadFailed(true);
-      }
-    })();
+      })
+      .catch(() => {
+        if (!cancelled) enterFallback();
+      });
 
     return () => {
       cancelled = true;
     };
-  }, [apiKey, inView, loadFailed, mapReady, mapId]);
+  }, [apiKey, inView, useFallback, mapReady, mapId, enterFallback]);
 
   useEffect(() => {
     if (!mapReady || !mapRef.current) return;
-    void searchCategory(mapRef.current, activeCategory);
-  }, [activeCategory, mapReady, searchCategory]);
+    void runCategorySearch(mapRef.current, activeCategory);
+  }, [activeCategory, mapReady, runCategorySearch]);
 
-  if (!apiKey || loadFailed) {
+  if (useFallback) {
     return (
       <AmenityMapFallback
         title="Nearby amenities map"
@@ -293,10 +251,31 @@ export default function CommunityAmenityMap({
         ) : null}
         {searchStatus === "error" ? (
           <p className="absolute bottom-3 left-3 rounded-md bg-amber-50 px-3 py-1 text-xs text-amber-900 shadow">
-            Could not load places for this filter. Try another category.
+            Live results unavailable — featured places for this category are listed below.
           </p>
         ) : null}
       </div>
+
+      {showCuratedForCategory.length > 0 ? (
+        <div>
+          <h3 className="text-lg font-semibold text-slate-900 mb-3">
+            Featured places ({AMENITY_CATEGORIES.find((c) => c.id === activeCategory)?.label})
+          </h3>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {showCuratedForCategory.map((place) => (
+              <li
+                key={`${place.name}-${place.address ?? place.sourceUrl}`}
+                className="rounded-xl border border-slate-200 bg-white p-4 text-sm"
+              >
+                <p className="font-semibold text-slate-900">{place.name}</p>
+                {place.address ? <p className="text-slate-600 mt-1">{place.address}</p> : null}
+                {place.note ? <p className="text-slate-500 mt-2">{place.note}</p> : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       <p className="text-xs text-slate-500">
         ★ marks {GRAND_PARK_COMMUNITY.name}. Results from Google Places near{" "}
         {GRAND_PARK_COMMUNITY.regionLabel}.

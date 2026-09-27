@@ -35,7 +35,7 @@ export default function AmenityMapFallback({
         />
       </div>
       <p className="text-sm text-slate-600">
-        Interactive amenity search loads when a Google Maps API key is configured. Center:{" "}
+        Map centered on{" "}
         <span className="font-medium text-slate-800">{address}</span>
         {" · "}
         <a
@@ -60,14 +60,25 @@ export default function AmenityMapFallback({
                 <p className="font-semibold text-slate-900">{place.name}</p>
                 <p className="text-slate-600 mt-1">{place.address}</p>
                 {place.note ? <p className="text-slate-500 mt-2">{place.note}</p> : null}
-                <a
-                  href={googleMapsDirectionsUrl(place.address)}
-                  className="mt-2 inline-block text-blue-600 hover:text-blue-800 font-medium"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  Directions
-                </a>
+                {place.address ? (
+                  <a
+                    href={googleMapsDirectionsUrl(place.address)}
+                    className="mt-2 inline-block text-blue-600 hover:text-blue-800 font-medium"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Directions
+                  </a>
+                ) : (
+                  <a
+                    href={place.sourceUrl}
+                    className="mt-2 inline-block text-blue-600 hover:text-blue-800 font-medium"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Official site
+                  </a>
+                )}
               </li>
             ))}
           </ul>
