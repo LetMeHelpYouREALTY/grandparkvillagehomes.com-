@@ -56,7 +56,7 @@ export const neighborhoods = [
   {
     name: "Grand Park",
     slug: "grand-park",
-    description: "Summerlin's newest village in West Summerlin, new construction from about $400,000 to over $2 million",
+    description: "One of Summerlin's newest villages, in West Summerlin, new construction from the $400,000s to nearly $2 million",
     medianPrice: "$827K ZIP 89138 median list",
     highlights: ["90+ acre park", "Glenrock", "New construction", "West of the 215"],
   },

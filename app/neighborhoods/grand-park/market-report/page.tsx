@@ -17,9 +17,7 @@ const canonicalUrl = `${siteConfig.url}${path}`;
 const title = `Grand Park Market Report ${m.month}`;
 const lowest = m.collections[0];
 const highest = m.collections[m.collections.length - 1];
-const description = `Grand Park village, ${m.month}: ${m.collections.length} builder collections from ${usd(
-  lowest.priceFrom,
-)} to ${usd(highest.priceFrom)}+, price per square foot by neighborhood. Updated monthly by Dr. Jan Duffy.`;
+const description = `Grand Park village, ${m.month}: ${m.collections.length} builder collections from ${m.lowLabel} to ${m.highLabel}, price per square foot by neighborhood. Updated monthly by Dr. Jan Duffy.`;
 
 export const metadata: Metadata = {
   title,
@@ -40,7 +38,7 @@ const reportSchema = {
   about: { "@id": `${siteConfig.url}/neighborhoods/grand-park#place` },
 };
 
-const rows = m.collections.map((c) => ({ ...c, psf: perSqft(c.priceFrom, c.sqftHigh) }));
+const rows = m.collections.map((c) => ({ ...c, psf: perSqft(c.priceFrom, c.sqftLow) }));
 const qmi = m.quickMoveIn;
 
 export default function GrandParkMarketReportPage() {
@@ -70,8 +68,7 @@ export default function GrandParkMarketReportPage() {
             </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
               {m.neighborhoods} neighborhoods, {m.floorplans} floor plans, and homes from {m.sqftRange} square feet in
-              West Summerlin ({m.zip}). Builder prices start near {usd(lowest.priceFrom)} and top out above{" "}
-              {usd(highest.priceFrom)}.
+              West Summerlin ({m.zip}). Builder prices run from {m.lowLabel} to {m.highLabel}.
             </p>
           </div>
           <RealScoutListings compact {...realscoutRange(path)} />
@@ -80,9 +77,9 @@ export default function GrandParkMarketReportPage() {
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Grand Park by the Numbers</h2>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                { value: usd(lowest.priceFrom), label: "Lowest builder price", note: lowest.name },
-                { value: usd(highest.priceFrom), label: "Top collection, from", note: highest.name },
-                { value: String(m.mls.village29Listed), label: "Homes on the MLS", note: `${usd(m.mls.village29Low)}–${usd(m.mls.village29High)}, ${m.mls.village29AsOf}` },
+                { value: "$400Ks", label: "Lowest builder prices", note: lowest.name },
+                { value: "~$1.9M", label: "Top collection, from", note: highest.name },
+                { value: String(m.mls.village29Listed), label: "Listed on the MLS (Village 29)", note: `${usd(m.mls.village29Low)}–${usd(m.mls.village29High)}, ${m.mls.village29AsOf}` },
                 { value: `${m.mls.zipMedianDom} days`, label: "Median days on market", note: `ZIP ${m.zip}, ${m.mls.zipAsOf}` },
               ].map((s) => (
                 <div key={s.label} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
@@ -97,7 +94,7 @@ export default function GrandParkMarketReportPage() {
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-2">Every Grand Park Collection</h2>
             <p className="text-slate-600 mb-6">
-              Builder &quot;from&quot; prices, lowest to highest. Price per square foot uses the starting price and the largest plan.
+              Builder &quot;from&quot; prices, lowest to highest. Price per square foot uses the starting price and the smallest plan.
             </p>
             <div className="overflow-x-auto rounded-xl border border-slate-200">
               <table className="w-full text-left text-sm">
@@ -135,13 +132,13 @@ export default function GrandParkMarketReportPage() {
               <AgentPhoto size={64} className="mt-1 ring-2 ring-amber-400" />
               <div className="space-y-4 text-lg text-slate-700">
                 <p>
-                  <strong>Grand Park covers almost every budget.</strong> Townhomes at Caldwell Park start in the high
-                  $300,000s. Lennar&apos;s Fairview single-story homes run about $1.9 million and up.
+                  <strong>Grand Park covers almost every budget.</strong> Townhomes at Caldwell Park start in the
+                  $400,000s. Lennar&apos;s Fairview single-story homes run from just under $1.9 million to nearly $2 million.
                 </p>
                 <p>
                   <strong>Base price is not the final price.</strong> At Arcadia, a finished Pinyon on Homesite 37
-                  lists at {usd(1990887)}, about 19% above the plan&apos;s {usd(1674990)} base. Glenrock has a finished
-                  home too: {qmi.label}, {qmi.sqft.toLocaleString()} square feet, at {usd(qmi.price)}. Budget for lot
+                  lists at {usd(1990887)}, about 19% above the plan&apos;s {usd(1674990)} base. Glenrock has two finished
+                  homes, including {qmi.label}, {qmi.sqft.toLocaleString()} square feet, at {usd(qmi.price)}. Budget for lot
                   premiums and options before you visit a sales office.
                 </p>
                 <p>

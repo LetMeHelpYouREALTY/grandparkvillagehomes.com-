@@ -28,7 +28,7 @@ const PAGES: Record<string, PageFacts> = {
   "/": {
     topic: "Grand Park Village Homes",
     place: "West Summerlin, Las Vegas, Nevada",
-    detail: "new homes in Grand Park, from the high $300,000s to over $1.6 million",
+    detail: "new homes in Grand Park, from the $400,000s to nearly $2 million",
   },
   "/about": {
     topic: "her Las Vegas real estate practice",

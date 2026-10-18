@@ -28,7 +28,7 @@ const OFFICE_ADDRESS = "9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134";
 export const metadata: Metadata = {
   title: "Grand Park Village Homes in West Summerlin | Glenrock Map",
   description:
-    "Grand Park village in West Summerlin, Las Vegas 89138: 11 neighborhoods, new homes from the high $300,000s to about $2 million. Glenrock map, builder prices, and buyer representation from Dr. Jan Duffy. Call (702) 500-1942.",
+    "Grand Park village in West Summerlin, Las Vegas 89138: 11 neighborhoods, new homes from the $400,000s to nearly $2 million. Glenrock map, builder prices, and buyer representation from Dr. Jan Duffy. Call (702) 500-1942.",
   keywords: [
     "Grand Park Summerlin",
     "Glenrock Toll Brothers",
@@ -49,12 +49,12 @@ const grandParkFaqs = [
   {
     question: "Where is Grand Park in Summerlin?",
     answer:
-      "Grand Park is in West Summerlin, west of the 215 Beltway along Sky Vista Drive and Far Hills Drive, next to the Redpoint and Kestrel districts. The Glenrock sales gallery is at 360 Talon Heights St, Las Vegas, NV 89138.",
+      "Grand Park is in West Summerlin, west of the 215 Beltway north of Far Hills Avenue, next to the Redpoint and Kestrel districts. The Glenrock sales gallery is at 360 Talon Heights St, Las Vegas, NV 89138.",
   },
   {
     question: "What do homes in Grand Park cost?",
     answer:
-      "As of October 2026, builder prices in Grand Park start in the high $300,000s for Caldwell Park townhomes and reach about $1.9 million and up at Lennar's Fairview. See the Grand Park market report for every collection's price.",
+      "As of October 2026, builder prices in Grand Park start in the $400,000s for Caldwell Park townhomes and reach nearly $2 million at Lennar's Fairview. See the Grand Park market report for every collection's price.",
   },
   {
     question: "What home types are available in Grand Park?",
@@ -86,7 +86,7 @@ const pageSchemas = combineSchemas(
     name: "Grand Park at Summerlin",
     slug: "grand-park",
     description:
-      "Summerlin’s newest village in West Las Vegas 89138. Eleven neighborhoods of new construction from the high $300,000s to about $2 million, planned around a 90-plus-acre park. Glenrock by Toll Brothers is at 360 Talon Heights St, Las Vegas, NV 89138.",
+      "One of Summerlin’s newest villages, in West Las Vegas 89138. Eleven neighborhoods of new construction from the $400,000s to nearly $2 million, planned around a 90-plus-acre park. Glenrock by Toll Brothers is at 360 Talon Heights St, Las Vegas, NV 89138.",
     containedIn: "Las Vegas",
   }),
   generateFAQSchema(grandParkFaqs)
@@ -134,7 +134,7 @@ export default function GrandParkPage() {
               Grand Park Village Homes in West Summerlin
             </h1>
             <p className="text-xl text-slate-600">
-              Grand Park is Summerlin’s newest village in Las Vegas. Builder prices run from the high $300,000s to about $2 million across 11 neighborhoods.
+              Grand Park is one of Summerlin’s newest villages in Las Vegas. Builder prices run from the $400,000s to nearly $2 million across 11 neighborhoods.
             </p>
             <div className="mx-auto mt-8 max-w-sm text-left">
               <DrJanPortrait variant="feature" pathname="/neighborhoods/grand-park" />
@@ -254,7 +254,7 @@ export default function GrandParkPage() {
             <h2 className="text-3xl font-bold mb-8 text-center">Price Range | {m.month}</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-1">High $300s</div>
+                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-1">$400s</div>
                 <div className="text-slate-300 text-sm">Caldwell Park townhomes</div>
               </div>
               <div className="text-center">
@@ -262,7 +262,7 @@ export default function GrandParkPage() {
                 <div className="text-slate-300 text-sm">ZIP {m.zip} median list</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-1">~$1.9M+</div>
+                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-1">~$2M</div>
                 <div className="text-slate-300 text-sm">Fairview by Lennar</div>
               </div>
               <div className="text-center">
@@ -282,7 +282,7 @@ export default function GrandParkPage() {
           <section className="mb-16 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-6">Overview of Grand Park Village</h2>
             <p className="text-lg text-slate-700 mb-8">
-              Grand Park sits in West Summerlin, west of the 215 Beltway along Sky Vista Drive and Far Hills Drive, beside Redpoint and Kestrel. Homes are single-family, paired, and attached townhomes.
+              Grand Park sits in West Summerlin, west of the 215 Beltway north of Far Hills Avenue, beside Redpoint and Kestrel. Homes are single-family, paired, and attached townhomes.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-slate-50 p-6 rounded-xl">
@@ -291,7 +291,7 @@ export default function GrandParkPage() {
                   <h3 className="font-bold text-slate-900 text-lg">Location</h3>
                 </div>
                 <p className="text-slate-600">
-                  West Summerlin, west of the 215. Sky Vista Drive and Far Hills Drive frame the village. Glenrock’s gallery is at {GLENROCK_ADDRESS}.
+                  West Summerlin, west of the 215. The village sits north of Far Hills Avenue. Glenrock’s gallery is at {GLENROCK_ADDRESS}.
                 </p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl">
@@ -328,7 +328,7 @@ export default function GrandParkPage() {
                   <h3 className="font-bold text-slate-900 text-lg">Price Range</h3>
                 </div>
                 <p className="text-slate-600">
-                  High $300,000s to about $2 million, depending on the neighborhood and collection.{" "}
+                  From the $400,000s to nearly $2 million, depending on the neighborhood and collection.{" "}
                   <Link href="/neighborhoods/grand-park/market-report" className="text-blue-700 font-medium">
                     Prices by collection
                   </Link>

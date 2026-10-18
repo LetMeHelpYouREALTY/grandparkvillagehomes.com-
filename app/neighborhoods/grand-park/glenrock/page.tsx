@@ -68,7 +68,7 @@ export default function GlenrockPage() {
           <header className="mx-auto mb-10 max-w-3xl">
             <h1 className="text-4xl font-bold text-slate-900 md:text-5xl">Glenrock at Grand Park Village Homes</h1>
             <p className="mt-4 text-xl text-slate-600">
-              Glenrock is the Toll Brothers neighborhood in Grand Park, West Summerlin. The sales gallery is at {ADDRESS}. Eight plans run from 2,897 to 4,557 square feet, priced from $1,398,995 as of October 12, 2026. One finished home, a Rosendale at 253 Talon Heights St, is listed at $1,700,000.
+              Glenrock is the Toll Brothers neighborhood in Grand Park, West Summerlin. The sales gallery is at {ADDRESS}. Eight plans run from 2,897 to 4,557 square feet, priced from $1,398,995 as of October 12, 2026. Toll Brothers lists two finished homes, including a Rosendale at 253 Talon Heights St for $1,700,000.
             </p>
           </header>
           <RealScoutListings compact {...realscoutRange("/neighborhoods/grand-park/glenrock")} />
@@ -102,7 +102,7 @@ export default function GlenrockPage() {
           <section className="mx-auto max-w-3xl space-y-4 text-lg text-slate-700">
             <h2 className="text-3xl font-bold text-slate-900">What to know before you visit</h2>
             <p>
-              Grand Park sits west of the 215 Beltway along Sky Vista Drive and Far Hills Drive, next to the Redpoint and Kestrel districts. Glenrock is the gated Toll Brothers collection inside that village.
+              Grand Park sits west of the 215 Beltway north of Far Hills Avenue, next to the Redpoint and Kestrel districts. Glenrock is the gated Toll Brothers collection inside that village.
             </p>
             <p>
               Call Dr. Jan Duffy before your first visit to the sales gallery. Builders usually require your agent to be registered at that first visit. Her office is at 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134.

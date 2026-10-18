@@ -23,21 +23,23 @@ export const grandParkMarket = {
   neighborhoods: 11,
   floorplans: "70+",
   sqftRange: "1,430–4,731",
+  lowLabel: "the $400,000s",
+  highLabel: "nearly $2 million",
 
   collections: [
-    { name: "The Groves at Caldwell Park", builder: "KB Home", homeType: "Townhomes", sqftLow: 1430, sqftHigh: 1947, priceFrom: 380000, priceNote: "high $300,000s to mid-$400,000s", source: "summerlin.com, Sept 14, 2026" },
+    { name: "The Groves at Caldwell Park", builder: "KB Home", homeType: "Townhomes", sqftLow: 1430, sqftHigh: 1947, priceFrom: 400000, priceNote: "from the $400,000s", source: "summerlin.com, Oct 13, 2026" },
     { name: "The Landings at Caldwell Park", builder: "KB Home", homeType: "Single-family", sqftLow: 1832, sqftHigh: 2466, priceFrom: 550000, priceNote: "mid- to high $500,000s", source: "summerlin.com, Oct 13, 2026" },
     { name: "Iris Glen", builder: "Richmond American", homeType: "Paired homes", sqftLow: 2040, sqftHigh: 2450, priceFrom: 580000, priceNote: "from the high $500,000s", source: "summerlin.com, July 20, 2026" },
     { name: "Alton", builder: "KB Home", homeType: "Single-family", sqftLow: 1634, sqftHigh: 3063, priceFrom: 600000, priceNote: "$600,000s to mid-$800,000s", source: "summerlin.com, Sept 14, 2026" },
     { name: "Aberdeen", builder: "Tri Pointe Homes", homeType: "Single-family", sqftLow: 1869, sqftHigh: 2687, priceFrom: 680000, priceNote: "from the high $600,000s", source: "summerlin.com, July 20, 2026" },
-    { name: "Brantley", builder: "Pulte Homes", homeType: "Single-family", sqftLow: 2194, sqftHigh: 4731, priceFrom: 900000, priceNote: "about $900,000 to over $1.5 million", source: "summerlin.com, July 20, 2026" },
+    { name: "Brantley", builder: "Pulte Homes", homeType: "Single-family", sqftLow: 2194, sqftHigh: 4731, priceFrom: 850000, priceNote: "high $800,000s to more than $1.5 million", source: "summerlin.com, Oct 13, 2026" },
     { name: "Edgewood", builder: "Tri Pointe Homes", homeType: "Single-family", sqftLow: 1995, sqftHigh: 2516, priceFrom: 900000, priceNote: "from the $900,000s (final homes)", source: "summerlin.com, Sept 14, 2026" },
     { name: "Ashland", builder: "Taylor Morrison", homeType: "Single-story", sqftLow: 2450, sqftHigh: 3306, priceFrom: 1000000, priceNote: "from just over $1 million", source: "summerlin.com, Oct 13, 2026" },
-    { name: "Primrose Park", builder: "Richmond American", homeType: "Single-family", sqftLow: 3410, sqftHigh: 3690, priceFrom: 1100000, priceNote: "from about $1.1 million", source: "summerlin.com, July 20, 2026" },
+    { name: "Primrose Park", builder: "Richmond American", homeType: "Single-family", sqftLow: 3410, sqftHigh: 3690, priceFrom: 1100000, priceNote: "just over $1.1 million to more than $1.2 million", source: "summerlin.com, Oct 13, 2026" },
     { name: "Glenrock", builder: "Toll Brothers", homeType: "Gated single-family", sqftLow: 2897, sqftHigh: 4557, priceFrom: 1398995, priceNote: "$1,398,995 to nearly $1.9 million", source: "tollbrothers.com, Oct 12, 2026" },
-    { name: "Carlisle Peak & Ridge", builder: "Tri Pointe Homes", homeType: "Single-family", sqftLow: 3234, sqftHigh: 4283, priceFrom: 1400000, priceNote: "about $1.4 million to $1.6 million", source: "summerlin.com, July 20, 2026" },
+    { name: "Carlisle Peak & Ridge", builder: "Tri Pointe Homes", homeType: "Single-family", sqftLow: 3234, sqftHigh: 4283, priceFrom: 1400000, priceNote: "over $1.4 million to just under $1.8 million", source: "summerlin.com, Oct 13, 2026" },
     { name: "Arcadia", builder: "SHAWOOD", homeType: "Gated single-family", sqftLow: 3176, sqftHigh: 3399, priceFrom: 1584990, priceNote: "from $1,584,990", source: "shawood.com, Oct 17, 2026" },
-    { name: "Fairview", builder: "Lennar", homeType: "Single-story", sqftLow: 3793, sqftHigh: 3972, priceFrom: 1900000, priceNote: "about $1.9 million to over $2 million", source: "summerlin.com, July 20, 2026" },
+    { name: "Fairview", builder: "Lennar", homeType: "Single-story", sqftLow: 3793, sqftHigh: 3972, priceFrom: 1880000, priceNote: "just under $1.9 million to nearly $2 million", source: "summerlin.com, Oct 13, 2026" },
   ] satisfies Collection[],
 
   /** A finished home a builder is selling now. */
@@ -46,6 +48,7 @@ export const grandParkMarket = {
   /** MLS context for ZIP 89138 (the whole ZIP, not Grand Park alone). */
   mls: {
     village29Listed: 31,
+    grandParkListed: 49,
     village29Low: 409750,
     village29High: 2085961,
     village29AsOf: "2026-09-29",

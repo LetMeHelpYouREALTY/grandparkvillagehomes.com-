@@ -13,7 +13,7 @@ import { combineSchemas, generateBreadcrumbSchema, generateFAQSchema } from "@/l
 export const metadata: Metadata = {
   title: "Grand Park 90-Acre Central Park | West Summerlin",
   description:
-    "Grand Park Village in West Summerlin is planned around a 90-plus-acre park with baseball and softball fields, basketball, pickleball, playgrounds, a splash pad, and fitness stations. Dr. Jan Duffy.",
+    "Grand Park Village in West Summerlin is planned around a 90-plus-acre park with baseball fields, basketball, pickleball, playgrounds, a splash pad, and fitness stations. Dr. Jan Duffy.",
   keywords: [
     "Grand Park central park Summerlin",
     "Grand Park pickleball",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 const amenities = [
-  "Baseball and softball fields",
+  "Baseball and  fields",
   "Basketball courts",
   "Pickleball courts",
   "Playgrounds",
@@ -40,12 +40,12 @@ const faqs = [
   {
     question: "What is in the Grand Park central park?",
     answer:
-      "The plan includes baseball and softball fields, basketball courts, pickleball courts, playgrounds, a splash pad, and fitness stations.",
+      "The plan includes baseball fields, basketball courts, pickleball courts, playgrounds, a splash pad, and fitness stations.",
   },
   {
     question: "Which homes sit next to the park?",
     answer:
-      "Single-family homes, paired homes, and townhomes from about 1,430 square feet to more than 4,500 square feet surround the park. As of October 2026, builder prices run from the high $300,000s to about $2 million.",
+      "Single-family homes, paired homes, and townhomes from about 1,430 square feet to more than 4,500 square feet surround the park. As of October 2026, builder prices run from the $400,000s to nearly $2 million.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function GrandParkParkPage() {
             <p className="text-sm font-semibold text-blue-700">Grand Park Village Homes</p>
             <h1 className="mt-2 text-4xl font-bold text-slate-900 md:text-5xl">The 90-acre park in Grand Park</h1>
             <p className="mt-4 text-xl text-slate-600">
-              Grand Park Village in West Summerlin is built around a central park of more than 90 acres, along Sky Vista Drive and Far Hills Drive, west of the 215 Beltway.
+              Grand Park Village in West Summerlin is built around a central park of more than 90 acres, north of Far Hills Avenue, west of the 215 Beltway.
             </p>
           </header>
           <RealScoutListings compact {...realscoutRange("/neighborhoods/grand-park/park")} />

@@ -30,7 +30,7 @@ const neighborhoods = [
     medianPrice: "From ~$400K",
     priceChange: "New",
     description:
-      "Summerlin's newest village in West Summerlin 89138, built around a 90-plus-acre park. Townhomes and single-family homes from about $400,000 to over $2 million.",
+      "One of Summerlin's newest villages, in West Summerlin 89138, built around a 90-plus-acre park. Townhomes and single-family homes from the $400,000s to nearly $2 million.",
     highlights: ["Summerlin West 89138", "90+ Acre Park", "Glenrock", "New Construction", "West of the 215"],
     lifestyleNote: "New construction from several builders, west of the 215 Beltway",
   },

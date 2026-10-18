@@ -151,7 +151,7 @@ export default function SummerlinPage() {
                 <Link href="/neighborhoods/grand-park" className="text-blue-600 hover:underline">
                   Grand Park
                 </Link>{" "}
-                is Summerlin&apos;s newest village, west of the 215 Beltway and built around a 90-plus-acre park.
+                is one of Summerlin&apos;s newest villages, west of the 215 Beltway and built around a 90-plus-acre park.
                 New homes there run from about $400,000 for townhomes to over $2 million at SHAWOOD&apos;s Arcadia.
               </p>
               <p>

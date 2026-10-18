@@ -144,7 +144,7 @@ export default async function Home() {
             <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-white">500+</span>
-                <span>Families Served</span>
+                <span>Clients Served</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-white">35 Years</span>
@@ -173,7 +173,7 @@ export default async function Home() {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[
                 { icon: MapPin, title: "Grand Park & Summerlin West", desc: "Builder contracts, lot premiums, and incentives across Grand Park's collections" },
-                { icon: Users, title: "500+ Families Served", desc: "Buyers and sellers across the Las Vegas Valley" },
+                { icon: Users, title: "500+ Clients Served", desc: "Buyers and sellers across the Las Vegas Valley" },
                 { icon: TrendingUp, title: "$127M+ Sold", desc: "35 years in Las Vegas real estate" },
                 { icon: HomeIcon, title: "Full Service", desc: "Buying, selling, 55+, luxury, investment — one expert handles it all" },
               ].map(({ icon: Icon, title, desc }) => (
@@ -205,7 +205,7 @@ export default async function Home() {
                 Homes Around a 90-Acre Park
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mb-8">
-                Summerlin’s newest village, west of the 215 Beltway. Townhomes and single-family homes run from about $400,000 to over $2 million.
+                One of Summerlin’s newest villages, west of the 215 Beltway. Townhomes and single-family homes run from the $400,000s to nearly $2 million.
               </p>
               <div className="mb-8 grid gap-4 md:grid-cols-3">
                 <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">

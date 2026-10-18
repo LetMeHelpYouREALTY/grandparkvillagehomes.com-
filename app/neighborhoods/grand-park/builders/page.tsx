@@ -36,7 +36,7 @@ const faqs = [
   {
     question: "What is the price range across those builders?",
     answer:
-      "As of October 2026, builder prices run from the high $300,000s at Caldwell Park to about $1.9 million and up at Fairview.",
+      "As of October 2026, builder prices run from the $400,000s at Caldwell Park to about $1.9 million and up at Fairview.",
   },
   {
     question: "Do I need my own agent at a builder sales office?",
@@ -66,7 +66,7 @@ export default function GrandParkBuildersPage() {
             <p className="text-sm font-semibold text-blue-700">Grand Park Village Homes</p>
             <h1 className="mt-2 text-4xl font-bold text-slate-900 md:text-5xl">Builders in Grand Park, West Summerlin</h1>
             <p className="mt-4 text-xl text-slate-600">
-              Nine builders sell new homes across Grand Park's 11 neighborhoods. Floor plans run from 1,430 to 4,731 square feet. As of October 2026, prices start in the high $300,000s and reach about $2 million.
+              Eight builders sell new homes across Grand Park's 11 neighborhoods. Floor plans run from 1,430 to 4,731 square feet. As of October 2026, prices start in the $400,000s and reach nearly $2 million.
             </p>
           </header>
           <RealScoutListings compact {...realscoutRange("/neighborhoods/grand-park/builders")} />
