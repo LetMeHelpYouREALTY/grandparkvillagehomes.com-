@@ -1,15 +1,14 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
-import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { 
   Phone, 
   Mail, 
   Award, 
   Users, 
   Home, 
-  TrendingUp, 
   CheckCircle, 
   MapPin,
   Shield,
@@ -19,18 +18,26 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 
+export const revalidate = 86400;
+
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import AgentPhoto from "@/components/AgentPhoto";
+import PageIllustration from "@/components/PageIllustration";
+
 export const metadata: Metadata = {
-  title: "About Dr. Jan Duffy | Berkshire Hathaway HomeServices Las Vegas",
+  title: "About Dr. Jan Duffy | Grand Park & Summerlin West Real Estate",
   description:
-    "Meet Dr. Jan Duffy, your trusted Berkshire Hathaway HomeServices Nevada Properties agent. Serving Las Vegas since 2008, $127M+ in transactions, Henderson & Summerlin specialist. Call (702) 500-1942.",
+    "Dr. Jan Duffy is a REALTOR® with 35 years in Las Vegas real estate and $127M+ in closed transactions. Meet your trusted agent for Grand Park and Summerlin West. Call (702) 500-1942.",
+  authors: [{ name: "Dr. Jan Duffy", url: "https://www.grandparkvillagehomes.com/about" }],
   keywords: [
     "Dr. Jan Duffy",
-    "Berkshire Hathaway HomeServices agent",
+    "Grand Park Village Homes",
     "Las Vegas realtor",
-    "BHHS Nevada Properties",
+    "Summerlin West real estate agent",
     "Henderson real estate agent",
     "Summerlin realtor",
   ],
+  ...selfCanonicalMetadata,
 };
 
 // Person Schema for Dr. Jan Duffy
@@ -39,12 +46,12 @@ const personSchema = {
   "@type": "RealEstateAgent",
   name: "Dr. Jan Duffy",
   jobTitle: "REALTOR®",
+  image: "https://www.grandparkvillagehomes.com/images/agent/dr-jan-duffy-realtor-las-vegas.png",
   description:
-    "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, serving Las Vegas, Henderson, and Summerlin since 2008.",
+    "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, with 35 years serving Las Vegas, Henderson, and Summerlin.",
   telephone: "+17025001942",
   email: "homes@heyberkshire.com",
   url: "https://www.grandparkvillagehomes.com/about",
-  image: "https://www.grandparkvillagehomes.com/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
   worksFor: {
     "@type": "RealEstateAgent",
     name: "Berkshire Hathaway HomeServices Nevada Properties",
@@ -79,7 +86,7 @@ const specializations = [
   },
   {
     title: "Luxury Properties ($1M+)",
-    description: "The Ridges, MacDonald Highlands, Southern Highlands, and exclusive communities",
+    description: "The Ridges, MacDonald Highlands, Southern Highlands, and other guard-gated communities",
   },
   {
     title: "New Construction",
@@ -95,7 +102,7 @@ const specializations = [
   },
   {
     title: "California Relocation",
-    description: "Helping CA families transition to Nevada's tax advantages and lower costs",
+    description: "Helping California buyers move to Nevada's tax advantages and lower costs",
   },
 ];
 
@@ -124,20 +131,24 @@ export default function AboutPage() {
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="container mx-auto px-4">
+          <PageIllustration scene="office" label="Illustration of Las Vegas skyline and neighborhoods at dusk" />
           {/* Hero Section */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Grand Park Village Homes
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Meet Your Berkshire Hathaway HomeServices Agent
+              Meet Dr. Jan Duffy
             </h1>
+            <p className="text-xl text-slate-700 font-medium mb-4">
+              Dr. Jan Duffy is a REALTOR® with 35 years in Las Vegas real estate.
+            </p>
             <p className="text-xl text-slate-600">
-              Dr. Jan Duffy has been serving Las Vegas since 2008—backed by the most
-              trusted name in real estate. Whether you're buying, selling, investing, or 
-              relocating, you'll receive expert guidance with integrity and professionalism.
+              Summerlin West and 55+ specialist. Whether you're buying, selling, investing, or
+              relocating, you'll get expert guidance with integrity and professionalism.
             </p>
           </div>
+          <RealScoutListings compact {...realscoutRange("/about")} />
 
           {/* Agent Profile */}
           <section className="mb-16">
@@ -150,25 +161,20 @@ export default function AboutPage() {
 
                 <div className="prose prose-lg text-slate-700 mb-8 space-y-4">
                   <p>
-                    When you choose to work with <strong>Berkshire Hathaway HomeServices</strong>,
-                    you're choosing a legacy of trust, integrity, and excellence. I'm proud to
-                    represent this iconic brand in the Las Vegas real estate market, bringing 
-                    world-class resources and local expertise to every client I serve.
+                    I've spent 35 years in Las Vegas real estate. I bring that local knowledge
+                    to every client I serve, from first showing to closing day.
                   </p>
                   <p>
-                    Since 2008, I've closed $127 million in transactions and
-                    helped hundreds of families find their perfect home in Las Vegas, Henderson,
+                    Over 35 years, I've closed $127 million in transactions and
+                    helped hundreds of clients find their home in Las Vegas, Henderson,
                     Summerlin, and throughout Southern Nevada. My expertise spans luxury properties,
                     new construction, investment real estate, 55+ active adult communities, and 
-                    relocations—particularly for California families seeking Nevada's tax advantages.
+                    relocations—particularly for California buyers seeking Nevada's tax advantages.
                   </p>
                   <p>
-                    What sets <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
-                    apart? We're backed by Warren Buffett's Berkshire Hathaway Inc.—a name synonymous
-                    with financial strength and ethical standards. When you're making the biggest
-                    financial decision of your life, that trust matters. You deserve an agent who 
-                    puts your interests first, provides honest advice, and has the resources to 
-                    deliver exceptional results.
+                    When you're making the biggest financial decision of your life, trust matters.
+                    You deserve an agent who puts your interests first, gives honest advice, and
+                    has the experience to deliver results.
                   </p>
                   <p>
                     I believe in treating every client like family. Whether you're a first-time 
@@ -195,7 +201,7 @@ export default function AboutPage() {
                       className="flex items-center text-slate-700 hover:text-blue-600"
                     >
                       <Mail className="h-5 w-5 mr-3 text-blue-600" />
-                      Homes@HeyBerkshire.com
+                      homes@heyberkshire.com
                     </a>
                     <div className="flex items-start text-slate-700">
                       <MapPin className="h-5 w-5 mr-3 text-blue-600 mt-0.5" />
@@ -211,6 +217,18 @@ export default function AboutPage() {
                   </div>
                 </div>
 
+                {/* Authority block */}
+                <div className="bg-blue-50 border border-blue-100 rounded-lg p-6">
+                  <p className="font-semibold text-slate-900">Dr. Jan Duffy | NV License #S.0197614.LLC</p>
+                  <p className="text-slate-700 mt-1">Grand Park Village Homes</p>
+                  <p className="text-slate-600 text-sm mt-1">35 years in Las Vegas real estate · Summerlin West luxury specialist</p>
+                  <p className="text-sm mt-2">
+                    <a href="tel:+17025001942" className="text-blue-600 hover:underline font-medium">(702) 500-1942</a>
+                    {" · "}
+                    <a href="https://www.grandparkvillagehomes.com" className="text-blue-600 hover:underline">grandparkvillagehomes.com</a>
+                  </p>
+                </div>
+
                 {/* Quote */}
                 <blockquote className="border-l-4 border-blue-600 pl-6 italic text-slate-700">
                   "My job isn't just to show you houses—it's to make sure you don't overpay, that
@@ -218,21 +236,30 @@ export default function AboutPage() {
                   the transaction. I treat every client like family and won't stop until we achieve 
                   your real estate goals."
                   <cite className="block mt-2 text-slate-900 font-semibold not-italic">
-                    — Dr. Jan Duffy, BHHS Nevada Properties
+                    <span className="inline-flex items-center gap-3 not-italic">
+                      <AgentPhoto size={48} />
+                      <span>— Dr. Jan Duffy, Grand Park Village Homes</span>
+                    </span>
                   </cite>
                 </blockquote>
               </div>
 
               {/* Stats & Credentials */}
               <div className="space-y-6">
-                {/* Agent Photo Placeholder */}
-                <DrJanPortrait variant="feature" pathname="/about" />
+                {/* Agent Photo */}
+                <div className="bg-gradient-to-br from-blue-50 to-slate-100 rounded-lg p-8 flex items-center justify-center">
+                  <div className="text-center">
+                    <AgentPhoto size={320} priority className="mx-auto mb-4 h-auto w-full max-w-[320px]" />
+                    <p className="text-slate-900 font-semibold text-lg">Dr. Jan Duffy, REALTOR®</p>
+                    <p className="text-sm text-slate-500">Grand Park Village Homes · NV License S.0197614.LLC</p>
+                  </div>
+                </div>
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-blue-50 rounded-lg p-6 text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-1">Since 2008</div>
-                    <div className="text-sm text-slate-600">Serving Las Vegas</div>
+                    <div className="text-3xl font-bold text-blue-600 mb-1">35 Years</div>
+                    <div className="text-sm text-slate-600">in Las Vegas Real Estate</div>
                   </div>
                   <div className="bg-blue-50 rounded-lg p-6 text-center">
                     <div className="text-3xl font-bold text-blue-600 mb-1">$127M+</div>
@@ -264,7 +291,7 @@ export default function AboutPage() {
                       <ArrowRight className="h-4 w-4 mr-2 text-blue-600" />
                       Free Home Valuation
                     </Link>
-                    <a href="https://drjanduffy.realscout.com/" target="_blank" rel="noopener noreferrer" className="flex items-center text-slate-700 hover:text-blue-600">
+                    <a href="http://drjanduffy.realscout.com/" target="_blank" rel="noopener noreferrer" className="flex items-center text-slate-700 hover:text-blue-600">
                       <ArrowRight className="h-4 w-4 mr-2 text-blue-600" />
                       Browse Listings
                     </a>
@@ -281,8 +308,8 @@ export default function AboutPage() {
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Dr. Jan Duffy brings specialized expertise across multiple real estate categories. 
-              Whether you're a first-time buyer, luxury home seeker, investor, or retiree looking 
-              for the perfect 55+ community, you'll receive tailored guidance for your specific needs.
+              Whether you're a first-time buyer, luxury home seeker, investor, or looking
+              for a 55+ active adult community, you'll receive tailored guidance for your specific needs.
             </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {specializations.map((spec) => (
@@ -297,62 +324,58 @@ export default function AboutPage() {
             </div>
           </section>
 
-          {/* Why BHHS Section */}
+          {/* Why Work with Dr. Jan Section */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-              Why Berkshire Hathaway HomeServices?
+              Why Work with Dr. Jan?
             </h2>
             <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
-              Berkshire Hathaway HomeServices is the only real estate brand backed by Warren 
-              Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, 
-              ethical standards, and a commitment to client service that defines every transaction.
+              Local experience, a proven track record, and honest advice on every transaction.
             </p>
             <div className="grid md:grid-cols-3 gap-8 mb-8">
               <div className="text-center">
                 <div className="bg-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Award className="h-8 w-8" />
                 </div>
-                <h3 className="font-bold text-xl mb-2">Trusted Brand</h3>
+                <h3 className="font-bold text-xl mb-2">35 Years Local</h3>
                 <p className="text-slate-300 text-sm">
-                  The only real estate brand backed by Warren Buffett's Berkshire Hathaway Inc.—a 
-                  name synonymous with trust and integrity worldwide.
+                  35 years in Las Vegas real estate and $127M+ in closed transactions.
                 </p>
               </div>
               <div className="text-center">
                 <div className="bg-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Users className="h-8 w-8" />
                 </div>
-                <h3 className="font-bold text-xl mb-2">Global Network</h3>
+                <h3 className="font-bold text-xl mb-2">500+ Transactions</h3>
                 <p className="text-slate-300 text-sm">
-                  50,000+ agents worldwide for seamless referrals and relocations. Whether you're 
-                  moving from California or anywhere else, our network has you covered.
+                  Summerlin West and 55+ specialist. Moving from California or anywhere else?
+                  Dr. Jan guides you from first call to closing.
                 </p>
               </div>
               <div className="text-center">
                 <div className="bg-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Shield className="h-8 w-8" />
                 </div>
-                <h3 className="font-bold text-xl mb-2">Ethical Standards</h3>
+                <h3 className="font-bold text-xl mb-2">Your Interests First</h3>
                 <p className="text-slate-300 text-sm">
-                  Rigorous ethical guidelines ensure your interests always come first. No pressure, 
-                  no games—just honest advice and expert representation.
+                  No pressure, no games—just honest advice and expert representation.
                 </p>
               </div>
             </div>
             <div className="text-center">
-              <Link
-                href="/why-berkshire-hathaway"
+              <a
+                href="tel:+17025001942"
                 className="inline-block bg-white text-slate-900 px-8 py-3 rounded-md font-semibold hover:bg-slate-100 transition-colors"
               >
-                Learn More About BHHS
-              </Link>
+                Call (702) 500-1942
+              </a>
             </div>
           </section>
 
           {/* Areas Served */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
-              Areas Served by BHHS Nevada Properties
+              Areas Served by Dr. Jan Duffy
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Dr. Jan Duffy serves the entire Las Vegas Valley with specialized knowledge of each 
@@ -445,7 +468,7 @@ export default function AboutPage() {
               </Link>
             </div>
             <p className="mt-4 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Grand Park Village Homes
             </p>
           </section>
         </div>
@@ -455,7 +478,6 @@ export default function AboutPage() {
           Last Updated: January 2026
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
 import {
   Phone,
@@ -10,21 +11,23 @@ import {
   Clock,
   CheckCircle,
   AlertTriangle,
-  Home as HomeIcon,
   MapPin,
   Calendar,
-  Users,
   FileText,
   HelpCircle,
 } from "lucide-react";
 import type { Metadata } from "next";
 
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import AgentPhoto from "@/components/AgentPhoto";
+import PageIllustration from "@/components/PageIllustration";
+
 export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices New Construction Las Vegas | Buyer's Guide",
+  title: "New Construction Las Vegas | Buyer's Guide",
   description:
     "Free buyer representation on new construction homes in Las Vegas. Dr. Jan Duffy helps you navigate builder contracts, negotiate upgrades, and secure incentives. Call (702) 500-1942.",
   keywords: [
-    "Berkshire Hathaway HomeServices new construction Las Vegas",
+    "Dr. Jan Duffy new construction Las Vegas",
     "new homes Las Vegas",
     "new construction Henderson",
     "Las Vegas builders",
@@ -32,6 +35,7 @@ export const metadata: Metadata = {
     "Lennar Las Vegas",
     "KB Home Las Vegas",
   ],
+  ...selfCanonicalMetadata,
 };
 
 const faqSchema = {
@@ -51,7 +55,7 @@ const faqSchema = {
       name: "Why do I need an agent when buying new construction?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Builder sales reps work for the builder, not you. A BHHS agent reviews contracts (often 50+ pages), negotiates upgrades and incentives, monitors construction quality, and ensures deadlines are met. Without representation, you're negotiating against experienced professionals alone.",
+        text: "Builder sales reps work for the builder, not you. Dr. Jan reviews contracts (often 50+ pages), negotiates upgrades and incentives, monitors construction quality, and ensures deadlines are met. Without representation, you're negotiating against experienced professionals alone.",
       },
     },
     {
@@ -75,7 +79,7 @@ const faqSchema = {
       name: "Can I negotiate on new construction pricing?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Base prices are typically firm, but everything else is negotiable—upgrades, lot premiums, closing costs, and design center selections. A BHHS agent knows which builders negotiate and how to maximize your leverage, especially on standing inventory.",
+        text: "Base prices are typically firm, but everything else is negotiable—upgrades, lot premiums, closing costs, and design center selections. Dr. Jan knows which builders negotiate and how to maximize your leverage, especially on standing inventory.",
       },
     },
     {
@@ -91,11 +95,24 @@ const faqSchema = {
 
 const builders = [
   {
+    name: "SHAWOOD at Arcadia",
+    segment: "Luxury boutique",
+    priceRange: "From $1.5M",
+    communities: ["Grand Park village, Summerlin West (Arcadia)"],
+    currentIncentives: "Contact Dr. Jan Duffy for current SHAWOOD incentives and inventory",
+    incentiveDeadline: "Varies by homesite",
+    highlights: [
+      "40-home gated enclave",
+      "Japanese-inspired design",
+      "Three floor plans (Bristlecone, Juniper, Pinyon)",
+    ],
+    detailPath: "/neighborhoods/grand-park",
+  },
+  {
     name: "Toll Brothers",
     segment: "Luxury",
     priceRange: "$600,000 - $2,500,000+",
     communities: [
-      "Summerlin Grand Park (Glenrock)",
       "Summerlin (Mesa Ridge, Reverence)",
       "Henderson (Inspirada, Lake Las Vegas)",
       "The Ridges",
@@ -113,7 +130,7 @@ const builders = [
     segment: "Production",
     priceRange: "$380,000 - $900,000",
     communities: [
-      "Summerlin Grand Park (Fairview)",
+      "Summerlin (various)",
       "Henderson (Cadence, Inspirada)",
       "North Las Vegas (Valley Vista)",
       "Southwest (Skye Hills)",
@@ -131,7 +148,6 @@ const builders = [
     segment: "Entry-Level to Mid-Range",
     priceRange: "$350,000 - $650,000",
     communities: [
-      "Summerlin Grand Park",
       "North Las Vegas (multiple)",
       "Southwest Las Vegas",
       "Henderson",
@@ -149,7 +165,7 @@ const builders = [
     segment: "Mid-Range to Luxury",
     priceRange: "$450,000 - $1,200,000",
     communities: [
-      "Summerlin Grand Park",
+      "Summerlin",
       "Henderson (Cadence, Lake Las Vegas)",
       "Mountains Edge",
     ],
@@ -166,7 +182,6 @@ const builders = [
     segment: "Mid-Range",
     priceRange: "$400,000 - $800,000",
     communities: [
-      "Summerlin Grand Park (The Brantley)",
       "Henderson (Inspirada)",
       "North Las Vegas",
       "Southwest Las Vegas",
@@ -184,7 +199,6 @@ const builders = [
     segment: "Entry-Level to Mid-Range",
     priceRange: "$380,000 - $700,000",
     communities: [
-      "Summerlin Grand Park (Iris Glen, Primrose Park)",
       "North Las Vegas",
       "Henderson",
       "Southwest Las Vegas",
@@ -253,13 +267,14 @@ export default function NewConstructionPage() {
             </nav>
           </div>
 
+          <PageIllustration scene="new-build" label="Illustration of new home framing under construction" />
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Free Buyer Representation
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices New Construction Las Vegas
+              New Construction Las Vegas
             </h1>
             <p className="text-xl text-slate-600 mb-8">
               Your complete buyer's guide to new homes in Las Vegas. Free representation,
@@ -282,11 +297,12 @@ export default function NewConstructionPage() {
               </div>
             </div>
           </div>
+          <RealScoutListings compact {...realscoutRange("/new-construction")} />
 
           {/* Why Free Representation */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center">
-              Why Use a BHHS Agent for New Construction?
+              Why Use a Buyer's Agent for New Construction?
             </h2>
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="flex items-start">
@@ -321,7 +337,7 @@ export default function NewConstructionPage() {
                   <h3 className="font-bold text-lg mb-2">Your Advocate</h3>
                   <p className="text-blue-100">
                     The builder's sales rep works for the builder. You deserve someone who works
-                    exclusively for YOUR interests—negotiating, monitoring, and protecting you.
+                    only for YOUR interests—negotiating, monitoring, and protecting you.
                   </p>
                 </div>
               </div>
@@ -436,6 +452,14 @@ export default function NewConstructionPage() {
                       </div>
                     </div>
 
+                    {"detailPath" in builder && builder.detailPath ? (
+                      <Link
+                        href={builder.detailPath}
+                        className="inline-block text-sm font-semibold text-blue-600 hover:text-blue-700 mb-4"
+                      >
+                        Explore {builder.name} →
+                      </Link>
+                    ) : null}
                     <div className="flex flex-wrap gap-2">
                       {builder.highlights.map((highlight) => (
                         <span
@@ -455,7 +479,7 @@ export default function NewConstructionPage() {
           {/* The Process */}
           <section className="mb-16 max-w-5xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              New Construction Buying Process with BHHS
+              New Construction Buying Process with Dr. Jan
             </h2>
             <div className="space-y-6">
               <div className="flex items-start">
@@ -543,13 +567,16 @@ export default function NewConstructionPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "I've seen buyers leave $30,000 on the table because they didn't know what to ask
                 for. Builders expect negotiation—their sales managers have authority to approve
-                upgrades and credits. As your <strong>Berkshire Hathaway HomeServices</strong>
-                agent, I know exactly which incentives are available, which upgrades add value, and
+                upgrades and credits. As your buyer's agent, with 35 years in Las Vegas
+                real estate, I know exactly which incentives are available, which upgrades add value, and
                 which builder promises are legally binding. This representation costs you nothing
                 and can save you tens of thousands."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                <span className="inline-flex items-center gap-3 not-italic">
+                  <AgentPhoto size={48} />
+                  <span>— Dr. Jan Duffy, Grand Park Village Homes</span>
+                </span>
               </cite>
             </div>
           </section>
@@ -577,7 +604,7 @@ export default function NewConstructionPage() {
                   Why do I need an agent when buying new construction?
                 </h3>
                 <p className="text-slate-600">
-                  Builder sales reps work for the builder, not you. A BHHS agent reviews contracts
+                  Builder sales reps work for the builder, not you. Dr. Jan reviews contracts
                   (often 50+ pages), negotiates upgrades and incentives, monitors construction
                   quality, and ensures deadlines are met. Without representation, you're negotiating
                   against experienced professionals alone.
@@ -616,7 +643,7 @@ export default function NewConstructionPage() {
                 </h3>
                 <p className="text-slate-600">
                   Base prices are typically firm, but everything else is negotiable—upgrades, lot
-                  premiums, closing costs, and design center selections. A BHHS agent knows which
+                  premiums, closing costs, and design center selections. Dr. Jan knows which
                   builders negotiate and how to maximize your leverage, especially on standing
                   inventory.
                 </p>
@@ -689,7 +716,7 @@ export default function NewConstructionPage() {
               </Link>
             </div>
             <p className="mt-6 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Grand Park Village Homes
             </p>
           </section>
         </div>
@@ -697,7 +724,6 @@ export default function NewConstructionPage() {
           Last Updated: January 2026 | Incentives subject to change
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

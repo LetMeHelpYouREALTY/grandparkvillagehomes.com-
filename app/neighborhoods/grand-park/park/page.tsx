@@ -3,6 +3,9 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
+import PageIllustration from "@/components/PageIllustration";
 import SchemaScript from "@/components/SchemaScript";
 import { grandParkImages } from "@/lib/grand-park-media";
 import { combineSchemas, generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
@@ -42,7 +45,7 @@ const faqs = [
   {
     question: "Which homes sit next to the park?",
     answer:
-      "Single-family homes, paired homes, and townhomes from about 1,430 square feet to more than 4,500 square feet surround the park. Prices as of September 2026 run from the high $300,000s to over $1.6 million.",
+      "Single-family homes, paired homes, and townhomes from about 1,430 square feet to more than 4,500 square feet surround the park. As of October 2026, builder prices run from the high $300,000s to about $2 million.",
   },
 ];
 
@@ -62,6 +65,7 @@ export default function GrandParkParkPage() {
       <Navbar />
       <main className="pb-16 pt-28">
         <div className="container mx-auto px-4">
+          <PageIllustration scene="desert" label="Illustration of desert mountains above neighborhood rooftops" />
           <header className="mx-auto mb-10 max-w-3xl">
             <p className="text-sm font-semibold text-blue-700">Grand Park Village Homes</p>
             <h1 className="mt-2 text-4xl font-bold text-slate-900 md:text-5xl">The 90-acre park in Grand Park</h1>
@@ -69,15 +73,17 @@ export default function GrandParkParkPage() {
               Grand Park Village in West Summerlin is built around a central park of more than 90 acres, along Sky Vista Drive and Far Hills Drive, west of the 215 Beltway.
             </p>
           </header>
+          <RealScoutListings compact {...realscoutRange("/neighborhoods/grand-park/park")} />
           <div className="relative mx-auto mb-10 h-72 max-w-5xl overflow-hidden rounded-2xl md:h-96">
             <Image
               src={grandParkImages.park}
-              alt="Grand Park central park in West Summerlin, Las Vegas, with fields and paths beside new homes"
+              alt="Illustration of a park with ball fields, courts, and paths beside new homes"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 1024px"
               priority
             />
+            <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
           </div>
           <section className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold text-slate-900">What the park includes</h2>
@@ -93,7 +99,7 @@ export default function GrandParkParkPage() {
               <Link href="/neighborhoods/grand-park/glenrock" className="font-medium text-blue-700 hover:underline">Glenrock at 360 Talon Heights St</Link>.
             </p>
             <p className="mt-4 text-lg text-slate-700">
-              Call or text Dr. Jan Duffy at <a href="tel:+17022221964" className="font-medium text-blue-700">(702) 222-1964</a>. Office: 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134.
+              Call or text Dr. Jan Duffy at <a href="tel:+17025001942" className="font-medium text-blue-700">(702) 500-1942</a>. Office: 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134.
             </p>
           </section>
           <section className="mx-auto mt-12 max-w-3xl">

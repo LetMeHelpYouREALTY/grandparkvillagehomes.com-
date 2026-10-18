@@ -1,21 +1,27 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
-import { Phone, Mountain, Users, Home as HomeIcon, GraduationCap } from "lucide-react";
+import { Phone, Mountain, Users } from "lucide-react";
 import type { Metadata } from "next";
 
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import AgentPhoto from "@/components/AgentPhoto";
+import PageIllustration from "@/components/PageIllustration";
+
 export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Skye Canyon | Northwest Las Vegas",
+  title: "Skye Canyon Homes for Sale | Northwest Las Vegas",
   description:
-    "Find Skye Canyon homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in this premier northwest community. Median price $550K. Call (702) 500-1942.",
+    "Find Skye Canyon homes with Dr. Jan Duffy of Grand Park Village Homes. She specializes in this premier northwest community. Median price $550K. Call (702) 500-1942.",
   keywords: [
-    "Berkshire Hathaway HomeServices Skye Canyon",
+    "Dr. Jan Duffy Skye Canyon",
     "Skye Canyon homes for sale",
     "Skye Canyon Las Vegas",
     "northwest Las Vegas homes",
     "new construction Skye Canyon",
   ],
+  ...selfCanonicalMetadata,
 };
 
 const faqSchema = {
@@ -32,26 +38,18 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "What amenities does Skye Canyon offer?",
+      name: "What community amenities does Skye Canyon offer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Skye Canyon features Skye Center, a 15-acre amenity complex with resort-style pools, fitness center, sports courts, and event spaces. The community also offers miles of trails, parks, and is adjacent to Floyd Lamb Park.",
+        text: "Skye Canyon features Skye Center with pools, fitness facilities, sports courts, and event spaces, plus miles of trails and parks. Howard Hughes–planned villages include newer schools and recreation programming throughout the year.",
       },
     },
     {
       "@type": "Question",
-      name: "Is Skye Canyon good for families?",
+      name: "Why use a buyer's agent for Skye Canyon new construction?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, Skye Canyon is designed for families with new schools, extensive children's amenities, community events, and safe neighborhoods. The community hosts family-friendly events throughout the year at Skye Center.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why use Berkshire Hathaway HomeServices for Skye Canyon new construction?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "BHHS provides free buyer representation on new construction purchases—the builder pays our commission. Dr. Jan Duffy can negotiate upgrades, review contracts, and ensure your interests are protected when builder sales agents work for the builder.",
+        text: "Dr. Jan Duffy provides free buyer representation on new construction purchases—the builder pays the commission. She can negotiate upgrades, review contracts, and make sure your interests are protected when builder sales agents work for the builder.",
       },
     },
   ],
@@ -78,19 +76,21 @@ export default function SkyeCanyonPage() {
             </nav>
           </div>
 
+          <PageIllustration scene="desert" palette="golden" label="Illustration of mountains above neighborhood rooftops" />
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Grand Park Village Homes
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices Skye Canyon
+              Skye Canyon Homes for Sale
             </h1>
             <p className="text-xl text-slate-600">
               Northwest Las Vegas's fastest-growing community. Discover Skye Canyon with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              <strong>Dr. Jan Duffy</strong>.
             </p>
           </div>
+          <RealScoutListings compact {...realscoutRange("/neighborhoods/skye-canyon")} />
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -127,22 +127,22 @@ export default function SkyeCanyonPage() {
                 <strong>Skye Canyon</strong> represents the future of Las Vegas master-planned living.
                 This 1,700-acre community in northwest Las Vegas has quickly become one of the valley's
                 most sought-after addresses, consistently ranking among the nation's top-selling
-                master-planned communities. <strong>Berkshire Hathaway HomeServices</strong> is proud
-                to help buyers discover what makes Skye Canyon special.
+                master-planned communities. <strong>Dr. Jan Duffy</strong> helps buyers
+                discover what makes Skye Canyon special.
               </p>
               <p>
                 What sets Skye Canyon apart is Skye Center—a stunning 15-acre amenity complex that
                 rivals resort facilities. The facility features multiple pools including a zero-entry
-                family pool and lap pool, a state-of-the-art fitness center, tennis and pickleball
+                pool and lap pool, a state-of-the-art fitness center, tennis and pickleball
                 courts, and flexible event spaces that host community gatherings throughout the year.
                 From summer movie nights to holiday celebrations, Skye Center creates the kind of
                 community connections that transform neighborhoods into true communities.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> offers free buyer
+                <strong>Dr. Jan Duffy</strong> offers free buyer
                 representation on all Skye Canyon new construction purchases. This is crucial because
                 when you walk into a builder's sales center, those agents work for the builder—not you.
-                Dr. Jan Duffy represents your interests, negotiates upgrades, reviews contracts for
+                Dr. Jan represents your interests, negotiates upgrades, reviews contracts for
                 hidden pitfalls, and ensures you're getting fair value. This service costs buyers
                 nothing—builders pay the commission.
               </p>
@@ -180,8 +180,8 @@ export default function SkyeCanyonPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Skye Canyon Schools</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Skye Canyon features newer schools purpose-built for the community, plus access to
-                  established northwest schools:
+                  Skye Canyon features newer schools built for the community, plus nearby
+                  northwest schools. Check CCSD for current zoning and boundaries:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
@@ -264,7 +264,7 @@ export default function SkyeCanyonPage() {
                   <h5 className="font-bold text-slate-900 mb-3">Skye Center Features</h5>
                   <ul className="text-slate-600 text-sm space-y-2">
                     <li>• Resort-style pool with cabanas</li>
-                    <li>• Zero-entry family pool and splash pad</li>
+                    <li>• Zero-entry pool and splash pad</li>
                     <li>• Lap pool for fitness swimming</li>
                     <li>• State-of-the-art fitness center</li>
                     <li>• Tennis and pickleball courts</li>
@@ -288,15 +288,15 @@ export default function SkyeCanyonPage() {
                 The current Skye Canyon market shows <strong>124 active listings</strong> with homes
                 averaging just <strong>21 days on market</strong>—among the fastest in the valley.
                 The median price of <strong>$550,000</strong> reflects 5.5% year-over-year appreciation,
-                driven by continued demand from families seeking modern homes with exceptional amenities.
+                driven by continued demand for modern homes near Skye Center, trails, and Floyd Lamb Park.
                 New construction from builders like Toll Brothers, Lennar, and Woodside Homes ranges
                 from $450,000 to $800,000.
               </p>
               <p>
-                Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Skye Canyon purchase
-                means working with agents who know which builders offer the best quality, which lots
+                Choosing <strong>Dr. Jan Duffy</strong> for your Skye Canyon purchase
+                means working with someone who knows which builders offer the best quality, which lots
                 have the best views, and which upgrades deliver the best value. Dr. Jan Duffy has
-                helped dozens of families find their Skye Canyon homes, and that experience translates
+                helped dozens of buyers find their Skye Canyon homes, and that experience translates
                 into better outcomes for buyers navigating this competitive market.
               </p>
             </div>
@@ -306,14 +306,17 @@ export default function SkyeCanyonPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Skye Canyon is where young families want to be right now. The amenities are incredible,
-                the homes are modern and energy-efficient, and the community vibe is exactly what people
-                are looking for. As a Berkshire Hathaway HomeServices agent, I make sure my clients get
+                "Skye Canyon is one of the most in-demand communities in the northwest right now. The
+                amenities are incredible, the homes are modern and energy-efficient, and the trails and
+                parks are right outside the door. With 35 years in Las Vegas real estate, I make sure my clients get
                 the best value—whether that's negotiating builder upgrades or finding a resale with
                 features already included."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                <span className="inline-flex items-center gap-3 not-italic">
+                  <AgentPhoto size={48} />
+                  <span>— Dr. Jan Duffy, Grand Park Village Homes</span>
+                </span>
               </cite>
             </div>
           </section>
@@ -346,22 +349,20 @@ export default function SkyeCanyonPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Is Skye Canyon good for families?
+                  What community amenities does Skye Canyon offer?
                 </h3>
                 <p className="text-slate-600">
-                  Yes, Skye Canyon is designed for families with new schools, extensive children's
-                  amenities, community events, and safe neighborhoods. The community hosts family-friendly
-                  events throughout the year at Skye Center.
+                  Skye Canyon features Skye Center with pools, fitness facilities, sports courts, and
+                  event spaces, plus miles of trails and parks. Howard Hughes–planned villages include
+                  newer schools and recreation programming throughout the year.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  Why use Berkshire Hathaway HomeServices for Skye Canyon new construction?
+                  Why use a buyer's agent for Skye Canyon new construction?
                 </h3>
                 <p className="text-slate-600">
-                  BHHS provides free buyer representation on new construction purchases—the builder pays
-                  our commission. Dr. Jan Duffy can negotiate upgrades, review contracts, and ensure
-                  your interests are protected when builder sales agents work for the builder.
+                  Dr. Jan Duffy provides free buyer representation on new construction purchases—the builder pays the commission. She can negotiate upgrades, review contracts, and make sure your interests are protected when builder sales agents work for the builder.
                 </p>
               </div>
             </div>
@@ -373,7 +374,7 @@ export default function SkyeCanyonPage() {
               Discover Skye Canyon Living
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Skye Canyon specialist,
+              Contact Dr. Jan Duffy, your Skye Canyon specialist,
               for expert guidance on new construction and resale homes.
             </p>
             <a
@@ -384,13 +385,12 @@ export default function SkyeCanyonPage() {
               Call (702) 500-1942
             </a>
             <p className="mt-4 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Grand Park Village Homes
             </p>
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

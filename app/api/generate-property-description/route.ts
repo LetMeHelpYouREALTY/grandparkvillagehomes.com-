@@ -1,10 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
 
-const openrouter = new OpenAI({
-  apiKey: process.env.OPENROUTER_API_KEY,
-  baseURL: "https://openrouter.ai/api/v1",
-});
+// Created per request so builds succeed when CEREBRAS_API_KEY is not set.
+function getCerebrasClient() {
+  return new OpenAI({
+    apiKey: process.env.CEREBRAS_API_KEY,
+    baseURL: "https://api.cerebras.ai/v1",
+  });
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,9 +17,9 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: "Property details are required" }, { status: 400 });
     }
 
-    if (!process.env.OPENROUTER_API_KEY) {
+    if (!process.env.CEREBRAS_API_KEY) {
       return NextResponse.json(
-        { error: "OpenRouter API key not configured" },
+        { error: "Cerebras API key not configured" },
         { status: 500 },
       );
     }
@@ -40,8 +43,8 @@ Requirements:
 - Make it compelling for potential buyers
 - Keep it professional and accurate`;
 
-    const response = await openrouter.chat.completions.create({
-      model: "anthropic/claude-3.5-haiku",
+    const response = await getCerebrasClient().chat.completions.create({
+      model: process.env.CEREBRAS_MODEL || "gpt-oss-120b",
       messages: [
         {
           role: "system",
@@ -61,7 +64,7 @@ Requirements:
 
     return NextResponse.json({ description });
   } catch (error) {
-    console.error("OpenRouter API error:", error);
+    console.error("Cerebras API error:", error);
     return NextResponse.json(
       { error: "Failed to generate property description" },
       { status: 500 },

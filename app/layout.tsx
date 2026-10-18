@@ -18,7 +18,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     metadataBase: new URL(getPreferredOrigin(domain)),
-    title: `${config.neighborhood} | Dr. Jan Duffy, REALTOR® | BHHS Nevada`,
+    title: {
+      default: "Grand Park Village | Homes by Dr. Jan Duffy",
+      template: "%s | Grand Park Village Homes",
+    },
     description: config.description,
     keywords: config.keywords,
     alternates: {
@@ -38,10 +41,10 @@ export async function generateMetadata(): Promise<Metadata> {
       url: canonical,
       images: [
         {
-          url: "/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
+          url: "/og-image.jpg",
           width: 1200,
-          height: 1200,
-          alt: "Dr. Jan Duffy, Las Vegas REALTOR, on a phone call. Grand Park Village Homes by Dr. Jan Duffy.",
+          height: 630,
+          alt: "Grand Park Village Homes by Dr. Jan Duffy, West Summerlin, (702) 500-1942",
         },
       ],
     },

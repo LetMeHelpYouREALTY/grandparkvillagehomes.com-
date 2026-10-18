@@ -6,7 +6,7 @@
  * @see https://developers.google.com/search/docs/appearance/structured-data
  */
 
-import { siteConfig, agentInfo, officeInfo } from "./site-config";
+import { siteConfig, agentInfo, officeInfo, agentStats } from "./site-config";
 
 // ============================================================================
 // Types
@@ -63,13 +63,13 @@ export interface SeniorCommunityData {
 
 const BASE_URL = siteConfig.url;
 
-// Social media profiles (to be updated with actual URLs)
+// Social media profiles — keep in sync with businessInfo.socialProfiles in lib/gbp-schema.ts
 export const socialProfiles = {
-  facebook: "https://www.facebook.com/heyberkshire",
-  instagram: "https://www.instagram.com/heyberkshire",
+  facebook: "https://www.facebook.com/drjanduffy",
+  instagram: "https://www.instagram.com/drjanduffy",
   linkedin: "https://www.linkedin.com/in/drjanduffy",
-  tiktok: "https://www.tiktok.com/@heyberkshire",
-  youtube: "https://www.youtube.com/@heyberkshire",
+  youtube: "https://www.youtube.com/@drjanduffy",
+  twitter: "https://twitter.com/drjanduffy",
 };
 
 // ============================================================================
@@ -87,15 +87,15 @@ export function generateRealEstateAgentSchema() {
     "@id": `${BASE_URL}#organization`,
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
     alternateName: [
+      "Grand Park Village Homes",
       "BHHS Nevada Properties",
       "Berkshire Hathaway HomeServices",
-      "Grand Park Village Homes",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-circle.png`,
-    image: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg`,
+    logo: `${BASE_URL}/icon-512.png`,
+    image: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-circle.png`,
     description: siteConfig.description,
-    telephone: "+1-702-500-1942",
+    telephone: "+17025001942",
     email: agentInfo.email,
     priceRange: "$385K - $10M+",
     address: {
@@ -111,36 +111,24 @@ export function generateRealEstateAgentSchema() {
       latitude: officeInfo.coordinates.lat,
       longitude: officeInfo.coordinates.lng,
     },
+    employee: {
+      "@id": `${BASE_URL}/about#agent`,
+    },
     areaServed: [
       {
-        "@type": "City",
-        name: "Las Vegas",
-        sameAs: "https://en.wikipedia.org/wiki/Las_Vegas",
-      },
-      {
-        "@type": "City",
-        name: "Henderson",
-        sameAs: "https://en.wikipedia.org/wiki/Henderson,_Nevada",
-      },
-      {
         "@type": "Place",
-        name: "Summerlin",
-      },
-      {
-        "@type": "Place",
+        "@id": `${BASE_URL}/neighborhoods/grand-park#place`,
         name: "Grand Park Village",
         containedInPlace: {
           "@type": "Place",
-          name: "Summerlin, Las Vegas, Nevada",
+          name: "Summerlin",
+          containedInPlace: {
+            "@type": "City",
+            name: "Las Vegas",
+            addressRegion: "NV",
+            addressCountry: "US",
+          },
         },
-      },
-      {
-        "@type": "City",
-        name: "North Las Vegas",
-      },
-      {
-        "@type": "Place",
-        name: "Green Valley",
       },
     ],
     openingHoursSpecification: [
@@ -179,7 +167,7 @@ export function generateRealEstateAgentSchema() {
     },
     knowsAbout: [
       "Las Vegas real estate",
-      "Henderson homes",
+      "Grand Park Village",
       "Summerlin properties",
       "Luxury homes",
       "New construction",
@@ -193,6 +181,43 @@ export function generateRealEstateAgentSchema() {
 }
 
 /**
+ * Generate Person schema for Dr. Jan Duffy (AEO/GEO entity resolution)
+ */
+export function generatePersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${BASE_URL}/about#agent`,
+    name: agentInfo.name,
+    jobTitle: agentInfo.title,
+    description:
+      "Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, with 35 years in Las Vegas real estate. Specialist in Grand Park, Summerlin West, luxury homes, and new construction.",
+    url: `${BASE_URL}/about`,
+    image: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-circle.png`,
+    email: agentInfo.email,
+    telephone: "+17025001942",
+    worksFor: {
+      "@id": `${BASE_URL}#parent-organization`,
+    },
+    mainEntityOfPage: `${BASE_URL}/about`,
+    knowsAbout: [
+      "Grand Park Village homes",
+      "Glenrock at Grand Park",
+      "Grand Park village Summerlin",
+      "Summerlin West real estate",
+      "Las Vegas luxury homes",
+    ],
+    sameAs: Object.values(socialProfiles),
+    hasCredential: {
+      "@type": "EducationalOccupationalCredential",
+      credentialCategory: "Real Estate License",
+      recognizedBy: { "@type": "Organization", name: "Nevada Real Estate Division" },
+      identifier: agentInfo.license,
+    },
+  };
+}
+
+/**
  * Generate Organization schema for BHHS brand
  */
 export function generateOrganizationSchema() {
@@ -202,7 +227,6 @@ export function generateOrganizationSchema() {
     "@id": `${BASE_URL}#parent-organization`,
     name: "Berkshire Hathaway HomeServices Nevada Properties",
     url: "https://www.bfrre.com",
-    logo: `${BASE_URL}/images/logos/grand-park-village-homes.svg`,
     parentOrganization: {
       "@type": "Organization",
       name: "Berkshire Hathaway HomeServices",
@@ -248,6 +272,9 @@ export function generateWebSiteSchema() {
     description: siteConfig.description,
     publisher: {
       "@id": `${BASE_URL}#organization`,
+    },
+    about: {
+      "@id": `${BASE_URL}/about#agent`,
     },
     potentialAction: {
       "@type": "SearchAction",
@@ -309,6 +336,10 @@ export function generateReviewSchema(reviews: ReviewItem[]) {
     "@type": "RealEstateAgent",
     "@id": `${BASE_URL}#organization`,
     name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
+    aggregateRating: generateAggregateRatingSchema(
+      agentStats.averageRating,
+      agentStats.reviewCount
+    ),
     review: reviews.map((review) => ({
       "@type": "Review",
       author: {
@@ -529,23 +560,45 @@ export function generateWebPageSchema(page: {
   url: string;
   datePublished?: string;
   dateModified?: string;
+  aboutId?: string;
+  primaryImage?: string;
+  speakableSelectors?: string[];
 }) {
-  return {
+  const pageUrl = page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`;
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": `${page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`}#webpage`,
+    "@id": `${pageUrl}#webpage`,
     name: page.name,
     description: page.description,
-    url: page.url.startsWith("http") ? page.url : `${BASE_URL}${page.url}`,
+    url: pageUrl,
     isPartOf: {
       "@id": `${BASE_URL}#website`,
     },
     about: {
-      "@id": `${BASE_URL}#organization`,
+      "@id": page.aboutId ?? `${BASE_URL}#organization`,
     },
     ...(page.datePublished && { datePublished: page.datePublished }),
     ...(page.dateModified && { dateModified: page.dateModified }),
   };
+
+  if (page.primaryImage) {
+    schema.primaryImageOfPage = {
+      "@type": "ImageObject",
+      url: page.primaryImage.startsWith("http")
+        ? page.primaryImage
+        : `${BASE_URL}${page.primaryImage}`,
+    };
+  }
+
+  if (page.speakableSelectors && page.speakableSelectors.length > 0) {
+    schema.speakable = {
+      "@type": "SpeakableSpecification",
+      cssSelector: page.speakableSelectors,
+    };
+  }
+
+  return schema;
 }
 
 // ============================================================================
@@ -573,5 +626,5 @@ export function combineSchemas(...schemas: Record<string, unknown>[]) {
  * Convert schema object to JSON-LD string
  */
 export function schemaToJsonLd(schema: Record<string, unknown>): string {
-  return JSON.stringify(schema);
+  return JSON.stringify(schema).replace(/</g, "\\u003c");
 }

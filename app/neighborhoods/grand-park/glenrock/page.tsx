@@ -3,6 +3,9 @@ import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
+import PageIllustration from "@/components/PageIllustration";
 import SchemaScript from "@/components/SchemaScript";
 import { combineSchemas, generateBreadcrumbSchema, generateFAQSchema } from "@/lib/schema";
 
@@ -12,7 +15,7 @@ const MAP_QUERY = encodeURIComponent("Glenrock Grand Park Summerlin, 360 Talon H
 export const metadata: Metadata = {
   title: "Glenrock at Grand Park Village Homes | Toll Brothers Map",
   description:
-    "Glenrock is the Toll Brothers neighborhood in Grand Park, West Summerlin. Sales gallery at 360 Talon Heights St, Las Vegas, NV 89138. Plans from 2,897 to 4,557 square feet, from about $1.6 million. Dr. Jan Duffy.",
+    "Glenrock is the Toll Brothers neighborhood in Grand Park, West Summerlin. Sales gallery at 360 Talon Heights St, Las Vegas, NV 89138. Plans from 2,897 to 4,557 square feet, from $1,398,995. Dr. Jan Duffy, (702) 500-1942.",
   keywords: [
     "Glenrock Grand Park",
     "Toll Brothers Glenrock Summerlin",
@@ -30,12 +33,12 @@ const faqs = [
   {
     question: "Who builds Glenrock?",
     answer:
-      "Toll Brothers builds Glenrock. Eight plans run from 2,897 to 4,557 square feet, priced from about $1.6 million as of September 2026.",
+      "Toll Brothers builds Glenrock. Eight plans run from 2,897 to 4,557 square feet. Toll Brothers listed prices from $1,398,995 as of October 12, 2026; Summerlin puts the top plans near $1.9 million.",
   },
   {
     question: "Is Glenrock the same as Grand Park?",
     answer:
-      "Glenrock is one neighborhood inside Grand Park Village. Other collections in the village include Fairview, Iris Glen, Primrose Park, Aberdeen, and The Brantley.",
+      "Glenrock is one neighborhood inside Grand Park Village. Grand Park has 11 neighborhoods, including Arcadia, Fairview, Iris Glen, Primrose Park, Aberdeen, Brantley, Ashland, and Caldwell Park.",
   },
 ];
 
@@ -61,12 +64,14 @@ export default function GlenrockPage() {
             {" / "}
             <span className="text-slate-900">Glenrock</span>
           </nav>
+          <PageIllustration scene="new-build" label="Illustration of new home framing under construction" />
           <header className="mx-auto mb-10 max-w-3xl">
             <h1 className="text-4xl font-bold text-slate-900 md:text-5xl">Glenrock at Grand Park Village Homes</h1>
             <p className="mt-4 text-xl text-slate-600">
-              Glenrock is the Toll Brothers neighborhood in Grand Park, West Summerlin. The sales gallery is at {ADDRESS}. Eight plans run from 2,897 to 4,557 square feet, priced from about $1.6 million as of September 2026.
+              Glenrock is the Toll Brothers neighborhood in Grand Park, West Summerlin. The sales gallery is at {ADDRESS}. Eight plans run from 2,897 to 4,557 square feet, priced from $1,398,995 as of October 12, 2026. One finished home, a Rosendale at 253 Talon Heights St, is listed at $1,700,000.
             </p>
           </header>
+          <RealScoutListings compact {...realscoutRange("/neighborhoods/grand-park/glenrock")} />
           <section className="mx-auto mb-12 max-w-6xl" aria-labelledby="glenrock-map">
             <h2 id="glenrock-map" className="mb-4 text-3xl font-bold text-slate-900">Map of 360 Talon Heights Street</h2>
             <div className="overflow-hidden rounded-2xl border border-slate-200">
@@ -79,9 +84,9 @@ export default function GlenrockPage() {
               />
             </div>
             <div className="mt-4 flex flex-wrap gap-3">
-              <a href="tel:+17022221964" className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-3 font-medium text-white">
+              <a href="tel:+17025001942" className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-3 font-medium text-white">
                 <Phone className="mr-2 h-4 w-4" aria-hidden="true" />
-                Call (702) 222-1964
+                Call (702) 500-1942
               </a>
               <a
                 href={`https://www.google.com/maps/dir//${encodeURIComponent(ADDRESS)}`}
@@ -100,7 +105,7 @@ export default function GlenrockPage() {
               Grand Park sits west of the 215 Beltway along Sky Vista Drive and Far Hills Drive, next to the Redpoint and Kestrel districts. Glenrock is the gated Toll Brothers collection inside that village.
             </p>
             <p>
-              Buyer representation is free. The builder pays the commission. Call Dr. Jan Duffy before the sales gallery so the contract is written for you. License S.0197614.LLC, Berkshire Hathaway HomeServices Nevada Properties, 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134.
+              Call Dr. Jan Duffy before your first visit to the sales gallery. Builders usually require your agent to be registered at that first visit. Her office is at 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134.
             </p>
             <p>
               <Link href="/neighborhoods/grand-park/builders" className="font-medium text-blue-700 hover:underline">See the other Grand Park builders</Link>

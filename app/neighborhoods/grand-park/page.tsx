@@ -3,7 +3,7 @@ import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin, TreePine, Home as HomeIcon, Building2, Star } from "lucide-react";
+import { Phone, MapPin, TreePine, Home as HomeIcon, Building2 } from "lucide-react";
 import { grandParkImages } from "@/lib/grand-park-media";
 import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import type { Metadata } from "next";
@@ -15,6 +15,9 @@ import {
   combineSchemas,
 } from "@/lib/schema";
 import { generateLocalBusinessSchema } from "@/lib/gbp-schema";
+import { realscoutRange } from "@/lib/realscout-ranges";
+import { grandParkMarket as m } from "@/lib/grand-park-market";
+import { usd } from "@/lib/format";
 
 const GLENROCK_ADDRESS = "360 Talon Heights St, Las Vegas, NV 89138";
 const GLENROCK_MAP_QUERY = encodeURIComponent(
@@ -25,7 +28,7 @@ const OFFICE_ADDRESS = "9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134";
 export const metadata: Metadata = {
   title: "Grand Park Village Homes in West Summerlin | Glenrock Map",
   description:
-    "Grand Park Village Homes in West Summerlin, Las Vegas. New construction from the high $300,000s to over $1.6 million. Glenrock map at 360 Talon Heights St. Dr. Jan Duffy, Berkshire Hathaway HomeServices. Call (702) 500-1942.",
+    "Grand Park village in West Summerlin, Las Vegas 89138: 11 neighborhoods, new homes from the high $300,000s to about $2 million. Glenrock map, builder prices, and buyer representation from Dr. Jan Duffy. Call (702) 500-1942.",
   keywords: [
     "Grand Park Summerlin",
     "Glenrock Toll Brothers",
@@ -51,17 +54,17 @@ const grandParkFaqs = [
   {
     question: "What do homes in Grand Park cost?",
     answer:
-      "As of September 2026, new construction in Grand Park runs from the high $300,000s to over $1.6 million. The village median sits around $900,000 and moves with the neighborhood and collection.",
+      "As of October 2026, builder prices in Grand Park start in the high $300,000s for Caldwell Park townhomes and reach about $1.9 million and up at Lennar's Fairview. See the Grand Park market report for every collection's price.",
   },
   {
     question: "What home types are available in Grand Park?",
     answer:
-      "Grand Park offers single-family detached homes, paired homes, and attached townhomes. Floor plans run from 1,430 square feet to more than 4,500 square feet, in one-story and two-story layouts.",
+      "Grand Park offers single-family detached homes, paired homes, and attached townhomes. Summerlin counts 11 neighborhoods and more than 70 floor plans, from 1,430 to 4,731 square feet, in one-story and two-story layouts.",
   },
   {
     question: "Which builders are selling in Grand Park?",
     answer:
-      "Active builders include Lennar at Fairview, Richmond American Homes at Iris Glen and Primrose Park, Tri Pointe Homes at Aberdeen, Pulte Homes at The Brantley, and Toll Brothers at Glenrock. KB Home and Taylor Morrison are also building in the village.",
+      "Builders include KB Home (Caldwell Park, Alton), Richmond American (Iris Glen, Primrose Park), Tri Pointe Homes (Aberdeen, Edgewood, Carlisle), Pulte Homes (Brantley), Taylor Morrison (Ashland), Toll Brothers (Glenrock), SHAWOOD (Arcadia), and Lennar (Fairview).",
   },
   {
     question: "What amenities does Grand Park include?",
@@ -70,44 +73,11 @@ const grandParkFaqs = [
   },
 ];
 
-const builders = [
-  {
-    name: "Toll Brothers",
-    neighborhood: "Glenrock",
-    detail:
-      "Gated single-family homes at 360 Talon Heights St. Eight plans from 2,897 to 4,557 square feet, priced from about $1.6 million. This is the pin on the map.",
-  },
-  {
-    name: "Lennar",
-    neighborhood: "Fairview",
-    detail:
-      "Gated luxury single-story homes with Next Gen suites, about 3,793 to 3,972 square feet.",
-  },
-  {
-    name: "Richmond American Homes",
-    neighborhood: "Iris Glen & Primrose Park",
-    detail:
-      "Open-concept paired homes and single-family homes with modern designer finishes.",
-  },
-  {
-    name: "Tri Pointe Homes",
-    neighborhood: "Aberdeen",
-    detail:
-      "Gated two-story collection focused on indoor-outdoor living, 1,869 to 2,687 square feet.",
-  },
-  {
-    name: "Pulte Homes",
-    neighborhood: "The Brantley",
-    detail:
-      "Single- and two-story layouts from 2,194 to 4,731 square feet, starting in the mid-$800,000s.",
-  },
-  {
-    name: "KB Home & Taylor Morrison",
-    neighborhood: "Grand Park village",
-    detail:
-      "Both builders are active in Grand Park alongside Toll Brothers, with plans across the village price range.",
-  },
-];
+const builders = m.collections.map((c) => ({
+  name: c.builder,
+  neighborhood: c.name,
+  detail: `${c.homeType}, ${c.sqftLow.toLocaleString()}–${c.sqftHigh.toLocaleString()} square feet, ${c.priceNote}.`,
+}));
 
 const pageSchemas = combineSchemas(
   generateLocalBusinessSchema() as Record<string, unknown>,
@@ -116,7 +86,7 @@ const pageSchemas = combineSchemas(
     name: "Grand Park at Summerlin",
     slug: "grand-park",
     description:
-      "Summerlin’s newest active village in West Las Vegas. New construction from the high $300,000s to over $1.6 million, planned around a 90-plus-acre park. Glenrock by Toll Brothers is at 360 Talon Heights St, Las Vegas, NV 89138.",
+      "Summerlin’s newest village in West Las Vegas 89138. Eleven neighborhoods of new construction from the high $300,000s to about $2 million, planned around a 90-plus-acre park. Glenrock by Toll Brothers is at 360 Talon Heights St, Las Vegas, NV 89138.",
     containedIn: "Las Vegas",
   }),
   generateFAQSchema(grandParkFaqs)
@@ -158,13 +128,13 @@ export default function GrandParkPage() {
               />
             </div>
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              West Summerlin · ZIP 89138
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
               Grand Park Village Homes in West Summerlin
             </h1>
             <p className="text-xl text-slate-600">
-              Grand Park is Summerlin’s newest active village in Las Vegas. New homes run from the high $300,000s to over $1.6 million.
+              Grand Park is Summerlin’s newest village in Las Vegas. Builder prices run from the high $300,000s to about $2 million across 11 neighborhoods.
             </p>
             <div className="mx-auto mt-8 max-w-sm text-left">
               <DrJanPortrait variant="feature" pathname="/neighborhoods/grand-park" />
@@ -179,8 +149,12 @@ export default function GrandParkPage() {
               <Link href="/neighborhoods/grand-park/park" className="rounded-full bg-slate-100 px-4 py-2 font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700">
                 90-acre park
               </Link>
+              <Link href="/neighborhoods/grand-park/market-report" className="rounded-full bg-slate-100 px-4 py-2 font-medium text-slate-800 hover:bg-blue-50 hover:text-blue-700">
+                Market report
+              </Link>
             </nav>
           </header>
+          <RealScoutListings compact {...realscoutRange("/neighborhoods/grand-park")} />
 
           <section className="max-w-6xl mx-auto mb-12" aria-labelledby="village-photo-heading">
             <h2 id="village-photo-heading" className="text-3xl font-bold text-slate-900 mb-4">
@@ -189,12 +163,13 @@ export default function GrandParkPage() {
             <div className="relative h-64 md:h-[420px] overflow-hidden rounded-2xl">
               <Image
                 src={grandParkImages.hero}
-                alt="Grand Park Village Homes in West Summerlin, with new construction around the central park and Red Rock mountains"
+                alt="Illustration of new homes around a large park below desert mountains"
                 fill
                 priority
                 sizes="(max-width: 1152px) 100vw, 1152px"
                 className="object-cover"
               />
+              <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
             </div>
           </section>
 
@@ -217,7 +192,7 @@ export default function GrandParkPage() {
             <p className="mt-3 text-sm text-slate-600 text-center">
               Map pin: Toll Brothers Glenrock sales gallery, {GLENROCK_ADDRESS}. West Summerlin, west of the 215 Beltway.
             </p>
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
               <a
                 href="tel:+17025001942"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-lg font-medium transition-colors"
@@ -242,15 +217,6 @@ export default function GrandParkPage() {
               >
                 View on Google Maps
               </a>
-              <a
-                href="https://g.page/r/heyberkshire/review"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-slate-100 hover:bg-slate-200 text-slate-800 px-4 py-3 rounded-lg font-medium transition-colors"
-              >
-                <Star className="h-4 w-4 mr-2" aria-hidden="true" />
-                View Google Reviews
-              </a>
             </div>
           </section>
 
@@ -258,10 +224,8 @@ export default function GrandParkPage() {
             <h2 id="visit-heading" className="text-3xl font-bold text-slate-900 mb-6">Visit with Dr. Jan Duffy</h2>
             <div className="grid md:grid-cols-2 gap-6">
             <address className="not-italic bg-slate-50 rounded-xl p-6 border border-slate-200">
-              <h3 className="font-bold text-slate-900 text-lg mb-3">Berkshire Hathaway HomeServices Nevada Properties</h3>
+              <h3 className="font-bold text-slate-900 text-lg mb-3">Dr. Jan Duffy&apos;s Office</h3>
               <p className="text-slate-700">
-                Berkshire Hathaway HomeServices Nevada Properties
-                <br />
                 {OFFICE_ADDRESS}
               </p>
               <p className="mt-3">
@@ -269,7 +233,6 @@ export default function GrandParkPage() {
                   (702) 500-1942
                 </a>
               </p>
-              <p className="text-sm text-slate-500 mt-2">License S.0197614.LLC</p>
             </address>
             <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
               <h3 className="font-bold text-slate-900 text-lg mb-3">Office Hours</h3>
@@ -288,25 +251,32 @@ export default function GrandParkPage() {
           </section>
 
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">Price Range | September 2026</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">Price Range | {m.month}</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-1">High $300s</div>
-                <div className="text-slate-300 text-sm">Starting prices</div>
+                <div className="text-slate-300 text-sm">Caldwell Park townhomes</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold mb-1">~$900,000</div>
-                <div className="text-slate-300 text-sm">Village median</div>
+                <div className="text-2xl md:text-3xl font-bold mb-1">{usd(m.mls.zipMedianList)}</div>
+                <div className="text-slate-300 text-sm">ZIP {m.zip} median list</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-1">$1.6M+</div>
-                <div className="text-slate-300 text-sm">Upper range</div>
+                <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-1">~$1.9M+</div>
+                <div className="text-slate-300 text-sm">Fairview by Lennar</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl md:text-3xl font-bold mb-1">1,430–4,500+</div>
+                <div className="text-2xl md:text-3xl font-bold mb-1">{m.sqftRange}</div>
                 <div className="text-slate-300 text-sm">Square feet</div>
               </div>
             </div>
+            <p className="mt-6 text-center text-sm text-slate-400">
+              Builder base prices and MLS figures checked {m.updated}.{" "}
+              <Link href="/neighborhoods/grand-park/market-report" className="underline hover:text-white">
+                See every collection
+              </Link>
+              .
+            </p>
           </section>
 
           <section className="mb-16 max-w-5xl mx-auto">
@@ -330,7 +300,7 @@ export default function GrandParkPage() {
                   <h3 className="font-bold text-slate-900 text-lg">Home Types</h3>
                 </div>
                 <p className="text-slate-600">
-                  Detached single-family homes, paired homes, and attached townhomes. Plans span 1,430 square feet to more than 4,500 square feet, one story or two.
+                  Detached single-family homes, paired homes, and attached townhomes. Plans span 1,430 to 4,731 square feet, one story or two.
                 </p>
               </div>
               <div className="bg-slate-50 p-6 rounded-xl md:col-span-2">
@@ -341,11 +311,12 @@ export default function GrandParkPage() {
                 <div className="relative mb-4 h-56 overflow-hidden rounded-xl">
                   <Image
                     src={grandParkImages.park}
-                    alt="Grand Park central park in Summerlin with baseball fields, courts, a playground, and a splash pad"
+                    alt="Illustration of a park with ball fields, courts, a playground, and a splash pad"
                     fill
                     sizes="(max-width: 768px) 100vw, 960px"
                     className="object-cover"
                   />
+                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
                 </div>
                 <p className="text-slate-600">
                   The village is built around a central park of more than 90 acres: baseball fields, basketball and pickleball courts, playgrounds, a splash pad, and fitness stations.
@@ -357,7 +328,11 @@ export default function GrandParkPage() {
                   <h3 className="font-bold text-slate-900 text-lg">Price Range</h3>
                 </div>
                 <p className="text-slate-600">
-                  High $300,000s to over $1.6 million. The median hovers around $900,000, depending on the neighborhood and collection.
+                  High $300,000s to about $2 million, depending on the neighborhood and collection.{" "}
+                  <Link href="/neighborhoods/grand-park/market-report" className="text-blue-700 font-medium">
+                    Prices by collection
+                  </Link>
+                  .
                 </p>
               </div>
             </div>
@@ -369,20 +344,22 @@ export default function GrandParkPage() {
               <div className="relative h-56 overflow-hidden rounded-xl">
                 <Image
                   src={grandParkImages.singleFamily}
-                  alt="Single-story Grand Park Village home in West Summerlin"
+                  alt="Illustration of a modern single-story desert home"
                   fill
                   sizes="(max-width: 768px) 100vw, 480px"
                   className="object-cover"
                 />
+                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
               </div>
               <div className="relative h-56 overflow-hidden rounded-xl">
                 <Image
                   src={grandParkImages.townhomes}
-                  alt="Attached townhomes at Grand Park Village in West Summerlin"
+                  alt="Illustration of modern two-story townhomes"
                   fill
                   sizes="(max-width: 768px) 100vw, 480px"
                   className="object-cover"
                 />
+                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
               </div>
             </div>
             <div className="grid md:grid-cols-2 gap-4">
@@ -446,10 +423,9 @@ export default function GrandParkPage() {
             </div>
           </section>
 
-          <p className="text-center text-sm text-slate-500">Last updated: September 24, 2026</p>
+          <p className="text-center text-sm text-slate-500">Last updated: {m.updated}</p>
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

@@ -7,8 +7,8 @@
 
 export const AGENT_IMAGES = {
   circle: "/images/agent/dr-jan-duffy-grand-park-circle.png",
-  portrait: "/images/agent/dr-jan-duffy-west-summerlin-realtor.jpg",
-  badge: "/images/agent/dr-jan-duffy-grand-park-village-homes-badge.jpg",
+  portrait: "/images/agent/dr-jan-duffy-grand-park-circle.png",
+  badge: "/images/agent/dr-jan-duffy-grand-park-circle.png",
 } as const;
 
 export type AgentPortraitCopy = {
@@ -33,7 +33,7 @@ const PAGES: Record<string, PageFacts> = {
   "/about": {
     topic: "her Las Vegas real estate practice",
     place: "Las Vegas, Nevada",
-    detail: "buying and selling homes across Las Vegas, Henderson, and Summerlin since 2008",
+    detail: "buying and selling homes across Las Vegas, Henderson, and Summerlin for 35 years",
   },
   "/contact": {
     topic: "a Las Vegas home search",
@@ -243,12 +243,7 @@ const PAGES: Record<string, PageFacts> = {
   "/google-business": {
     topic: "her Las Vegas real estate office",
     place: "Las Vegas, Nevada",
-    detail: "the Berkshire Hathaway HomeServices office at 9406 W Lake Mead Blvd",
-  },
-  "/why-berkshire-hathaway": {
-    topic: "Berkshire Hathaway HomeServices Nevada Properties",
-    place: "Las Vegas, Nevada",
-    detail: "why she works under Berkshire Hathaway HomeServices",
+    detail: "her office at 9406 W Lake Mead Blvd",
   },
   "/security-policy": {
     topic: "this website's security policy",
@@ -292,6 +287,6 @@ export function getAgentPortraitCopy(pathname: string, slot: PortraitSlot = "car
     topic: facts.topic,
     place: facts.place,
     alt: `Dr. Jan Duffy, Las Vegas REALTOR, smiling on a phone call in a royal blue blazer, photographed for ${facts.topic} in ${facts.place}. ${SLOT_NOTE[slot]}`,
-    caption: `Dr. Jan Duffy of Grand Park Village Homes can walk you through ${facts.detail}. Berkshire Hathaway HomeServices Nevada Properties. Call or text (702) 222-1964.`,
+    caption: `Dr. Jan Duffy of Grand Park Village Homes can walk you through ${facts.detail}. Call or text (702) 500-1942.`,
   };
 }

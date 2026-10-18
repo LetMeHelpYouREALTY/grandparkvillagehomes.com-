@@ -1,21 +1,27 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
-import { Phone, Waves, TreePine, GraduationCap, Home as HomeIcon } from "lucide-react";
+import { Phone, Waves, TreePine } from "lucide-react";
 import type { Metadata } from "next";
 
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import AgentPhoto from "@/components/AgentPhoto";
+import PageIllustration from "@/components/PageIllustration";
+
 export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Inspirada | Henderson Resort Living",
+  title: "Inspirada Homes for Sale | Henderson Resort Living",
   description:
-    "Find Inspirada homes with Berkshire Hathaway HomeServices Nevada Properties. Dr. Jan Duffy specializes in Henderson's resort-style community. Median price $525K. Call (702) 500-1942.",
+    "Find Inspirada homes with Dr. Jan Duffy of Grand Park Village Homes. Dr. Jan specializes in Henderson's resort-style community. Median price $525K. Call (702) 500-1942.",
   keywords: [
-    "Berkshire Hathaway HomeServices Inspirada",
+    "Dr. Jan Duffy Inspirada",
     "Inspirada homes for sale",
     "Inspirada Henderson",
     "Henderson master planned",
     "resort style community",
   ],
+  ...selfCanonicalMetadata,
 };
 
 const faqSchema = {
@@ -40,10 +46,10 @@ const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "How are the schools in Inspirada?",
+      name: "Which schools serve Inspirada?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Inspirada is served by highly-rated Henderson schools including newer facilities built specifically for the growing community. The area attracts families specifically for its educational options and family-friendly environment.",
+        text: "Inspirada is served by Clark County School District schools, including Inspirada Elementary, Del Webb Middle School, and Coronado High School, with newer facilities built for the growing community. Private options include Henderson International and Pinecrest Academy. Verify school assignments for any specific address with CCSD.",
       },
     },
     {
@@ -78,19 +84,21 @@ export default function InspiradaPage() {
             </nav>
           </div>
 
+          <PageIllustration scene="desert" palette="day" label="Illustration of mountains above neighborhood rooftops" />
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Dr. Jan Duffy | Grand Park Village Homes
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Berkshire Hathaway HomeServices Inspirada
+              Inspirada Homes for Sale
             </h1>
             <p className="text-xl text-slate-600">
               Resort-style living in Henderson. Discover Inspirada with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> and Dr. Jan Duffy.
+              <strong>Dr. Jan Duffy</strong>.
             </p>
           </div>
+          <RealScoutListings compact {...realscoutRange("/neighborhoods/inspirada")} />
 
           {/* Market Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -127,8 +135,8 @@ export default function InspiradaPage() {
                 <strong>Inspirada</strong> redefines what a master-planned community can be. This
                 2,000-acre development in Henderson consistently ranks among the nation's top-selling
                 communities, and for good reason: Inspirada delivers resort-style amenities that make
-                every day feel like a vacation. <strong>Berkshire Hathaway HomeServices</strong>
-                is proud to represent buyers and sellers in this exceptional community.
+                every day feel like a vacation. <strong>Dr. Jan Duffy</strong> represents buyers
+                and sellers in this community.
               </p>
               <p>
                 The community's amenity package rivals many resorts. Multiple pools feature water
@@ -139,11 +147,11 @@ export default function InspiradaPage() {
                 to Inspirada's identity.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> provides free
+                <strong>Dr. Jan Duffy</strong> provides free
                 buyer representation on Inspirada new construction purchases. With multiple builders
-                offering homes in the community, navigating options can be overwhelming. Dr. Jan Duffy
+                offering homes in the community, navigating options can be overwhelming. Dr. Jan
                 helps buyers compare builders, negotiate upgrades, and avoid common new construction
-                pitfalls. For resales, BHHS agents identify properties where previous owners made
+                pitfalls. For resales, she identifies properties where previous owners made
                 smart upgrade decisions, delivering better value than comparable new construction.
               </p>
 
@@ -157,7 +165,7 @@ export default function InspiradaPage() {
                   </div>
                   <p className="text-slate-600">
                     Inspirada's pools aren't typical community pools—they're resort experiences.
-                    Water slides, splash pads for kids, lap lanes for exercise, and shaded cabanas
+                    Water slides, splash pads, lap lanes for exercise, and shaded cabanas
                     for relaxation create a vacation atmosphere steps from your front door. The
                     HOA maintains these facilities to exceptional standards year-round.
                   </p>
@@ -180,8 +188,8 @@ export default function InspiradaPage() {
               <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6">Inspirada School Districts</h3>
               <div className="not-prose bg-white border border-slate-200 rounded-xl p-6">
                 <p className="text-slate-700 mb-4">
-                  Inspirada is served by excellent Henderson schools, with newer facilities built to
-                  serve the growing community:
+                  Inspirada is served by Clark County School District schools, with newer facilities
+                  built to serve the growing community:
                 </p>
                 <div className="grid md:grid-cols-3 gap-4">
                   <div>
@@ -244,7 +252,7 @@ export default function InspiradaPage() {
                   <ul className="text-slate-600 text-sm space-y-2">
                     <li>• Resort-style pool with cabanas</li>
                     <li>• Water slides and splash features</li>
-                    <li>• Zero-entry family pool</li>
+                    <li>• Zero-entry pool</li>
                     <li>• Lap lanes for fitness swimming</li>
                     <li>• Poolside WiFi and refreshments</li>
                     <li>• Extended summer hours</li>
@@ -289,10 +297,10 @@ export default function InspiradaPage() {
                 established yards and upgraded features offer compelling alternatives.
               </p>
               <p>
-                Choosing <strong>Berkshire Hathaway HomeServices</strong> for your Inspirada purchase
-                means working with agents who understand the community's various neighborhoods, which
-                builders offer the best quality, and which lots provide the best value. Dr. Jan Duffy
-                has helped dozens of families find their Inspirada homes, and that experience
+                Choosing <strong>Dr. Jan Duffy</strong> for your Inspirada purchase
+                means working with an agent who understands the community's various neighborhoods, which
+                builders offer the best quality, and which lots provide the best value. Dr. Jan
+                has helped dozens of buyers find their Inspirada homes, and that experience
                 translates into better outcomes for buyers navigating this popular community.
               </p>
             </div>
@@ -302,14 +310,17 @@ export default function InspiradaPage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Inspirada isn't just a place to live—it's a lifestyle. Families move here for the
-                pools, the trails, and the community events that make weekends special. As a
-                Berkshire Hathaway HomeServices agent, I help clients find the specific neighborhood
+                "Inspirada isn't just a place to live—it's a lifestyle. People move here for the
+                pools, the trails, and the community events that make weekends special. I help
+                clients find the specific neighborhood
                 within Inspirada that matches how they want to live, whether that's close to the
                 main pool complex or on a quiet cul-de-sac backing to open space."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                <span className="inline-flex items-center gap-3 not-italic">
+                  <AgentPhoto size={48} />
+                  <span>— Dr. Jan Duffy, Grand Park Village Homes</span>
+                </span>
               </cite>
             </div>
           </section>
@@ -342,12 +353,10 @@ export default function InspiradaPage() {
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
                 <h3 className="font-bold text-slate-900 mb-2">
-                  How are the schools in Inspirada?
+                  Which schools serve Inspirada?
                 </h3>
                 <p className="text-slate-600">
-                  Inspirada is served by highly-rated Henderson schools including newer facilities
-                  built specifically for the growing community. The area attracts families specifically
-                  for its educational options and family-friendly environment.
+                  Inspirada is served by Clark County School District schools, including Inspirada Elementary, Del Webb Middle School, and Coronado High School, with newer facilities built for the growing community. Private options include Henderson International and Pinecrest Academy. Verify school assignments for any specific address with CCSD.
                 </p>
               </div>
               <div className="bg-white border border-slate-200 rounded-lg p-6">
@@ -369,8 +378,8 @@ export default function InspiradaPage() {
               Experience Inspirada Living
             </h2>
             <p className="text-xl text-blue-100 mb-8">
-              Contact Dr. Jan Duffy, your Berkshire Hathaway HomeServices Inspirada specialist,
-              for expert guidance in Henderson's premier resort-style community.
+              Contact Dr. Jan Duffy, your Inspirada specialist, for expert guidance in
+              Henderson's resort-style community.
             </p>
             <a
               href="tel:+17025001942"
@@ -380,13 +389,12 @@ export default function InspiradaPage() {
               Call (702) 500-1942
             </a>
             <p className="mt-4 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Dr. Jan Duffy | Grand Park Village Homes
             </p>
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

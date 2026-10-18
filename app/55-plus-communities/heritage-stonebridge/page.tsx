@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
 import {
   Phone,
@@ -16,24 +17,29 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import AgentPhoto from "@/components/AgentPhoto";
+import PageIllustration from "@/components/PageIllustration";
+
 export const metadata: Metadata = {
   title: "Heritage at Stonebridge Homes for Sale | Guard-Gated 55+ Summerlin | Dr. Jan Duffy",
   description:
-    "Heritage at Stonebridge - boutique guard-gated 55+ community in Summerlin. Homes from $400K-$750K. Near Downtown Summerlin, Red Rock Canyon. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
+    "Heritage at Stonebridge - boutique guard-gated 55+ community in Summerlin. Homes from $400K-$750K. Near Downtown Summerlin, Red Rock Canyon. Dr. Jan Duffy, Grand Park Village Homes. Call (702) 500-1942.",
   keywords: [
     "Heritage at Stonebridge homes for sale",
     "Heritage Stonebridge Summerlin",
     "guard-gated 55+ community Las Vegas",
     "Summerlin 55+ communities",
     "boutique 55+ community Las Vegas",
-    "Berkshire Hathaway Heritage Stonebridge",
+    "Dr. Jan Duffy Heritage Stonebridge",
   ],
   openGraph: {
     title: "Heritage at Stonebridge - Guard-Gated 55+ Living in Summerlin",
     description:
-      "Boutique community with premium Summerlin location. Guard-gated security, near Downtown Summerlin. From $400K. Dr. Jan Duffy, BHHS.",
+      "Boutique community with premium Summerlin location. Guard-gated security, near Downtown Summerlin. From $400K. Dr. Jan Duffy, Grand Park Village Homes.",
     type: "website",
   },
+  ...selfCanonicalMetadata,
 };
 
 const communitySchema = {
@@ -80,6 +86,7 @@ export default function HeritageAtStonebridgePage() {
             </nav>
           </div>
 
+          <PageIllustration scene="active-adult" palette="golden" label="Illustration of 55+ clubhouse and pool at sunset" />
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -94,6 +101,7 @@ export default function HeritageAtStonebridgePage() {
               Summerlin.
             </p>
           </div>
+          <RealScoutListings compact {...realscoutRange("/55-plus-communities/heritage-stonebridge")} />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -136,8 +144,8 @@ export default function HeritageAtStonebridgePage() {
                 <strong>Heritage at Stonebridge</strong> offers what larger 55+
                 communities can't—a boutique, guard-gated experience in one of
                 Las Vegas's most desirable locations. With just over 1,100 homes,
-                this intimate community provides the security and exclusivity of
-                a private enclave while still offering resort-style amenities.
+                this intimate community provides the gated access and privacy of
+                a smaller enclave while still offering resort-style amenities.
               </p>
               <p>
                 The community's prime Summerlin location puts residents minutes
@@ -148,11 +156,10 @@ export default function HeritageAtStonebridgePage() {
                 rather than committing to a community course.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
-                helps buyers who value privacy and location over massive amenity
-                complexes. Dr. Jan Duffy understands why Heritage at Stonebridge
-                appeals to buyers seeking a more exclusive, intimate 55+
-                experience.
+                <strong>Dr. Jan Duffy</strong> helps buyers who value privacy and
+                location over massive amenity complexes. She knows why Heritage at
+                Stonebridge appeals to buyers who want a smaller, guard-gated 55+
+                active adult community.
               </p>
             </div>
           </section>
@@ -169,7 +176,7 @@ export default function HeritageAtStonebridgePage() {
                   <p className="text-slate-700 mb-4">
                     Unlike many 55+ communities with simple gate codes, Heritage
                     at Stonebridge features 24/7 guard-gated security. Every
-                    visitor is screened, providing genuine privacy and peace of
+                    visitor is screened, providing real privacy and peace of
                     mind.
                   </p>
                   <div className="grid md:grid-cols-3 gap-4">
@@ -324,7 +331,7 @@ export default function HeritageAtStonebridgePage() {
                     True guard-gated security
                   </strong>
                   <p className="text-slate-600 text-sm">
-                    24/7 manned gate with visitor verification—genuine privacy, not
+                    24/7 manned gate with visitor verification—real privacy, not
                     just a keypad
                   </p>
                 </div>
@@ -372,16 +379,18 @@ export default function HeritageAtStonebridgePage() {
           <section className="mb-16 max-w-4xl mx-auto">
             <div className="bg-blue-50 border-l-4 border-blue-600 rounded-r-xl p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
-                "Heritage at Stonebridge attracts buyers who want exclusivity and
-                privacy without the sprawl of larger 55+ communities. The
-                guard-gated security is genuine—not just a code anyone can get.
-                And the location in Summerlin is simply unbeatable. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I help
-                buyers who prioritize quality over quantity find their perfect
-                fit here."
+                "Heritage at Stonebridge attracts buyers who want a smaller,
+                private community without the sprawl of larger 55+ communities.
+                The guard gate is staffed—not just a code anyone can get. And the
+                Summerlin location puts Downtown Summerlin and Red Rock Canyon
+                minutes away. With 35 years in Las Vegas real estate, I help
+                buyers who prioritize quality over quantity find their fit here."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                <span className="inline-flex items-center gap-3 not-italic">
+                  <AgentPhoto size={48} />
+                  <span>— Dr. Jan Duffy, Grand Park Village Homes</span>
+                </span>
               </cite>
             </div>
           </section>
@@ -422,7 +431,6 @@ export default function HeritageAtStonebridgePage() {
           Last Updated: January 2026
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

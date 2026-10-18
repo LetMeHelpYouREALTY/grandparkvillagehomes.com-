@@ -1,11 +1,10 @@
 {
-  "name": "heyberkshire-com",
+  "name": "grandparkvillagehomes-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "flask-dev": "FLASK_DEBUG=1 pip3 install -r requirements.txt && python3 -m flask --app api/index run -p 5328",
     "next-dev": "next dev",
-    "dev": "concurrently \"pnpm run next-dev\" \"pnpm run flask-dev\"",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
@@ -21,7 +20,7 @@
     "test:watch": "vitest watch",
     "analyze": "ANALYZE=true npm run build",
     "lighthouse": "lhci autorun",
-    "lighthouse:manual": "lighthouse https://heyberkshire.com --view --preset=desktop",
+    "lighthouse:manual": "lighthouse https://www.grandparkvillagehomes.com --view --preset=desktop",
     "perf": "npm run analyze && npm run lighthouse",
     "vercel:build": "vercel build",
     "vercel:deploy": "vercel deploy --prebuilt",

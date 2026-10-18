@@ -1,11 +1,11 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
 import {
   Phone,
   Waves,
-  Mountain,
   Home as HomeIcon,
   Star,
   Dumbbell,
@@ -13,8 +13,12 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import AgentPhoto from "@/components/AgentPhoto";
+import PageIllustration from "@/components/PageIllustration";
+
 export const metadata: Metadata = {
-  title: "Del Webb at Lake Las Vegas Homes | Berkshire Hathaway HomeServices",
+  title: "Del Webb at Lake Las Vegas Homes",
   description:
     "Lakefront 55+ living at Del Webb Lake Las Vegas. Homes from $400K-$900K. Resort amenities, stunning lake and mountain views. Dr. Jan Duffy. Call (702) 500-1942.",
   keywords: [
@@ -22,8 +26,9 @@ export const metadata: Metadata = {
     "Lake Las Vegas 55 plus",
     "Del Webb homes Henderson",
     "lakefront retirement community",
-    "Berkshire Hathaway Del Webb",
+    "Dr. Jan Duffy Del Webb",
   ],
+  ...selfCanonicalMetadata,
 };
 
 export default function DelWebbLakeLasVegasPage() {
@@ -43,6 +48,7 @@ export default function DelWebbLakeLasVegasPage() {
             </nav>
           </div>
 
+          <PageIllustration scene="lake" label="Illustration of lakeside homes below desert mountains" />
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -56,6 +62,7 @@ export default function DelWebbLakeLasVegasPage() {
               Modern homes. Lake views. Resort living. The newest Del Webb in Las Vegas.
             </p>
           </div>
+          <RealScoutListings compact {...realscoutRange("/55-plus-communities/del-webb-lake-las-vegas")} />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -103,8 +110,8 @@ export default function DelWebbLakeLasVegasPage() {
                 lifestyle activities.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong> helps buyers
-                navigate Del Webb's various floor plans and lot positions. Dr. Jan Duffy provides
+                <strong>Dr. Jan Duffy</strong> helps buyers navigate Del Webb's various floor plans
+                and lot positions. She provides
                 guidance on which phases offer the best value and which premium lots justify
                 their price premiums.
               </p>
@@ -247,12 +254,15 @@ export default function DelWebbLakeLasVegasPage() {
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Del Webb at Lake Las Vegas offers something no other 55+ community can—lakefront
                 living in the desert. The homes are modern, the setting is spectacular, and the
-                Del Webb programming creates instant community. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I help buyers understand
+                Del Webb programming creates instant community. With 35 years in Las Vegas real
+                estate, I help buyers understand
                 which lots offer the best views and which floor plans work for their lifestyle."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                <span className="inline-flex items-center gap-3 not-italic">
+                  <AgentPhoto size={48} />
+                  <span>— Dr. Jan Duffy, Grand Park Village Homes</span>
+                </span>
               </cite>
             </div>
           </section>
@@ -285,7 +295,6 @@ export default function DelWebbLakeLasVegasPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
 import {
   Phone,
@@ -14,15 +15,16 @@ import {
   Heart,
   HelpCircle,
   Sun,
-  Trophy,
   Palmtree,
   CheckCircle,
-  Waves,
-  Mountain,
   Star,
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
+
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import AgentPhoto from "@/components/AgentPhoto";
+import PageIllustration from "@/components/PageIllustration";
 
 export const metadata: Metadata = {
   title:
@@ -44,9 +46,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Find Your Perfect 55+ Community in Las Vegas | Dr. Jan Duffy",
     description:
-      "Sun City, Del Webb, Heritage at Stonebridge & more—Dr. Duffy specializes in active adult living. Berkshire Hathaway HomeServices Nevada Properties.",
+      "Sun City, Del Webb, Heritage at Stonebridge & more—Dr. Duffy specializes in active adult living. Grand Park Village Homes.",
     type: "website",
   },
+  ...selfCanonicalMetadata,
 };
 
 const faqSchema = {
@@ -66,7 +69,7 @@ const faqSchema = {
       name: "Can I buy in a 55+ community if I'm under 55?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Generally no, but there are exceptions. You may purchase if you'll be 55 by close of escrow, or as an investor who will rent to 55+ tenants. Some communities allow residents 45-54 in limited circumstances. A BHHS agent can explain each community's specific rules.",
+        text: "Generally no, but there are exceptions. You may purchase if you'll be 55 by close of escrow, or as an investor who will rent to 55+ tenants. Some communities allow residents 45-54 in limited circumstances. Dr. Jan can explain each community's specific rules.",
       },
     },
     {
@@ -161,7 +164,7 @@ const communities = [
       "Henderson's premier 55+ community",
       "2 championship golf courses",
       "Stunning mountain views",
-      "America's safest large city location",
+      "64,000 sq ft Anthem Center clubhouse",
     ],
     description:
       "Henderson's premier 55+ community with stunning mountain views and championship golf.",
@@ -274,7 +277,7 @@ const communities = [
     highlights: [
       "Most affordable Summerlin 55+ option",
       "18-hole golf course",
-      "Established community (1990s)",
+      "Built in the 1990s",
       "Strong sense of community",
     ],
     description:
@@ -351,6 +354,7 @@ export default function FiftyFiveCommunitiesPage() {
             </nav>
           </div>
 
+          <PageIllustration scene="active-adult" label="Illustration of 55+ active adult community clubhouse, pool and palms" />
           {/* Hero Section */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-flex items-center bg-amber-100 text-amber-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -374,7 +378,7 @@ export default function FiftyFiveCommunitiesPage() {
                 Call (702) 500-1942
               </a>
               <a
-                href="https://drjanduffy.realscout.com/"
+                href="http://drjanduffy.realscout.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-slate-100 text-slate-900 px-8 py-4 rounded-md font-bold text-lg hover:bg-slate-200 transition-colors"
@@ -384,6 +388,7 @@ export default function FiftyFiveCommunitiesPage() {
               </a>
             </div>
           </div>
+          <RealScoutListings compact {...realscoutRange("/55-plus-communities")} />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -694,15 +699,17 @@ export default function FiftyFiveCommunitiesPage() {
                 "Buying in a 55+ community involves considerations beyond a
                 typical purchase. You need to understand HOA rules, age
                 verification processes, and how the community fits your
-                lifestyle. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent
-                specializing in active adult communities, I guide clients through
+                lifestyle. As a 55+
+                specialist with 35 years in Las Vegas real estate, I guide clients through
                 every step—from touring amenities to reviewing HOA documents. Many
                 clients are relocating from California, and they rely on my local
                 knowledge to make confident decisions."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                <span className="inline-flex items-center gap-3 not-italic">
+                  <AgentPhoto size={48} />
+                  <span>— Dr. Jan Duffy, Grand Park Village Homes</span>
+                </span>
               </cite>
             </div>
           </section>
@@ -778,8 +785,9 @@ export default function FiftyFiveCommunitiesPage() {
             </div>
           </section>
 
-          {/* Why BHHS */}
+          {/* Why Dr. Jan */}
           <section className="mb-16 max-w-4xl mx-auto">
+            <div className="flex justify-center mb-4"><AgentPhoto size={96} /></div>
             <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
               Why Choose Dr. Jan Duffy for 55+ Communities?
             </h2>
@@ -808,9 +816,9 @@ export default function FiftyFiveCommunitiesPage() {
                     Relocation Support
                   </h3>
                   <p className="text-slate-600 text-sm">
-                    Many 55+ buyers relocate from out of state. Our national BHHS
-                    network provides referrals, and Dr. Jan offers virtual tours
-                    and detailed community information.
+                    Many 55+ buyers relocate from out of state. Dr. Jan offers
+                    virtual tours and detailed community information so you can
+                    compare options from home.
                   </p>
                 </div>
               </div>
@@ -819,11 +827,11 @@ export default function FiftyFiveCommunitiesPage() {
                   <Shield className="h-5 w-5 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 mb-1">Trusted Brand</h3>
+                  <h3 className="font-bold text-slate-900 mb-1">35 Years of Local Experience</h3>
                   <p className="text-slate-600 text-sm">
-                    The Berkshire Hathaway name represents trust and
-                    integrity—values that matter when making one of life's biggest
-                    decisions.
+                    35 years in Las Vegas real estate and $127M+ in closed
+                    transactions. That track record matters when you're making
+                    one of life's biggest decisions.
                   </p>
                 </div>
               </div>
@@ -877,7 +885,7 @@ export default function FiftyFiveCommunitiesPage() {
               </span>
             </p>
             <p className="mt-4 text-blue-300 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Grand Park Village Homes
             </p>
           </section>
         </div>
@@ -885,7 +893,6 @@ export default function FiftyFiveCommunitiesPage() {
           Last Updated: January 2026
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

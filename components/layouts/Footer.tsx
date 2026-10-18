@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { headers } from "next/headers";
-import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { agentInfo, siteConfig } from "@/lib/site-config";
 import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { SiteLogo } from "@/components/brand/SiteLogo";
 import { getAgentPortraitCopy } from "@/lib/agent-portrait";
@@ -22,38 +23,9 @@ export default function Footer() {
               <SiteLogo imageAlt={portrait.alt} tone="light" />
             </div>
             <p className="text-slate-300 mb-4 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties. Las Vegas, Henderson, and
-              Summerlin, including Grand Park Village.
+              Grand Park Village and Summerlin West real estate with Dr. Jan Duffy, 35 years in Las
+              Vegas real estate.
             </p>
-            <div className="flex space-x-4">
-              <a
-                href="https://drjanduffy.realscout.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="https://drjanduffy.realscout.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://drjanduffy.realscout.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-slate-400 hover:text-white transition-colors"
-                aria-label="Search Las Vegas Homes"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -76,14 +48,6 @@ export default function Footer() {
                   className="text-slate-300 hover:text-white transition-colors text-sm"
                 >
                   Neighborhoods
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/why-berkshire-hathaway"
-                  className="text-slate-300 hover:text-white transition-colors text-sm"
-                >
-                  Why BHHS
                 </Link>
               </li>
               <li>
@@ -214,8 +178,7 @@ export default function Footer() {
         <div className="border-t border-slate-800 mt-8 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-slate-400 text-sm text-center md:text-left">
-              © {currentYear} Berkshire Hathaway HomeServices Nevada Properties. All Rights
-              Reserved.
+              © {currentYear} {siteConfig.name} · {agentInfo.name}. All Rights Reserved.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm">
               <Link href="/faq" className="text-slate-400 hover:text-white transition-colors">
@@ -226,14 +189,28 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-          <p className="text-slate-500 text-xs mt-4 text-center">
-            Dr. Jan Duffy, REALTOR® | License S.0197614.LLC | Berkshire Hathaway HomeServices Nevada
-            Properties
+          <p className="text-slate-500 text-xs text-center mt-4 max-w-3xl mx-auto">
+            Equal Housing Opportunity. We do not discriminate based on race, color, religion, sex,
+            handicap, familial status, national origin, sexual orientation, or gender identity.
           </p>
-          <p className="text-slate-600 text-xs mt-2 text-center max-w-3xl mx-auto">
-            When you work with a Berkshire Hathaway HomeServices agent, you're backed by a name
-            synonymous with trust, ethical standards, and financial strength.
-          </p>
+          {/* Brokerage disclosure — NAC 645.610: brokerage name shown with prominence,
+              license number, and franchise independently-owned statement */}
+          <div className="mt-6 mx-auto max-w-3xl rounded-lg border border-slate-700 bg-slate-800/60 px-6 py-5 text-center space-y-1">
+            <p className="text-white text-base md:text-lg font-bold">
+              Brokered by {agentInfo.brokerage}
+            </p>
+            <p className="text-slate-200 text-sm font-semibold">
+              {agentInfo.name}, {agentInfo.title} | NV License #{agentInfo.license}
+            </p>
+            <p className="text-slate-300 text-sm">
+              Each office is independently owned and operated.
+            </p>
+            <p className="text-slate-300 text-sm">
+              <a href={agentInfo.phoneTel} className="hover:text-white">{agentInfo.phone}</a>
+              {" · "}
+              <a href={siteConfig.url} className="hover:text-white">{siteConfig.url.replace("https://", "").replace("www.", "")}</a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>

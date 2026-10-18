@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
 import {
   Phone,
@@ -15,17 +16,21 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import PageIllustration from "@/components/PageIllustration";
+
 export const metadata: Metadata = {
-  title: "Berkshire Hathaway HomeServices Las Vegas Market Update | January 2026",
+  title: "Las Vegas Market Update | January 2026",
   description:
-    "Weekly Las Vegas real estate market update from Berkshire Hathaway HomeServices Nevada Properties. Get the latest stats, notable sales, and expert analysis from Dr. Jan Duffy. Call (702) 500-1942.",
+    "Weekly Las Vegas real estate market update from Grand Park Village Homes. Get the latest stats, notable sales, and expert analysis from Dr. Jan Duffy. Call (702) 500-1942.",
   keywords: [
-    "Berkshire Hathaway HomeServices Las Vegas market update",
+    "Grand Park Village Homes market update",
     "Las Vegas real estate market",
     "Las Vegas housing market 2026",
     "Henderson real estate market",
     "Las Vegas home prices",
   ],
+  ...selfCanonicalMetadata,
 };
 
 const articleSchema = {
@@ -74,22 +79,24 @@ export default function MarketUpdatePage() {
           </div>
 
           {/* Header */}
+          <PageIllustration scene="market" label="Illustration of rising bar chart beside a city skyline" />
           <div className="max-w-4xl mx-auto text-center mb-12">
             <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               <Calendar className="h-4 w-4 mr-2" />
               Week of January 20, 2026
             </div>
             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Berkshire Hathaway HomeServices Las Vegas Market Update
+              Las Vegas Market Update
             </h1>
             <p className="text-xl text-slate-600">
               Your weekly insider report on Las Vegas Valley real estate from{" "}
-              <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>
+              <strong>Dr. Jan Duffy</strong>
             </p>
             <div className="flex items-center justify-center mt-6 text-slate-500 text-sm">
-              <span>By Dr. Jan Duffy, REALTOR® | BHHS Nevada Properties</span>
+              <span>By Dr. Jan Duffy, REALTOR® | Grand Park Village Homes</span>
             </div>
           </div>
+          <RealScoutListings compact {...realscoutRange("/market-update")} />
 
           {/* Key Statistics */}
           <section className="mb-16 max-w-5xl mx-auto">
@@ -213,7 +220,7 @@ export default function MarketUpdatePage() {
                 <p>
                   What I'm watching closely: <strong>new listing activity</strong>. If inventory
                   continues declining while sales remain strong, we could see more competitive
-                  conditions by spring. <strong>Berkshire Hathaway HomeServices</strong> buyers
+                  conditions by spring. Buyers
                   should be prepared to move quickly on desirable properties, while sellers should
                   consider listing before the traditional spring rush creates more competition."
                 </p>
@@ -225,7 +232,7 @@ export default function MarketUpdatePage() {
                 <div>
                   <div className="font-bold text-slate-900">Dr. Jan Duffy</div>
                   <div className="text-slate-500 text-sm">
-                    REALTOR® | Berkshire Hathaway HomeServices Nevada Properties
+                    REALTOR® | Grand Park Village Homes
                   </div>
                 </div>
               </div>
@@ -271,8 +278,8 @@ export default function MarketUpdatePage() {
                   <li className="flex items-start">
                     <ArrowRight className="h-5 w-5 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span>
-                      <strong>Work with an expert.</strong> A Berkshire Hathaway HomeServices agent
-                      can identify properties before they hit the market and negotiate effectively.
+                      <strong>Work with an expert.</strong> Dr. Jan brings 35 years of Las Vegas
+                      experience. She can identify properties before they hit the market and negotiate effectively.
                     </span>
                   </li>
                 </ul>
@@ -311,8 +318,8 @@ export default function MarketUpdatePage() {
                   <li className="flex items-start">
                     <ArrowRight className="h-5 w-5 text-blue-600 mr-2 mt-0.5 flex-shrink-0" />
                     <span>
-                      <strong>Leverage the BHHS brand.</strong> Berkshire Hathaway HomeServices
-                      marketing reaches qualified buyers locally, nationally, and internationally.
+                      <strong>Start with a market analysis.</strong> Dr. Jan can provide a detailed
+                      market analysis so you know where your home fits this week.
                     </span>
                   </li>
                 </ul>
@@ -400,7 +407,7 @@ export default function MarketUpdatePage() {
               </Link>
             </div>
             <p className="mt-6 text-blue-200 text-sm">
-              Berkshire Hathaway HomeServices Nevada Properties
+              Grand Park Village Homes
             </p>
           </section>
 
@@ -432,7 +439,6 @@ export default function MarketUpdatePage() {
           Last Updated: January 24, 2026 | Data Source: Las Vegas REALTORS® MLS
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

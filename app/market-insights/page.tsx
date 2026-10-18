@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
 import {
   Phone,
@@ -8,7 +9,6 @@ import {
   Building2,
   Cpu,
   Globe,
-  Zap,
   BarChart3,
   Users,
   DollarSign,
@@ -16,8 +16,12 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import AgentPhoto from "@/components/AgentPhoto";
+import PageIllustration from "@/components/PageIllustration";
+
 export const metadata: Metadata = {
-  title: "Las Vegas Real Estate Market Insights 2026 | Berkshire Hathaway HomeServices",
+  title: "Las Vegas Real Estate Market Insights 2026",
   description:
     "Technology trends, economic forecasts, and market analysis shaping Las Vegas real estate in 2026. AI, data centers, California migration, and what it means for buyers and sellers. Call (702) 500-1942.",
   keywords: [
@@ -26,8 +30,8 @@ export const metadata: Metadata = {
     "Nevada economic outlook",
     "California to Las Vegas migration",
     "Las Vegas tech hub",
-    "Berkshire Hathaway market insights",
   ],
+  ...selfCanonicalMetadata,
 };
 
 const reportSchema = {
@@ -65,6 +69,7 @@ export default function MarketInsightsPage() {
             </nav>
           </div>
 
+          <PageIllustration scene="market" label="Illustration of rising bar chart beside a city skyline" />
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-flex items-center bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -79,6 +84,7 @@ export default function MarketInsightsPage() {
               real estate in 2026 and beyond.
             </p>
           </div>
+          <RealScoutListings compact {...realscoutRange("/market-insights")} />
 
           {/* Key Drivers */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -282,7 +288,7 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Tech corridor growth, safety rankings, and quality of life driving consistent demand.
+                  Tech corridor growth, 60+ city parks, and master-planned amenities driving consistent demand.
                   Expect continued 4-6% appreciation.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -297,7 +303,7 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Red Rock views, Downtown Summerlin, and top schools maintain premium positioning.
+                  Red Rock views, Downtown Summerlin, and 150+ parks maintain premium positioning.
                   Limited new inventory keeps values strong.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -327,7 +333,7 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Family-friendly community with the valley's largest park. New construction
+                  Master-planned area with the valley's largest park. New construction
                   competing with resales. Solid appreciation.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -411,12 +417,14 @@ export default function MarketInsightsPage() {
                 "Understanding market forces—not just current prices—separates informed decisions
                 from reactive ones. Las Vegas is no longer just a gaming and tourism economy.
                 Tech investment, California migration, and economic diversification are reshaping
-                which neighborhoods will outperform. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent, I help clients position
+                which neighborhoods will outperform. With 35 years in Las Vegas real estate, I help clients position
                 themselves for where the market is going, not just where it's been."
               </blockquote>
               <cite className="text-slate-300 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                <span className="inline-flex items-center gap-3 not-italic">
+                  <AgentPhoto size={48} />
+                  <span>— Dr. Jan Duffy, Grand Park Village Homes</span>
+                </span>
               </cite>
             </div>
           </section>
@@ -449,7 +457,6 @@ export default function MarketInsightsPage() {
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

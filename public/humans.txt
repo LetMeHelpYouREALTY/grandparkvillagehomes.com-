@@ -3,7 +3,7 @@
 /* TEAM */
 Agent: Dr. Jan Duffy
 License: S.0197614.LLC
-Site: https://heyberkshire.com
+Site: https://www.grandparkvillagehomes.com
 Location: Las Vegas, Nevada, USA
 Phone: (702) 500-1942
 
@@ -21,7 +21,7 @@ Testing: Vitest
 Fonts: Geist Sans
 
 /* SITE */
-Last update: 2026-02-14
+Last update: 2026-10-18
 Language: English
 Doctype: HTML5
 Standards: W3C, WCAG 2.1, Fair Housing Act

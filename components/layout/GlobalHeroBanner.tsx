@@ -37,6 +37,9 @@ export default function GlobalHeroBanner() {
           className="absolute inset-0 bg-gradient-to-r from-slate-950/75 via-slate-950/45 to-slate-950/25"
           aria-hidden="true"
         />
+        <span className="absolute bottom-2 right-3 z-20 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">
+          Illustration
+        </span>
         <div className="relative z-10 flex h-full items-end">
           <div className="container mx-auto px-4 pb-5 md:pb-6">
             <p className="text-lg sm:text-xl md:text-2xl font-semibold text-white [text-shadow:0_2px_12px_rgba(0,0,0,0.7)] max-w-3xl text-balance">

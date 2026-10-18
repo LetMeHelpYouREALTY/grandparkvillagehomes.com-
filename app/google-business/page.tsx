@@ -9,13 +9,9 @@ import {
   Star,
   CheckCircle,
   MessageSquare,
-  Camera,
-  FileText,
   Award,
   Users,
   Home,
-  Building,
-  Heart,
 } from "lucide-react";
 import type { Metadata } from "next";
 import {
@@ -25,26 +21,32 @@ import {
   generateLocalBusinessSchema,
   generateFAQSchema,
 } from "@/lib/gbp-schema";
+import { schemaToJsonLd } from "@/lib/schema";
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import PageIllustration from "@/components/PageIllustration";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 
 export const metadata: Metadata = {
-  title: "Dr. Jan Duffy, REALTOR® Las Vegas | Berkshire Hathaway HomeServices",
+  title: "Dr. Jan Duffy, REALTOR® Las Vegas",
   description:
-    "Dr. Jan Duffy is a trusted Las Vegas REALTOR® with Berkshire Hathaway HomeServices Nevada Properties. Specializing in Summerlin, Henderson, 55+ communities, California relocation, and luxury homes. Call (702) 500-1942.",
+    "Dr. Jan Duffy is a trusted Las Vegas REALTOR® with 35 years of experience. Specializing in Summerlin, Henderson, 55+ communities, California relocation, and luxury homes. Call (702) 500-1942.",
   keywords: [
     "Dr. Jan Duffy realtor",
     "Las Vegas real estate agent",
-    "Berkshire Hathaway HomeServices Las Vegas",
+    "Grand Park Village Homes",
     "Summerlin realtor",
     "Henderson real estate agent",
     "55+ communities Las Vegas",
     "California relocation Las Vegas",
   ],
   openGraph: {
-    title: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
-    description: "Trusted Las Vegas REALTOR® serving since 2008. Summerlin, Henderson, luxury homes, 55+ communities.",
+    title: "Dr. Jan Duffy - Grand Park Village Homes",
+    description: "Trusted Las Vegas REALTOR® with 35 years of experience. Summerlin, Henderson, luxury homes, 55+ communities.",
     url: "https://www.grandparkvillagehomes.com/google-business",
     type: "profile",
   },
+  ...selfCanonicalMetadata,
 };
 
 export default function GoogleBusinessPage() {
@@ -55,11 +57,11 @@ export default function GoogleBusinessPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        dangerouslySetInnerHTML={{ __html: schemaToJsonLd(localBusinessSchema) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: schemaToJsonLd(faqSchema) }}
       />
       <Navbar />
       <main className="pt-24 pb-16">
@@ -71,13 +73,14 @@ export default function GoogleBusinessPage() {
                 <div>
                   <div className="flex items-center gap-2 mb-4">
                     <Award className="h-6 w-6 text-yellow-400" />
-                    <span className="text-yellow-400 font-semibold">Berkshire Hathaway HomeServices</span>
+                    <span className="text-yellow-400 font-semibold">35 Years in Las Vegas Real Estate</span>
                   </div>
+                  <PageIllustration scene="office" label="Illustration of Las Vegas skyline and neighborhoods at dusk" />
                   <h1 className="text-4xl md:text-5xl font-bold mb-4">
                     Dr. Jan Duffy
                   </h1>
                   <p className="text-xl text-blue-200 mb-2">REALTOR® | License {businessInfo.license}</p>
-                  <p className="text-slate-300 mb-6">Nevada Properties</p>
+                  <p className="text-slate-300 mb-6">Grand Park Village Homes</p>
                   
                   {/* NAP - Exact match to GBP */}
                   <div className="space-y-3">
@@ -123,6 +126,7 @@ export default function GoogleBusinessPage() {
               </div>
             </div>
           </section>
+          <RealScoutListings compact {...realscoutRange("/google-business")} />
 
           {/* Business Hours */}
           <section className="max-w-5xl mx-auto mb-16">
@@ -225,7 +229,7 @@ export default function GoogleBusinessPage() {
               <div className="mt-8 pt-8 border-t border-blue-200">
                 <h3 className="font-bold text-slate-900 mb-4">Neighborhood Expertise</h3>
                 <div className="flex flex-wrap gap-2">
-                  {["Summerlin", "Grand Park", "Henderson", "Green Valley", "The Ridges", "Southern Highlands", "Centennial Hills", "Skye Canyon", "Inspirada", "Mountains Edge", "North Las Vegas"].map((area) => (
+                  {["Summerlin", "Henderson", "Green Valley", "The Ridges", "Southern Highlands", "Centennial Hills", "Skye Canyon", "Inspirada", "Mountains Edge", "North Las Vegas"].map((area) => (
                     <Link
                       key={area}
                       href={`/neighborhoods/${area.toLowerCase().replace(/\s+/g, "-")}`}

@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
+
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
+import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 
 export const metadata: Metadata = {
   title: 'Security Policy',
@@ -15,11 +19,12 @@ export default function SecurityPolicyPage() {
   return (
     <>
     <Navbar />
-    <div className="min-h-screen bg-white pb-12 pt-28">
+    <div className="min-h-screen bg-white py-12">
       <div className="container mx-auto max-w-4xl px-4">
         <h1 className="text-4xl font-bold text-gray-900 mb-8">
           Security Policy
         </h1>
+        <RealScoutListings compact {...realscoutRange("/security-policy")} />
 
         <div className="prose prose-lg max-w-none">
           {/* Overview */}
@@ -28,7 +33,7 @@ export default function SecurityPolicyPage() {
               Our Commitment to Security
             </h2>
             <p className="text-gray-700 leading-relaxed">
-              At Berkshire Hathaway HomeServices Nevada Properties, we take the security
+              At Grand Park Village Homes, we take the security
               of our systems and the privacy of our clients seriously. This page outlines
               our security practices and provides information for security researchers.
             </p>
@@ -51,8 +56,8 @@ export default function SecurityPolicyPage() {
               <ul className="space-y-2 text-blue-800">
                 <li>
                   <strong>Email:</strong>{' '}
-                  <a href="mailto:security@heyberkshire.com" className="underline">
-                    security@heyberkshire.com
+                  <a href="mailto:homes@heyberkshire.com" className="underline">
+                    homes@heyberkshire.com
                   </a>
                 </li>
                 <li>
@@ -246,12 +251,12 @@ export default function SecurityPolicyPage() {
                 <strong>Dr. Jan Duffy</strong>
               </p>
               <p className="mb-2">
-                Berkshire Hathaway HomeServices Nevada Properties
+                Grand Park Village Homes
               </p>
               <p className="mb-2">
                 Email:{' '}
-                <a href="mailto:info@heyberkshire.com" className="text-blue-600 underline">
-                  info@heyberkshire.com
+                <a href="mailto:info@grandparkvillagehomes.com" className="text-blue-600 underline">
+                  info@grandparkvillagehomes.com
                 </a>
               </p>
               <p>

@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;
-  const lastModified = new Date();
+  const lastModified = new Date("2026-10-18T00:00:00.000Z");
 
   // Core pages
   const corePages = [
@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/about`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/contact`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/listings`, priority: 0.9, changeFrequency: "daily" as const },
-    { url: `${baseUrl}/why-berkshire-hathaway`, priority: 0.9, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/market-report`, priority: 0.9, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/market-update`, priority: 0.9, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/market-insights`, priority: 0.9, changeFrequency: "monthly" as const },
@@ -66,6 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/neighborhoods/grand-park/glenrock`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/grand-park/builders`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/grand-park/park`, priority: 0.8, changeFrequency: "weekly" as const },
+    { url: `${baseUrl}/neighborhoods/grand-park/market-report`, priority: 0.8, changeFrequency: "monthly" as const },
     { url: `${baseUrl}/neighborhoods/henderson`, priority: 0.8, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/green-valley`, priority: 0.7, changeFrequency: "weekly" as const },
     { url: `${baseUrl}/neighborhoods/the-ridges`, priority: 0.8, changeFrequency: "weekly" as const },

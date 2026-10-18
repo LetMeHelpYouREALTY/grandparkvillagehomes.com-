@@ -6,13 +6,17 @@ import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Home as HomeIcon, TrendingUp, Shield, Users } from "lucide-react";
+import { Phone, Home as HomeIcon, TrendingUp, MapPin, Users } from "lucide-react";
 import { grandParkImages } from "@/lib/grand-park-media";
 import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { headers } from "next/headers";
 import { getPreferredOrigin } from "@/lib/canonical";
 import { getPageDomainConfig } from "@/lib/get-domain-config";
 import { getFaqsForDomain } from "@/lib/faq-config";
+import { realscoutRange } from "@/lib/realscout-ranges";
+import { vegasMarket as v } from "@/lib/vegas-market";
+import { usd } from "@/lib/format";
+import { agentInfo } from "@/lib/site-config";
 
 // Maps pageType → human-readable FAQ section title/subtitle
 const FAQ_SECTION_COPY: Record<
@@ -33,7 +37,7 @@ const FAQ_SECTION_COPY: Record<
   },
   search: {
     title: "Las Vegas Home Search FAQ",
-    subtitle: "Straight answers from a 30-year Las Vegas market expert",
+    subtitle: "Straight answers from a 35-year Las Vegas market expert",
   },
   lifestyle: {
     title: "Moving to Las Vegas FAQ",
@@ -51,12 +55,6 @@ export default async function Home() {
   // ── Domain-aware FAQs ────────────────────────────────────────────────────
   const faqs = getFaqsForDomain(config.pageType, config.domain);
   const faqCopy = FAQ_SECTION_COPY[config.pageType] ?? FAQ_SECTION_COPY["search"];
-  const showVillageHero =
-    config.domain === "default" ||
-    config.domain === "heyberkshire.com" ||
-    config.domain === "grandparkvillagehomes.com" ||
-    config.neighborhood === "Grand Park";
-
   // Personalise the FAQ title with the neighborhood name for community/55+ pages
   const faqTitle =
     config.pageType === "community" || config.pageType === "55plus"
@@ -69,7 +67,7 @@ export default async function Home() {
     "@type": "RealEstateAgent",
     name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
     url: getPreferredOrigin(headers().get("x-domain")),
-    telephone: "+17022221964",
+    telephone: "+17025001942",
     address: {
       "@type": "PostalAddress",
       streetAddress: "9406 W Lake Mead Blvd, Suite 100",
@@ -108,18 +106,17 @@ export default async function Home() {
         {/* Domain-Aware Hero */}
         <section className="relative min-h-[640px] overflow-hidden bg-slate-900 text-white">
           <Image
-            src={showVillageHero ? grandParkImages.hero : "/Image/hero_bg_1.jpg"}
-            alt={
-              showVillageHero
-                ? "Grand Park Village Homes in West Summerlin, Las Vegas, with new homes beside the central park"
-                : `${config.neighborhood} homes for sale`
-            }
+            src={grandParkImages.hero}
+            alt="Illustration of new homes beside a large park below desert mountains"
             fill
             priority
             className="object-cover"
             sizes="100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/45 via-slate-950/55 to-slate-950/80" />
+          <span className="absolute bottom-2 right-3 z-10 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">
+            Illustration
+          </span>
           <div className="relative z-10 container mx-auto px-4 pb-20 pt-32 text-center md:pb-24 md:pt-40">
             <DrJanPortrait variant="hero" />
             {config.ctaBadge && (
@@ -147,10 +144,10 @@ export default async function Home() {
             <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-white">500+</span>
-                <span>Clients Helped</span>
+                <span>Families Served</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">30+ Years</span>
+                <span className="font-semibold text-white">35 Years</span>
                 <span>Las Vegas Experience</span>
               </div>
               <div className="flex items-center gap-2">
@@ -160,6 +157,7 @@ export default async function Home() {
             </div>
           </div>
         </section>
+        <RealScoutListings {...realscoutRange("/")} />
 
         {/* Value Proposition */}
         <section className="py-16 md:py-20 bg-white">
@@ -169,14 +167,14 @@ export default async function Home() {
                 Why Work With Dr. Jan Duffy?
               </h2>
               <p className="text-lg text-slate-600">
-                Berkshire Hathaway HomeServices Nevada Properties — the most trusted name in Las Vegas real estate.
+                35 years of Las Vegas real estate experience and one agent from first call to closing.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[
-                { icon: Shield, title: "Trusted Brand", desc: "Backed by Warren Buffett's Berkshire Hathaway — unmatched integrity" },
-                { icon: Users, title: "50K+ Network", desc: "Global referral network for seamless moves to or from any market" },
-                { icon: TrendingUp, title: "$127M+ Sold", desc: "Proven results across every Las Vegas neighborhood since 2008" },
+                { icon: MapPin, title: "Grand Park & Summerlin West", desc: "Builder contracts, lot premiums, and incentives across Grand Park's collections" },
+                { icon: Users, title: "500+ Families Served", desc: "Buyers and sellers across the Las Vegas Valley" },
+                { icon: TrendingUp, title: "$127M+ Sold", desc: "35 years in Las Vegas real estate" },
                 { icon: HomeIcon, title: "Full Service", desc: "Buying, selling, 55+, luxury, investment — one expert handles it all" },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="text-center p-6">
@@ -191,7 +189,7 @@ export default async function Home() {
           </div>
         </section>
 
-        {config.neighborhood === "Las Vegas" || config.neighborhood === "Summerlin" ? (
+        {(
           <section className="py-16 md:py-20 bg-slate-50">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="mb-6">
@@ -207,35 +205,38 @@ export default async function Home() {
                 Homes Around a 90-Acre Park
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mb-8">
-                Summerlin’s newest active village, west of the 215 Beltway. Single-family homes, paired homes, and townhomes run from the high $300,000s to over $1.6 million.
+                Summerlin’s newest village, west of the 215 Beltway. Townhomes and single-family homes run from about $400,000 to over $2 million.
               </p>
               <div className="mb-8 grid gap-4 md:grid-cols-3">
                 <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
                   <Image
                     src={grandParkImages.park}
-                    alt="Grand Park central park in West Summerlin, Las Vegas"
+                    alt="Illustration of a large community park with sports courts and a splash pad"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
+                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
                 </div>
                 <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
                   <Image
                     src={grandParkImages.singleFamily}
-                    alt="Single-family home for sale in Grand Park Village, Summerlin"
+                    alt="Illustration of a modern single-story desert home"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
+                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
                 </div>
                 <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
                   <Image
                     src={grandParkImages.townhomes}
-                    alt="Townhomes for sale in Grand Park Village, Las Vegas"
+                    alt="Illustration of modern two-story townhomes"
                     fill
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
+                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
                 </div>
               </div>
               <Link
@@ -246,23 +247,23 @@ export default async function Home() {
               </Link>
             </div>
           </section>
-        ) : null}
+        )}
 
         {/* Market Stats */}
         <section className="py-16 bg-slate-900 text-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold mb-3">
-                {config.neighborhood} Real Estate Market
+                Las Vegas Real Estate Market
               </h2>
-              <p className="text-slate-400">Current data — updated regularly</p>
+              <p className="text-slate-400">Las Vegas REALTORS, {v.month} · checked {v.updated}</p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
-                { value: "$450K", label: "Median Price", sub: "+4.2% YoY" },
-                { value: "28", label: "Avg Days on Market", sub: "" },
-                { value: "4,850", label: "Active Listings", sub: "" },
-                { value: "2.1", label: "Months Inventory", sub: "" },
+                { value: usd(v.lvr.sfMedian), label: "Single-family median", sub: `${v.lvr.sfMedianYoY} vs. last year` },
+                { value: v.lvr.soldWithin30, label: "Sold within 30 days", sub: "" },
+                { value: v.lvr.sfNoOffer.toLocaleString(), label: "Homes with no offer", sub: v.lvr.sfNoOfferYoY },
+                { value: `${v.lvr.monthsSupply}`, label: "Months of supply", sub: "" },
               ].map(({ value, label, sub }) => (
                 <div key={label} className="text-center">
                   <div className="text-4xl font-bold text-blue-400 mb-1">{value}</div>
@@ -279,7 +280,6 @@ export default async function Home() {
           </div>
         </section>
 
-        <RealScoutListings />
         <WhyChooseUs />
         <ReviewsSection />
 
@@ -301,11 +301,11 @@ export default async function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17022221964"
+                href={agentInfo.phoneTel}
                 className="inline-flex items-center justify-center bg-white text-blue-600 px-8 py-4 rounded-md font-bold text-lg hover:bg-blue-50 transition-colors"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Call 702-222-1964
+                Call {agentInfo.phone}
               </a>
               <Link
                 href="/contact"
@@ -315,7 +315,7 @@ export default async function Home() {
               </Link>
             </div>
             <p className="mt-6 text-blue-200 text-sm">
-              Dr. Jan Duffy | License S.0197614.LLC | Berkshire Hathaway HomeServices Nevada Properties
+              Dr. Jan Duffy, REALTOR® | 35 years in Las Vegas real estate
             </p>
           </div>
         </section>

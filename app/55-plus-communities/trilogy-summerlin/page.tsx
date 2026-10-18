@@ -1,39 +1,42 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import { realscoutRange } from "@/lib/realscout-ranges";
 import Link from "next/link";
 import {
   Phone,
-  MapPin,
   Star,
   UtensilsCrossed,
   Dumbbell,
-  Users,
   CheckCircle,
   Sparkles,
   Home as HomeIcon,
-  Heart,
 } from "lucide-react";
 import type { Metadata } from "next";
+
+import { selfCanonicalMetadata } from "@/lib/page-metadata";
+import AgentPhoto from "@/components/AgentPhoto";
+import PageIllustration from "@/components/PageIllustration";
 
 export const metadata: Metadata = {
   title: "Trilogy at Summerlin Homes for Sale | Luxury Resort 55+ Living | Dr. Jan Duffy",
   description:
-    "Trilogy at Summerlin - luxury resort-style 55+ community. Homes from $500K-$1.1M. On-site farm-to-table restaurant, spa, contemporary designs. Dr. Jan Duffy, BHHS. Call (702) 500-1942.",
+    "Trilogy at Summerlin - luxury resort-style 55+ community. Homes from $500K-$1.1M. On-site farm-to-table restaurant, spa, contemporary designs. Dr. Jan Duffy, Grand Park Village Homes. Call (702) 500-1942.",
   keywords: [
     "Trilogy at Summerlin homes for sale",
     "Trilogy Summerlin Las Vegas",
     "luxury 55+ community Las Vegas",
     "resort style 55+ Las Vegas",
     "Shea Homes Trilogy",
-    "Berkshire Hathaway Trilogy Summerlin",
+    "Dr. Jan Duffy Trilogy Summerlin",
   ],
   openGraph: {
     title: "Trilogy at Summerlin - Luxury Resort 55+ Living",
     description:
-      "Where resort living meets 55+ community. Farm-to-table dining, spa, contemporary homes. From $500K. Dr. Jan Duffy, BHHS.",
+      "Where resort living meets 55+ community. Farm-to-table dining, spa, contemporary homes. From $500K. Dr. Jan Duffy, Grand Park Village Homes.",
     type: "website",
   },
+  ...selfCanonicalMetadata,
 };
 
 const communitySchema = {
@@ -80,6 +83,7 @@ export default function TrilogySummerlinPage() {
             </nav>
           </div>
 
+          <PageIllustration scene="active-adult" label="Illustration of 55+ resort-style clubhouse and pool" />
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-flex items-center bg-rose-100 text-rose-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
@@ -94,6 +98,7 @@ export default function TrilogySummerlinPage() {
               dining, world-class spa, and contemporary homes.
             </p>
           </div>
+          <RealScoutListings compact {...realscoutRange("/55-plus-communities/trilogy-summerlin")} />
 
           {/* Quick Stats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
@@ -147,10 +152,9 @@ export default function TrilogySummerlinPage() {
                 plans, designer finishes, and modern smart home technology.
               </p>
               <p>
-                <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>{" "}
-                serves discerning buyers seeking luxury 55+ options. Dr. Jan
-                Duffy understands why buyers choose Trilogy's resort experience
-                over traditional active adult communities.
+                <strong>Dr. Jan Duffy</strong> works with buyers looking for
+                luxury 55+ options. She knows why buyers choose Trilogy's resort
+                experience over traditional active adult communities.
               </p>
             </div>
           </section>
@@ -351,7 +355,7 @@ export default function TrilogySummerlinPage() {
                   </strong>
                   <p className="text-slate-600 text-sm">
                     800+ homes—large enough for vibrant programming, small enough
-                    for genuine community
+                    for a close-knit community
                   </p>
                 </div>
               </div>
@@ -377,13 +381,15 @@ export default function TrilogySummerlinPage() {
                 "Trilogy at Summerlin is for buyers who want more than a 55+
                 community—they want a lifestyle. The on-site restaurant, spa, and
                 contemporary homes create an experience you simply can't find
-                elsewhere. As a{" "}
-                <strong>Berkshire Hathaway HomeServices</strong> agent serving
-                luxury 55+ buyers, I recommend Trilogy to those who appreciate
+                elsewhere. As a
+                Summerlin West and 55+ specialist, I recommend Trilogy to those who appreciate
                 quality and won't settle for ordinary."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
-                — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
+                <span className="inline-flex items-center gap-3 not-italic">
+                  <AgentPhoto size={48} />
+                  <span>— Dr. Jan Duffy, Grand Park Village Homes</span>
+                </span>
               </cite>
             </div>
           </section>
@@ -424,7 +430,6 @@ export default function TrilogySummerlinPage() {
           Last Updated: January 2026
         </div>
       </main>
-      <RealScoutListings />
       <Footer />
     </>
   );

@@ -71,7 +71,7 @@ export function DrJanPortrait({ variant = "card", pathname }: DrJanPortraitProps
           width={960}
           height={960}
           priority
-          className="h-auto w-full"
+          className="mx-auto h-auto w-3/4 p-4"
           sizes="(max-width: 768px) 100vw, 480px"
         />
         <figcaption className="px-4 py-3 text-sm text-slate-600">{copy.caption}</figcaption>

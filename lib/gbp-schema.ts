@@ -1,6 +1,9 @@
 // Google Business Profile Schema Data
 // Supports GBP ranking factors: Relevance, Distance, Prominence
 
+import { generateRealEstateAgentSchema } from "@/lib/schema";
+import { officeInfo } from "@/lib/site-config";
+
 export const businessInfo = {
   // NAP - Must match GBP exactly
   name: "Dr. Jan Duffy - Berkshire Hathaway HomeServices Nevada Properties",
@@ -35,8 +38,8 @@ export const businessInfo = {
 
   // Geo coordinates for distance ranking
   geo: {
-    latitude: 36.1941,
-    longitude: -115.2678,
+    latitude: officeInfo.coordinates.lat,
+    longitude: officeInfo.coordinates.lng,
   },
 
   // Service areas - Start focused, expand with prominence
@@ -145,19 +148,19 @@ export const businessInfo = {
 // 750-word GBP Description (3 sections)
 export const gbpDescription = {
   // Section 1: Who you are/mission (~250 words)
-  whoWeAre: `Dr. Jan Duffy is a trusted REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, serving the Las Vegas real estate market since 2008. Backed by Warren Buffett's Berkshire Hathaway—the most recognized name in real estate—Dr. Jan combines local expertise with world-class resources to deliver exceptional results for buyers and sellers alike.
+  whoWeAre: `Dr. Jan Duffy is a REALTOR® with 35 years in the Las Vegas real estate market. Through Grand Park Village Homes, she represents buyers and sellers in Grand Park Village, Summerlin West, 55+ communities and luxury neighborhoods across the valley.
 
-With $127 million in closed transactions and hundreds of satisfied clients, Dr. Jan has earned a reputation for integrity, market knowledge, and personalized service. Whether you're a first-time buyer navigating the process, a luxury home seeker exploring The Ridges or MacDonald Highlands, or a California family relocating for Nevada's tax advantages, Dr. Jan provides the guidance you need to make confident real estate decisions.`,
+With $127 million in closed transactions and hundreds of satisfied clients, Dr. Jan has earned a reputation for integrity, market knowledge, and personalized service. Whether you're a first-time buyer navigating the process, a luxury home seeker exploring The Ridges or MacDonald Highlands, or a California buyer relocating for Nevada's tax advantages, Dr. Jan provides the guidance you need to make confident real estate decisions.`,
 
   // Section 2: What/why - Value proposition (~250 words)
-  whatWeDo: `What sets Dr. Jan apart is a commitment to education and advocacy. Clients receive comprehensive market analysis, expert negotiation, and honest advice—not sales pressure. As a Berkshire Hathaway HomeServices agent, Dr. Jan offers access to a global network of 50,000+ agents, world-class marketing for sellers, and off-market opportunities for buyers.
+  whatWeDo: `What sets Dr. Jan apart is a commitment to education and advocacy. Clients receive comprehensive market analysis, expert negotiation, and honest advice—not sales pressure. Sellers get full MLS marketing and pricing backed by current sales data. Buyers get access to off-market and coming-soon opportunities.
 
 Specialized services include: buyer and seller representation, luxury home sales, 55+ active adult community expertise (Sun City Summerlin, Sun City Anthem, Del Webb Lake Las Vegas), California relocation assistance, probate and divorce real estate, investment property consulting, new construction representation, and first-time buyer programs including FHA, VA, and down payment assistance guidance.
 
 Dr. Jan's approach is simple: treat every client like family, know the market inside and out, and never stop working until the deal closes successfully.`,
 
   // Section 3: Where - Areas served (~250 words)
-  whereWeServe: `Dr. Jan serves the entire Las Vegas Valley with specialized knowledge of Las Vegas, Summerlin, Henderson, North Las Vegas, and all of Clark County. Neighborhood expertise includes Summerlin's master-planned communities and Grand Park Village Homes in West Summerlin, Henderson's Green Valley and Inspirada, the luxury enclaves of The Ridges and Southern Highlands, family-friendly Centennial Hills and Skye Canyon, and affordable options in Mountains Edge and North Las Vegas.
+  whereWeServe: `Dr. Jan serves the entire Las Vegas Valley with specialized knowledge of Las Vegas, Summerlin, Henderson, North Las Vegas, and all of Clark County. Neighborhood expertise includes Summerlin's master-planned communities, Henderson's Green Valley and Inspirada, the luxury enclaves of The Ridges and Southern Highlands, Centennial Hills and Skye Canyon, and affordable options in Mountains Edge and North Las Vegas.
 
 55+ active adult community specialization covers Sun City Summerlin (Nevada's largest 55+ community), Sun City Anthem in Henderson, Del Webb Lake Las Vegas, and Solera at Anthem. Investment property expertise spans single-family rentals, multi-family opportunities, and short-term rental analysis across the Las Vegas metro area.
 
@@ -168,7 +171,7 @@ Office located at 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134. Availab
 export const gbpFAQs = [
   {
     question: "What areas does Dr. Jan Duffy serve in Las Vegas?",
-    answer: "Dr. Jan serves all of Las Vegas, Summerlin, Henderson, North Las Vegas, and Clark County. Specialized neighborhood expertise includes Summerlin, Grand Park Village, Green Valley, The Ridges, Southern Highlands, Centennial Hills, Skye Canyon, Inspirada, and Mountains Edge.",
+    answer: "Dr. Jan serves all of Las Vegas, Summerlin, Henderson, North Las Vegas, and Clark County. Specialized neighborhood expertise includes Summerlin, Green Valley, The Ridges, Southern Highlands, Centennial Hills, Skye Canyon, Inspirada, and Mountains Edge.",
   },
   {
     question: "Does Dr. Jan help buyers relocating from California?",
@@ -179,7 +182,7 @@ export const gbpFAQs = [
     answer: "Dr. Jan specializes in Sun City Summerlin (Nevada's largest 55+ community with 7,700+ homes), Sun City Anthem in Henderson, Del Webb Lake Las Vegas, and Solera at Anthem. Each community offers different amenities and price points for active adult living.",
   },
   {
-    question: "Does Berkshire Hathaway HomeServices help with new construction?",
+    question: "Does Dr. Jan help with new construction?",
     answer: "Yes! Dr. Jan provides free buyer representation for new construction purchases from builders like Toll Brothers, Lennar, and Century Communities. The builder pays the commission, but Dr. Jan works exclusively for you—protecting your interests during the build process.",
   },
   {
@@ -195,8 +198,8 @@ export const gbpFAQs = [
     answer: "Absolutely! Dr. Jan guides first-time buyers through every step, including pre-approval, loan programs (FHA 3.5% down, VA 0% down, conventional options), Nevada down payment assistance programs, and new construction incentives. Free buyer consultations available.",
   },
   {
-    question: "Why choose Berkshire Hathaway HomeServices over other agencies?",
-    answer: "Berkshire Hathaway HomeServices is backed by Warren Buffett's Berkshire Hathaway Inc.—the only real estate brand with this level of financial stability and trust. You get a global network of 50,000+ agents, world-class marketing, and a name synonymous with integrity.",
+    question: "Why choose Dr. Jan Duffy?",
+    answer: "35 years in Las Vegas real estate, $127M+ in closed transactions, and a focus on Summerlin West and 55+ communities. You work with Dr. Jan directly, from first call to closing.",
   },
   {
     question: "How do I schedule a consultation with Dr. Jan Duffy?",
@@ -208,39 +211,17 @@ export const gbpFAQs = [
   },
 ];
 
-// Generate LocalBusiness Schema
+// Single RealEstateAgent node (@id #organization) — extended with GBP service catalog
 export function generateLocalBusinessSchema() {
+  const agent = generateRealEstateAgentSchema();
+  const { "@context": _ctx, ...agentNode } = agent as {
+    "@context": string;
+    [key: string]: unknown;
+  };
+
   return {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    "@id": "https://www.grandparkvillagehomes.com/#organization",
-    name: businessInfo.name,
-    image: "https://www.grandparkvillagehomes.com/images/dr-jan-duffy.jpg",
-    url: businessInfo.url,
-    telephone: businessInfo.phone.tel,
-    email: businessInfo.email,
-    priceRange: businessInfo.priceRange,
-    address: {
-      "@type": "PostalAddress",
-      ...businessInfo.address,
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: businessInfo.geo.latitude,
-      longitude: businessInfo.geo.longitude,
-    },
-    openingHoursSpecification: [
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Monday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Tuesday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Wednesday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Thursday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "09:00", closes: "18:00" },
-      { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "10:00", closes: "16:00" },
-    ],
-    areaServed: businessInfo.serviceAreas.map((area) => ({
-      "@type": "City",
-      name: area,
-    })),
+    ...agentNode,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Real Estate Services",
@@ -253,11 +234,7 @@ export function generateLocalBusinessSchema() {
         },
       })),
     },
-    sameAs: [
-      "https://www.facebook.com/drjanduffy",
-      "https://www.instagram.com/drjanduffy",
-      "https://www.linkedin.com/in/drjanduffy",
-    ],
+    sameAs: businessInfo.socialProfiles,
   };
 }
 
