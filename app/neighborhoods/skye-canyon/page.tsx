@@ -15,7 +15,7 @@ import PageIllustration from "@/components/PageIllustration";
 export const metadata: Metadata = {
   title: "Skye Canyon Homes for Sale | Northwest Las Vegas",
   description:
-    "Find Skye Canyon homes with Dr. Jan Duffy of Grand Park Village Homes. She specializes in this premier northwest community. Median price $550K. Call (702) 500-1942.",
+    "Find Skye Canyon homes with Dr. Jan Duffy of Grand Park Village Homes. She specializes in this premier northwest community. Call (702) 500-1942.",
   keywords: [
     "Dr. Jan Duffy Skye Canyon",
     "Skye Canyon homes for sale",

@@ -15,7 +15,7 @@ import PageIllustration from "@/components/PageIllustration";
 export const metadata: Metadata = {
   title: "Inspirada Homes for Sale | Henderson Resort Living",
   description:
-    "Find Inspirada homes with Dr. Jan Duffy of Grand Park Village Homes. Dr. Jan specializes in Henderson's resort-style community. Median price $525K. Call (702) 500-1942.",
+    "Find Inspirada homes with Dr. Jan Duffy of Grand Park Village Homes. Dr. Jan specializes in Henderson's resort-style community. Call (702) 500-1942.",
   keywords: [
     "Dr. Jan Duffy Inspirada",
     "Inspirada homes for sale",

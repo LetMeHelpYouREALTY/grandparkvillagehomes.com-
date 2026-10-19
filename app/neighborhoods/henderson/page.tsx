@@ -15,7 +15,7 @@ import PageIllustration from "@/components/PageIllustration";
 export const metadata: Metadata = {
   title: "Henderson Homes & Real Estate",
   description:
-    "Find Henderson homes with Dr. Jan Duffy, Grand Park Village Homes. Green Valley, Inspirada, MacDonald Highlands, and Lake Las Vegas. Median price $485K. Call (702) 500-1942.",
+    "Find Henderson homes with Dr. Jan Duffy, Grand Park Village Homes. Green Valley, Inspirada, MacDonald Highlands, and Lake Las Vegas. Call (702) 500-1942.",
   keywords: [
     "Henderson homes for sale",
     "Henderson real estate agent",
