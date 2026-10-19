@@ -37,6 +37,12 @@ const nextConfig = {
         destination: 'https://www.grandparkvillagehomes.com/:path+',
         permanent: true,
       },
+      // Old January 2026 "weekly update"; the monthly market report replaces it
+      {
+        source: '/market-update',
+        destination: '/market-report',
+        permanent: true,
+      },
     ]
   },
 
