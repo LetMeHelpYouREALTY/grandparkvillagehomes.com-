@@ -23,8 +23,7 @@ export default function Footer() {
               <SiteLogo imageAlt={portrait.alt} tone="light" />
             </div>
             <p className="text-slate-300 mb-4 text-sm">
-              Grand Park Village and Summerlin West real estate with Dr. Jan Duffy, 35 years in Las
-              Vegas real estate.
+              Grand Park Village and Summerlin West real estate with Dr. Jan Duffy, in real estate since 1983.
             </p>
           </div>
 
@@ -197,10 +196,10 @@ export default function Footer() {
               license number, and franchise independently-owned statement */}
           <div className="mt-6 mx-auto max-w-3xl rounded-lg border border-slate-700 bg-slate-800/60 px-6 py-5 text-center space-y-1">
             <p className="text-white text-base md:text-lg font-bold">
-              Brokered by {agentInfo.brokerage}
+              Berkshire Hathaway HomeServices Nevada Properties since September 2008 · License S.0197614.LLC
             </p>
             <p className="text-slate-200 text-sm font-semibold">
-              {agentInfo.name}, {agentInfo.title} | NV License #{agentInfo.license}
+              {agentInfo.name}, {agentInfo.title}
             </p>
             <p className="text-slate-300 text-sm">
               Each office is independently owned and operated.

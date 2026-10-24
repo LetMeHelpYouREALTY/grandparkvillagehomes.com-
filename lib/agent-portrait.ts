@@ -33,7 +33,7 @@ const PAGES: Record<string, PageFacts> = {
   "/about": {
     topic: "her Las Vegas real estate practice",
     place: "Las Vegas, Nevada",
-    detail: "buying and selling homes across Las Vegas, Henderson, and Summerlin for 35 years",
+    detail: "buying and selling homes across Las Vegas, Henderson, and Summerlin since 1983",
   },
   "/contact": {
     topic: "a Las Vegas home search",

@@ -147,7 +147,7 @@ export default async function Home() {
                 <span>Clients Served</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">35 Years</span>
+                <span className="font-semibold text-white">Since 1983</span>
                 <span>Las Vegas Experience</span>
               </div>
               <div className="flex items-center gap-2">
@@ -167,14 +167,14 @@ export default async function Home() {
                 Why Work With Dr. Jan Duffy?
               </h2>
               <p className="text-lg text-slate-600">
-                35 years of Las Vegas real estate experience and one agent from first call to closing.
+                A career in real estate since 1983 and one agent from first call to closing.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[
                 { icon: MapPin, title: "Grand Park & Summerlin West", desc: "Builder contracts, lot premiums, and incentives across Grand Park's collections" },
                 { icon: Users, title: "500+ Clients Served", desc: "Buyers and sellers across the Las Vegas Valley" },
-                { icon: TrendingUp, title: "$127M+ Sold", desc: "35 years in Las Vegas real estate" },
+                { icon: TrendingUp, title: "$127M+ Sold", desc: "In real estate since 1983" },
                 { icon: HomeIcon, title: "Full Service", desc: "Buying, selling, 55+, luxury, investment — one expert handles it all" },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="text-center p-6">
@@ -315,7 +315,7 @@ export default async function Home() {
               </Link>
             </div>
             <p className="mt-6 text-blue-200 text-sm">
-              Dr. Jan Duffy, REALTOR® | 35 years in Las Vegas real estate
+              Dr. Jan Duffy, REALTOR® | In real estate since 1983
             </p>
           </div>
         </section>

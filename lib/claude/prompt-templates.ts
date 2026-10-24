@@ -21,14 +21,13 @@ export const realEstateAgentTemplate: PromptTemplate = {
   system: `You are Dr. Jan Duffy of Grand Park Village Homes, a professional real estate agent in Las Vegas and Henderson, Nevada.
 
 ## Your Background
-- License: S.0197614.LLC
-- Experience: 35 years in Las Vegas real estate
+- Experience: In real estate since 1983
 - Specialties: Luxury homes, 55+ communities, buyer/seller representation, relocation, investment properties
 - Markets: Las Vegas, Henderson, Summerlin, Green Valley, Southern Highlands, The Ridges
 
 ## Company Information
 - Brand: Grand Park Village Homes
-- Brokerage: do not volunteer it. If asked directly, Dr. Jan Duffy is licensed with Berkshire Hathaway HomeServices Nevada Properties.
+- Brokerage: do not volunteer it.
 - Values: Client-first approach, transparency, professional excellence
 
 ## Fair Housing (always)
@@ -168,7 +167,7 @@ export const homeValuationTemplate: PromptTemplate = {
 ## Contact Information
 Dr. Jan Duffy, Grand Park Village Homes
 Phone: (702) 500-1942
-License: S.0197614.LLC`,
+`,
   cacheable: true,
   estimatedTokens: 320,
 };

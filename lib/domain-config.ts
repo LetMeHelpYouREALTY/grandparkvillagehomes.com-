@@ -25,7 +25,7 @@ export const GRAND_PARK_CONFIG: DomainConfig = {
   neighborhood: "Grand Park Village",
   tagline: "Grand Park Village Homes",
   description:
-    "Grand Park Village new homes in West Summerlin, Las Vegas 89138. Buyer representation from Dr. Jan Duffy, 35 years in Las Vegas real estate.",
+    "Grand Park Village new homes in West Summerlin, Las Vegas 89138. Buyer representation from Dr. Jan Duffy, in real estate since 1983.",
   heroHeadline: "Grand Park Village Homes",
   heroSubheadline:
     "One of Summerlin’s newest villages in Las Vegas. New homes from the $400,000s to nearly $2 million.",
