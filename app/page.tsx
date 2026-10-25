@@ -66,7 +66,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
-    url: getPreferredOrigin(headers().get("x-domain")),
+    url: getPreferredOrigin((await headers()).get("x-domain")),
     telephone: "+17025001942",
     address: {
       "@type": "PostalAddress",
