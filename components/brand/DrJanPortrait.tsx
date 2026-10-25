@@ -10,8 +10,8 @@ type DrJanPortraitProps = {
 
 const SITE = siteConfig.url;
 
-export function DrJanPortrait({ variant = "card", pathname }: DrJanPortraitProps) {
-  const path = pathname ?? headers().get("x-pathname") ?? "/";
+export async function DrJanPortrait({ variant = "card", pathname }: DrJanPortraitProps) {
+  const path = pathname ?? (await headers()).get("x-pathname") ?? "/";
   const slot = variant === "hero" ? "hero" : variant === "feature" ? "feature" : "card";
   const copy = getAgentPortraitCopy(path, slot);
   const src =

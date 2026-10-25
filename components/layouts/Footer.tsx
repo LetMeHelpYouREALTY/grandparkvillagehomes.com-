@@ -6,9 +6,9 @@ import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { SiteLogo } from "@/components/brand/SiteLogo";
 import { getAgentPortraitCopy } from "@/lib/agent-portrait";
 
-export default function Footer() {
+export default async function Footer() {
   const currentYear = new Date().getFullYear();
-  const pathname = headers().get("x-pathname") || "/";
+  const pathname = (await headers()).get("x-pathname") || "/";
   const portrait = getAgentPortraitCopy(pathname, "footer");
 
   return (

@@ -10,8 +10,8 @@ import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
 import AutoBreadcrumbSchema from "@/components/AutoBreadcrumbSchema";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const domain = headers().get("x-domain") || "";
-  const pathname = headers().get("x-pathname") || "/";
+  const domain = (await headers()).get("x-domain") || "";
+  const pathname = (await headers()).get("x-pathname") || "/";
   const config = getDomainConfig(domain);
   const canonical = getCanonicalUrl(domain, pathname);
   const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
