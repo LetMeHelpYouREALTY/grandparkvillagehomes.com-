@@ -6,7 +6,13 @@ import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Home as HomeIcon, TrendingUp, MapPin, Users } from "lucide-react";
+import {
+  Phone,
+  Home as HomeIcon,
+  TrendingUp,
+  MapPin,
+  Users,
+} from "lucide-react";
 import { grandParkImages } from "@/lib/grand-park-media";
 import { DrJanPortrait } from "@/components/brand/DrJanPortrait";
 import { headers } from "next/headers";
@@ -19,10 +25,7 @@ import { usd } from "@/lib/format";
 import { agentInfo } from "@/lib/site-config";
 
 // Maps pageType → human-readable FAQ section title/subtitle
-const FAQ_SECTION_COPY: Record<
-  string,
-  { title: string; subtitle: string }
-> = {
+const FAQ_SECTION_COPY: Record<string, { title: string; subtitle: string }> = {
   community: {
     title: "Community Real Estate FAQ",
     subtitle: "Common questions from buyers and sellers in this neighborhood",
@@ -54,7 +57,8 @@ export default async function Home() {
 
   // ── Domain-aware FAQs ────────────────────────────────────────────────────
   const faqs = getFaqsForDomain(config.pageType, config.domain);
-  const faqCopy = FAQ_SECTION_COPY[config.pageType] ?? FAQ_SECTION_COPY["search"];
+  const faqCopy =
+    FAQ_SECTION_COPY[config.pageType] ?? FAQ_SECTION_COPY["search"];
   // Personalise the FAQ title with the neighborhood name for community/55+ pages
   const faqTitle =
     config.pageType === "community" || config.pageType === "55plus"
@@ -66,7 +70,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "RealEstateAgent",
     name: `Dr. Jan Duffy - ${config.neighborhood} Real Estate`,
-    url: getPreferredOrigin(headers().get("x-domain")),
+    url: getPreferredOrigin((await headers()).get("x-domain")),
     telephone: "+17025001942",
     address: {
       "@type": "PostalAddress",
@@ -167,15 +171,32 @@ export default async function Home() {
                 Why Work With Dr. Jan Duffy?
               </h2>
               <p className="text-lg text-slate-600">
-                A career in real estate since 1983 and one agent from first call to closing.
+                A career in real estate since 1983 and one agent from first call
+                to closing.
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[
-                { icon: MapPin, title: "Grand Park & Summerlin West", desc: "Builder contracts, lot premiums, and incentives across Grand Park's collections" },
-                { icon: Users, title: "500+ Clients Served", desc: "Buyers and sellers across the Las Vegas Valley" },
-                { icon: TrendingUp, title: "$127M+ Sold", desc: "In real estate since 1983" },
-                { icon: HomeIcon, title: "Full Service", desc: "Buying, selling, 55+, luxury, investment — one expert handles it all" },
+                {
+                  icon: MapPin,
+                  title: "Grand Park & Summerlin West",
+                  desc: "Builder contracts, lot premiums, and incentives across Grand Park's collections",
+                },
+                {
+                  icon: Users,
+                  title: "500+ Clients Served",
+                  desc: "Buyers and sellers across the Las Vegas Valley",
+                },
+                {
+                  icon: TrendingUp,
+                  title: "$127M+ Sold",
+                  desc: "In real estate since 1983",
+                },
+                {
+                  icon: HomeIcon,
+                  title: "Full Service",
+                  desc: "Buying, selling, 55+, luxury, investment — one expert handles it all",
+                },
               ].map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="text-center p-6">
                   <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
@@ -189,7 +210,7 @@ export default async function Home() {
           </div>
         </section>
 
-        {(
+        {
           <section className="py-16 md:py-20 bg-slate-50">
             <div className="container mx-auto px-4 max-w-6xl">
               <div className="mb-6">
@@ -205,7 +226,9 @@ export default async function Home() {
                 Homes Around a 90-Acre Park
               </h2>
               <p className="text-lg text-slate-600 max-w-3xl mb-8">
-                One of Summerlin’s newest villages, west of the 215 Beltway. Townhomes and single-family homes run from the $400,000s to nearly $2 million.
+                One of Summerlin’s newest villages, west of the 215 Beltway.
+                Townhomes and single-family homes run from the $400,000s to
+                nearly $2 million.
               </p>
               <div className="mb-8 grid gap-4 md:grid-cols-3">
                 <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
@@ -216,7 +239,9 @@ export default async function Home() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
-                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
+                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">
+                    Illustration
+                  </span>
                 </div>
                 <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
                   <Image
@@ -226,7 +251,9 @@ export default async function Home() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
-                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
+                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">
+                    Illustration
+                  </span>
                 </div>
                 <div className="relative h-56 overflow-hidden rounded-2xl md:h-72">
                   <Image
@@ -236,7 +263,9 @@ export default async function Home() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                     className="object-cover"
                   />
-                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">Illustration</span>
+                  <span className="absolute bottom-2 right-3 rounded bg-black/40 px-2 py-0.5 text-[11px] font-medium text-white/90">
+                    Illustration
+                  </span>
                 </div>
               </div>
               <Link
@@ -247,7 +276,7 @@ export default async function Home() {
               </Link>
             </div>
           </section>
-        )}
+        }
 
         {/* Market Stats */}
         <section className="py-16 bg-slate-900 text-white">
@@ -256,24 +285,49 @@ export default async function Home() {
               <h2 className="text-3xl font-bold mb-3">
                 Las Vegas Real Estate Market
               </h2>
-              <p className="text-slate-400">Las Vegas REALTORS, {v.month} · checked {v.updated}</p>
+              <p className="text-slate-400">
+                Las Vegas REALTORS, {v.month} · checked {v.updated}
+              </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
               {[
-                { value: usd(v.lvr.sfMedian), label: "Single-family median", sub: `${v.lvr.sfMedianYoY} vs. last year` },
-                { value: v.lvr.soldWithin30, label: "Sold within 30 days", sub: "" },
-                { value: v.lvr.sfNoOffer.toLocaleString(), label: "Homes with no offer", sub: v.lvr.sfNoOfferYoY },
-                { value: `${v.lvr.monthsSupply}`, label: "Months of supply", sub: "" },
+                {
+                  value: usd(v.lvr.sfMedian),
+                  label: "Single-family median",
+                  sub: `${v.lvr.sfMedianYoY} vs. last year`,
+                },
+                {
+                  value: v.lvr.soldWithin30,
+                  label: "Sold within 30 days",
+                  sub: "",
+                },
+                {
+                  value: v.lvr.sfNoOffer.toLocaleString(),
+                  label: "Homes with no offer",
+                  sub: v.lvr.sfNoOfferYoY,
+                },
+                {
+                  value: `${v.lvr.monthsSupply}`,
+                  label: "Months of supply",
+                  sub: "",
+                },
               ].map(({ value, label, sub }) => (
                 <div key={label} className="text-center">
-                  <div className="text-4xl font-bold text-blue-400 mb-1">{value}</div>
+                  <div className="text-4xl font-bold text-blue-400 mb-1">
+                    {value}
+                  </div>
                   <div className="text-slate-300 text-sm">{label}</div>
-                  {sub && <div className="text-green-400 text-xs mt-1">{sub}</div>}
+                  {sub && (
+                    <div className="text-green-400 text-xs mt-1">{sub}</div>
+                  )}
                 </div>
               ))}
             </div>
             <div className="text-center mt-8">
-              <Link href="/market-report" className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors">
+              <Link
+                href="/market-report"
+                className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md font-semibold transition-colors"
+              >
                 Full Market Report
               </Link>
             </div>
@@ -284,11 +338,7 @@ export default async function Home() {
         <ReviewsSection />
 
         {/* Domain-Aware FAQ with FAQPage schema already injected above */}
-        <FAQSection
-          faqs={faqs}
-          title={faqTitle}
-          subtitle={faqCopy.subtitle}
-        />
+        <FAQSection faqs={faqs} title={faqTitle} subtitle={faqCopy.subtitle} />
 
         {/* Domain-Specific CTA */}
         <section className="py-16 md:py-20 bg-blue-600 text-white">
