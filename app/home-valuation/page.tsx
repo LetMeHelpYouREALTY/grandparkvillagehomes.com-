@@ -17,7 +17,7 @@ import PageIllustration from "@/components/PageIllustration";
 export const metadata: Metadata = {
   title: "Free Home Valuation Las Vegas | What's Your Home Worth?",
   description:
-    "Get a free, accurate home valuation in Las Vegas from Dr. Jan Duffy, in real estate since 1983. Expert CMA analysis for Summerlin, Henderson, Green Valley & all Las Vegas neighborhoods. Call (702) 500-1942.",
+    "Get a free, accurate home valuation in Las Vegas from Dr. Jan Duffy, licensed since 2008 · 35 years in Las Vegas. Expert CMA analysis for Summerlin, Henderson, Green Valley & all Las Vegas neighborhoods. Call (702) 500-1942.",
   keywords: [
     "home valuation Las Vegas",
     "what is my home worth Las Vegas",
@@ -101,8 +101,7 @@ export default function HomeValuationPage() {
               What's Your Las Vegas Home Worth?
             </h1>
             <p className="text-xl text-slate-600">
-              Get a free, no-obligation home valuation from Dr. Jan Duffy. Accurate pricing backed by a career in real estate
-              since 1983 and $127M+ in closed transactions.
+              Get a free, no-obligation home valuation from Dr. Jan Duffy. Accurate pricing backed by a career licensed since 2008 · 35 years in Las Vegas and $127M+ in closed transactions.
             </p>
           </div>
           <RealScoutListings compact {...realscoutRange("/home-valuation")} />
@@ -129,7 +128,7 @@ export default function HomeValuationPage() {
                 <p className="text-slate-300 mb-6">
                   Online estimators like Zillow's "Zestimate" can be off by 10% or more—that's
                   $45,000+ on a typical Las Vegas home. Dr. Jan Duffy provides a comprehensive
-                  market analysis using current MLS data, recent comparable sales, and her experience in real estate since 1983
+                  market analysis using current MLS data, recent comparable sales, and her experience licensed since 2008 · 35 years in Las Vegas
                   of Las Vegas real estate expertise. The result? Accurate pricing that helps you sell
                   faster and for more money.
                 </p>

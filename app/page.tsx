@@ -151,7 +151,7 @@ export default async function Home() {
                 <span>Clients Served</span>
               </div>
               <div className="flex items-center gap-2">
-                <span className="font-semibold text-white">Since 1983</span>
+                <span className="font-semibold text-white">Since 2008</span>
                 <span>Las Vegas Experience</span>
               </div>
               <div className="flex items-center gap-2">
@@ -171,7 +171,7 @@ export default async function Home() {
                 Why Work With Dr. Jan Duffy?
               </h2>
               <p className="text-lg text-slate-600">
-                A career in real estate since 1983 and one agent from first call
+                A career licensed since 2008 · 35 years in Las Vegas and one agent from first call
                 to closing.
               </p>
             </div>
@@ -190,7 +190,7 @@ export default async function Home() {
                 {
                   icon: TrendingUp,
                   title: "$127M+ Sold",
-                  desc: "In real estate since 1983",
+                  desc: "Licensed since 2008 · 35 years in Las Vegas",
                 },
                 {
                   icon: HomeIcon,
@@ -365,7 +365,7 @@ export default async function Home() {
               </Link>
             </div>
             <p className="mt-6 text-blue-200 text-sm">
-              Dr. Jan Duffy, REALTOR® | In real estate since 1983
+              Dr. Jan Duffy, REALTOR® | Licensed since 2008 · 35 years in Las Vegas
             </p>
           </div>
         </section>

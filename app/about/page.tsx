@@ -27,7 +27,7 @@ import PageIllustration from "@/components/PageIllustration";
 export const metadata: Metadata = {
   title: "About Dr. Jan Duffy | Grand Park & Summerlin West Real Estate",
   description:
-    "Dr. Jan Duffy is a REALTOR® in real estate since 1983 and $127M+ in closed transactions. Meet your trusted agent for Grand Park and Summerlin West. Call (702) 500-1942.",
+    "Dr. Jan Duffy is a REALTOR® licensed since 2008 · 35 years in Las Vegas and $127M+ in closed transactions. Meet your trusted agent for Grand Park and Summerlin West. Call (702) 500-1942.",
   authors: [{ name: "Dr. Jan Duffy", url: "https://www.grandparkvillagehomes.com/about" }],
   keywords: [
     "Dr. Jan Duffy",
@@ -141,7 +141,7 @@ export default function AboutPage() {
               Meet Dr. Jan Duffy
             </h1>
             <p className="text-xl text-slate-700 font-medium mb-4">
-              Dr. Jan Duffy is a REALTOR® in real estate since 1983.
+              Dr. Jan Duffy is a REALTOR® licensed since 2008 · 35 years in Las Vegas.
             </p>
             <p className="text-xl text-slate-600">
               Summerlin West and 55+ specialist. Whether you're buying, selling, investing, or
@@ -161,7 +161,7 @@ export default function AboutPage() {
 
                 <div className="prose prose-lg text-slate-700 mb-8 space-y-4">
                   <p>
-                    I've been in real estate since 1983. I bring that local knowledge
+                    I've been licensed since 2008 · 35 years in Las Vegas. I bring that local knowledge
                     to every client I serve, from first showing to closing day.
                   </p>
                   <p>
@@ -219,9 +219,9 @@ export default function AboutPage() {
 
                 {/* Authority block */}
                 <div className="bg-blue-50 border border-blue-100 rounded-lg p-6">
-                  <p className="font-semibold text-slate-900">Dr. Jan Duffy | Top 1% Las Vegas REALTOR®</p>
+                  <p className="font-semibold text-slate-900">Dr. Jan Duffy | Las Vegas REALTOR®</p>
                   <p className="text-slate-700 mt-1">Grand Park Village Homes</p>
-                  <p className="text-slate-600 text-sm mt-1">In real estate since 1983 · Summerlin West luxury specialist</p>
+                  <p className="text-slate-600 text-sm mt-1">Licensed since 2008 · Summerlin West luxury specialist</p>
                   <p className="text-sm mt-2">
                     <a href="tel:+17025001942" className="text-blue-600 hover:underline font-medium">(702) 500-1942</a>
                     {" · "}
@@ -258,16 +258,16 @@ export default function AboutPage() {
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4">
                   <div className="bg-blue-50 rounded-lg p-6 text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-1">Since 1983</div>
+                    <div className="text-3xl font-bold text-blue-600 mb-1">Since 2008</div>
                     <div className="text-sm text-slate-600">in Las Vegas Real Estate</div>
                   </div>
                   <div className="bg-blue-50 rounded-lg p-6 text-center">
                     <div className="text-3xl font-bold text-blue-600 mb-1">$127M+</div>
-                    <div className="text-sm text-slate-600">Volume Closed</div>
+                    <div className="text-sm text-slate-600">Team Career Sales</div>
                   </div>
                   <div className="bg-blue-50 rounded-lg p-6 text-center">
                     <div className="text-3xl font-bold text-blue-600 mb-1">500+</div>
-                    <div className="text-sm text-slate-600">Transactions</div>
+                    <div className="text-sm text-slate-600">Team Sales</div>
                   </div>
                   <div className="bg-blue-50 rounded-lg p-6 text-center">
                     <div className="text-3xl font-bold text-blue-600 mb-1">4.9★</div>
@@ -337,9 +337,9 @@ export default function AboutPage() {
                 <div className="bg-blue-600 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <Award className="h-8 w-8" />
                 </div>
-                <h3 className="font-bold text-xl mb-2">In Real Estate Since 1983</h3>
+                <h3 className="font-bold text-xl mb-2">Licensed Since 2008</h3>
                 <p className="text-slate-300 text-sm">
-                  In real estate since 1983 and $127M+ in closed transactions.
+                  Licensed since 2008 · 35 years in Las Vegas and $127M+ in closed transactions.
                 </p>
               </div>
               <div className="text-center">
