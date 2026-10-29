@@ -6,7 +6,7 @@ export const siteConfig = {
   tagline: "Grand Park & Summerlin West Real Estate",
   url: "https://www.grandparkvillagehomes.com",
   description:
-    "Grand Park Village new homes in West Summerlin, Las Vegas 89138. Buyer representation from Dr. Jan Duffy, in real estate since 1983.",
+    "Grand Park Village new homes in West Summerlin, Las Vegas 89138. Buyer representation from Dr. Jan Duffy, licensed since 2008 · 35 years in Las Vegas.",
   ogImage: {
     path: "/og-image.jpg",
     width: 1200,

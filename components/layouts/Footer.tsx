@@ -24,7 +24,7 @@ export default async function Footer() {
               </div>
               <p className="text-slate-300 mb-4 text-sm">
                 Grand Park Village and Summerlin West real estate with Dr. Jan
-                Duffy, in real estate since 1983.
+                Duffy, licensed since 2008 · 35 years in Las Vegas.
               </p>
             </div>
 
