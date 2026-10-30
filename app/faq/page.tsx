@@ -59,7 +59,7 @@ const faqCategories = [
     faqs: [
       {
         q: "What is my home worth in today's market?",
-        a: "Home values depend on location, condition, size, and recent comparable sales. Dr. Jan provides free, comprehensive home valuations using current MLS data and her experience licensed since 2008 · 35 years in Las Vegas.",
+        a: "Home values depend on location, condition, size, and recent comparable sales. Dr. Jan provides free, comprehensive home valuations using current MLS data and her experience (licensed since 2008 · 35 years in Las Vegas).",
       },
       {
         q: "How long will it take to sell my home?",

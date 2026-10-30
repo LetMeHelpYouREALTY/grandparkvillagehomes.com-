@@ -127,7 +127,7 @@ export default function CentennialHillsPage() {
               <p>
                 <strong>Dr. Jan Duffy</strong> knows which Centennial Hills streets offer the best
                 mountain views, which school zones serve each neighborhood, and which HOAs maintain
-                their communities to the highest standards. That local knowledge, built licensed since 2008 · 35 years in Las Vegas, means Centennial Hills buyers and sellers get sharp
+                their communities to the highest standards. That local knowledge (licensed since 2008 · 35 years in Las Vegas) means Centennial Hills buyers and sellers get sharp
                 representation.
               </p>
 

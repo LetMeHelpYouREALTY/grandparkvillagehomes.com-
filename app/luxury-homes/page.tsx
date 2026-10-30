@@ -144,7 +144,7 @@ export default function LuxuryHomesPage() {
             </h1>
             <p className="text-xl text-slate-600 mb-8">
               When you're buying or selling a $1M+ home, trust matters more than ever.
-              <strong> Dr. Jan Duffy</strong> brings a career licensed since 2008 · 35 years in Las Vegas, discretion,
+              <strong> Dr. Jan Duffy</strong> brings a career (licensed since 2008 · 35 years in Las Vegas), discretion,
               and expertise to every luxury transaction.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">

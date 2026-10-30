@@ -117,7 +117,7 @@ export default function BuyersPage() {
             </h1>
             <p className="text-xl text-slate-600 mb-8">
               When you work with <strong>Dr. Jan Duffy</strong> as your buyer's agent, you get
-              A career licensed since 2008 · 35 years in Las Vegas on your side—and it costs you nothing.
+              A career (licensed since 2008 · 35 years in Las Vegas) on your side—and it costs you nothing.
               The seller pays the commission, but the representation is yours.
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
@@ -306,7 +306,7 @@ export default function BuyersPage() {
               Why Buy with Dr. Jan Duffy
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Not all real estate agents are created equal. Dr. Jan brings a career licensed since 2008 · 35 years in Las Vegas to every purchase.
+              Not all real estate agents are created equal. Dr. Jan brings a career (licensed since 2008 · 35 years in Las Vegas) to every purchase.
             </p>
             <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
               <div className="text-center">
@@ -406,7 +406,7 @@ export default function BuyersPage() {
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Find Your Las Vegas Home?</h2>
             <p className="text-xl text-slate-300 mb-8">
               Questions about buying in Las Vegas? Call or text Dr. Jan Duffy for a free buyer
-              consultation. Get expert guidance backed by a career licensed since 2008 · 35 years in Las Vegas—the 
+              consultation. Get expert guidance backed by a career (licensed since 2008 · 35 years in Las Vegas)—the 
               seller pays the commission, so representation is free for you.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
