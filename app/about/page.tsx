@@ -48,7 +48,7 @@ const personSchema = {
   jobTitle: "REALTOR®",
   image: "https://www.grandparkvillagehomes.com/images/agent/dr-jan-duffy-realtor-las-vegas.png",
   description:
-    "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, with 35 years serving Las Vegas, Henderson, and Summerlin.",
+    "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, licensed since 2008 · 35 years in Las Vegas, serving Las Vegas, Henderson, and Summerlin.",
   telephone: "+17025001942",
   email: "homes@heyberkshire.com",
   url: "https://www.grandparkvillagehomes.com/about",

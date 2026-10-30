@@ -52,7 +52,7 @@ const summerlinFaqs = [
   {
     question: "Why should I work with Dr. Jan Duffy in Summerlin?",
     answer:
-      "Dr. Jan Duffy brings a career licensed since 2008 · 35 years in Las Vegas and deep Summerlin West expertise, with $127M+ in Dr. Duffy Group career sales. That experience helps buyers compete in Summerlin's competitive market and helps sellers maximize their home's value.",
+      "Dr. Jan Duffy brings a career (licensed since 2008 · 35 years in Las Vegas) and deep Summerlin West expertise, with $127M+ in Dr. Duffy Group career sales. That experience helps buyers compete in Summerlin's competitive market and helps sellers maximize their home's value.",
   },
 ];
 
@@ -322,7 +322,7 @@ export default function SummerlinPage() {
                   Why should I work with Dr. Jan Duffy in Summerlin?
                 </h3>
                 <p className="text-slate-600">
-                  Dr. Jan Duffy brings a career licensed since 2008 · 35 years in Las Vegas and deep Summerlin
+                  Dr. Jan Duffy brings a career (licensed since 2008 · 35 years in Las Vegas) and deep Summerlin
                   West expertise, with $127M+ in Dr. Duffy Group career sales. That experience helps buyers compete in Summerlin's competitive market and helps sellers
                   maximize their home's value.
                 </p>
