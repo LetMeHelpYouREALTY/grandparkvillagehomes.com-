@@ -46,7 +46,7 @@ const personSchema = {
   "@type": "RealEstateAgent",
   name: "Dr. Jan Duffy",
   jobTitle: "REALTOR®",
-  image: "https://www.grandparkvillagehomes.com/images/agent/dr-jan-duffy-realtor-las-vegas.png",
+  image: "https://www.grandparkvillagehomes.com/images/agent/dr-jan-duffy-grand-park-circle.png",
   description:
     "Licensed real estate agent with Berkshire Hathaway HomeServices Nevada Properties, with 35 years serving Las Vegas, Henderson, and Summerlin.",
   telephone: "+17025001942",

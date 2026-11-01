@@ -92,7 +92,7 @@ export function generateRealEstateAgentSchema() {
       "Berkshire Hathaway HomeServices",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/icon-512.png`,
+    logo: `${BASE_URL}/android-chrome-512x512.png`,
     image: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-circle.png`,
     description: siteConfig.description,
     telephone: "+17025001942",
