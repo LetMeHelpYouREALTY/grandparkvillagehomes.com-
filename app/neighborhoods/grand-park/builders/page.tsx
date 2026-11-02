@@ -93,6 +93,18 @@ export default function GrandParkBuildersPage() {
             <p>
               Call or text Dr. Jan Duffy at <a href="tel:+17025001942" className="font-medium text-blue-700">(702) 500-1942</a> before you walk into a model. Office: 9406 W Lake Mead Blvd, Suite 100, Las Vegas, NV 89134. <Link href="/neighborhoods/grand-park/market-report" className="font-medium text-blue-700 hover:underline">See every collection's price</Link>.
             </p>
+            <p>
+              Comparing builders?{" "}
+              <a
+                href="https://calendly.com/drjanduffy/buyer-consultation-30-min?utm_source=grandparkvillagehomes.com&utm_medium=website&utm_content=builders-page"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-blue-700 hover:underline"
+              >
+                Book a 30-minute buyer consultation with Dr. Jan Duffy
+              </a>{" "}
+              before you visit a model.
+            </p>
           </section>
           <section className="mx-auto mt-12 max-w-3xl">
             <h2 className="mb-6 text-3xl font-bold text-slate-900">Builder questions</h2>
