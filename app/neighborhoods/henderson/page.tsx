@@ -70,7 +70,7 @@ const faqSchema = {
       name: "Why choose Dr. Jan Duffy for Henderson real estate?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Dr. Jan Duffy brings 35 years in Las Vegas real estate and $127M+ in closed transactions. She knows Henderson's communities, school zoning, and HOAs, and she works with both buyers and sellers.",
+        text: "Dr. Jan Duffy, licensed since 2008 · 35 years in Las Vegas, brings $127M+ in closed transactions. She knows Henderson's communities, school zoning, and HOAs, and she works with both buyers and sellers.",
       },
     },
   ],
@@ -128,7 +128,7 @@ export default function HendersonPage() {
               <p>
                 <strong>Henderson</strong> has quietly become one of the most desirable cities in the American
                 Southwest. As Nevada's second-largest city with over 320,000 residents, Henderson offers the
-                perfect balance of suburban tranquility and urban convenience. <strong>Dr. Jan Duffy</strong> brings a career licensed since 2008 · 35 years in Las Vegas to every Henderson transaction.
+                perfect balance of suburban tranquility and urban convenience. <strong>Dr. Jan Duffy</strong> brings a career (licensed since 2008 · 35 years in Las Vegas) to every Henderson transaction.
               </p>
               <p>
                 What sets Henderson apart? Start with space to get outside. The city operates over 60 parks and
@@ -340,7 +340,7 @@ export default function HendersonPage() {
                   Why choose Dr. Jan Duffy for Henderson real estate?
                 </h3>
                 <p className="text-slate-600">
-                  Dr. Jan Duffy brings a career licensed since 2008 · 35 years in Las Vegas and $127M+ in closed transactions.
+                  Dr. Jan Duffy brings a career (licensed since 2008 · 35 years in Las Vegas) and $127M+ in closed transactions.
                   She knows Henderson's communities, school zoning, and HOAs, and she works with both buyers
                   and sellers.
                 </p>

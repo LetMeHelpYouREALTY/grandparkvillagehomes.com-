@@ -191,7 +191,7 @@ export function generatePersonSchema() {
     name: agentInfo.name,
     jobTitle: agentInfo.title,
     description:
-      "Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, with 35 years in Las Vegas real estate. Specialist in Grand Park, Summerlin West, luxury homes, and new construction.",
+      "Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, licensed since 2008 · 35 years in Las Vegas. Specialist in Grand Park, Summerlin West, luxury homes, and new construction.",
     url: `${BASE_URL}/about`,
     image: `${BASE_URL}/images/agent/dr-jan-duffy-grand-park-circle.png`,
     email: agentInfo.email,

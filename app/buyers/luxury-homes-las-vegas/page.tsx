@@ -58,7 +58,7 @@ const faqSchema = {
       name: "Do luxury buyers need representation?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Absolutely. Luxury transactions involve complex negotiations, privacy concerns, and significant financial exposure. One wrong move can cost hundreds of thousands. Berkshire Hathaway HomeServices provides discrete, sophisticated representation for discerning buyers.",
+        text: "Absolutely. Luxury transactions involve complex negotiations, privacy concerns, and significant financial exposure. One wrong move can cost hundreds of thousands. Dr. Jan Duffy provides discrete, sophisticated representation for discerning buyers.",
       },
     },
   ],

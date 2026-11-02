@@ -171,7 +171,7 @@ export default function SellersPage() {
               Why Sell with Dr. Jan
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Not all real estate agents deliver the same results. Dr. Jan brings a career licensed since 2008 · 35 years in Las Vegas, $127M+ in closed transactions, and 500+ transactions
+              Not all real estate agents deliver the same results. Dr. Jan brings a career (licensed since 2008 · 35 years in Las Vegas), $127M+ in closed transactions, and 500+ transactions
               to every listing.
             </p>
             <div className="grid md:grid-cols-2 gap-8">
@@ -297,7 +297,7 @@ export default function SellersPage() {
                 "Pricing your home correctly from day one is the single most important factor in
                 getting top dollar. Overpriced homes sit on the market, and every day on market costs 
                 you money—both in carrying costs and buyer perception. That's why I use comprehensive 
-                market analysis and my experience licensed since 2008 · 35 years in Las Vegas to price homes right 
+                market analysis and my experience (licensed since 2008 · 35 years in Las Vegas) to price homes right 
                 the first time. The result? My listings typically sell within 2% of asking price."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
@@ -336,7 +336,7 @@ export default function SellersPage() {
                 <h2 className="text-3xl font-bold mb-4">What's Your Home Worth?</h2>
                 <p className="text-blue-100 mb-6">
                   Get a free, no-obligation home valuation from Dr. Jan Duffy. Using current MLS
-                  data and experience licensed since 2008 · 35 years in Las Vegas, you'll know exactly what your 
+                  data and experience (licensed since 2008 · 35 years in Las Vegas), you'll know exactly what your 
                   home could sell for in today's market. No algorithms—just real analysis from 
                   a local expert.
                 </p>

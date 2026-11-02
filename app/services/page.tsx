@@ -67,7 +67,7 @@ const coreServices = [
     title: "Home Selling Services",
     slug: "sellers",
     description:
-      "Maximize your home's value with professional marketing, accurate pricing, and expert negotiation from Dr. Jan Duffy, backed by a career licensed since 2008 · 35 years in Las Vegas.",
+      "Maximize your home's value with professional marketing, accurate pricing, and expert negotiation from Dr. Jan Duffy, backed by a career (licensed since 2008 · 35 years in Las Vegas).",
     highlights: ["World-class marketing", "Accurate pricing", "MLS exposure", "Staging guidance"],
     stats: { label: "Homes Sold", value: "500+" },
   },
@@ -121,7 +121,7 @@ const specializedServices = [
     title: "Home Valuation Services",
     slug: "home-valuation",
     description:
-      "Free, no-obligation home valuations using current MLS data, recent comparable sales, and deep local market knowledge from a career licensed since 2008 · 35 years in Las Vegas.",
+      "Free, no-obligation home valuations using current MLS data, recent comparable sales, and deep local market knowledge from a career (licensed since 2008 · 35 years in Las Vegas).",
     highlights: ["Accurate pricing", "No obligation", "Detailed analysis", "Market trends"],
   },
 ];
@@ -187,7 +187,7 @@ export default function ServicesPage() {
               Las Vegas Real Estate Services
             </h1>
             <p className="text-xl text-slate-600 mb-8">
-              Comprehensive real estate solutions from <strong>Dr. Jan Duffy</strong>, backed by a career licensed since 2008 · 35 years in Las Vegas. Whether you're 
+              Comprehensive real estate solutions from <strong>Dr. Jan Duffy</strong>, backed by a career (licensed since 2008 · 35 years in Las Vegas). Whether you're 
               buying your first home, selling a luxury estate, or relocating from California, 
               you'll receive expert guidance every step of the way.
             </p>
@@ -426,7 +426,7 @@ export default function ServicesPage() {
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Whether you're buying or selling, the process begins with a free consultation 
               to understand your goals, timeline, and unique circumstances. From there, 
-              Dr. Jan creates a customized strategy backed by a career licensed since 2008 · 35 years in Las Vegas to
+              Dr. Jan creates a customized strategy backed by a career (licensed since 2008 · 35 years in Las Vegas) to
               achieve the best possible outcome.
             </p>
             <div className="space-y-6">
@@ -487,7 +487,7 @@ export default function ServicesPage() {
             <p className="text-xl text-blue-100 mb-8">
               Contact Dr. Jan Duffy for a free consultation about any of our real estate services. 
               Whether you're buying, selling, investing, or relocating, you'll receive expert
-              guidance backed by a career licensed since 2008 · 35 years in Las Vegas.
+              guidance backed by a career (licensed since 2008 · 35 years in Las Vegas).
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
