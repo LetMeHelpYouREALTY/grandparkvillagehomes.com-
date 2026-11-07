@@ -8,6 +8,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 import GlobalHeroBanner from "@/components/layout/GlobalHeroBanner";
 import AutoBreadcrumbSchema from "@/components/AutoBreadcrumbSchema";
+import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const domain = (await headers()).get("x-domain") || "";
@@ -75,6 +76,7 @@ export default function RootLayout({
         <GlobalHeroBanner />
         {children}
         <Analytics />
+        <VercelSpeedInsights />
       </body>
     </html>
   );
