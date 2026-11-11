@@ -171,7 +171,7 @@ export default async function Home() {
                 Why Work With Dr. Jan Duffy?
               </h2>
               <p className="text-lg text-slate-600">
-                A career licensed since 2008 · 35 years in Las Vegas and one agent from first call
+                A career (licensed since 2008 · 35 years in Las Vegas) and one agent from first call
                 to closing.
               </p>
             </div>
